@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Quem Somos — FIPE ou Furada?</title>
+<meta name="description" content="Conheça o FIPE ou Furada — a plataforma que traduz dados complexos em uma resposta simples para o comprador de carros brasileiro."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0D0D0D;--bg2:#141414;--bg3:#1C1C1C;
+  --border:#2A2A2A;--text:#F0F0F0;--muted:#888;
+  --orange:#FF6B2B;
+}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 32px;border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.95);
+  backdrop-filter:blur(8px);
+}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:0.02em;color:var(--text);text-decoration:none}
+.logo span{color:var(--orange)}
+.back-link{font-size:0.82rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s}
+.back-link:hover{color:var(--orange)}
+
+.page-wrap{max-width:720px;margin:0 auto;padding:60px 24px 80px}
+
+/* ── HERO DA PÁGINA ── */
+.page-eyebrow{font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.page-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:clamp(2rem,6vw,3.4rem);line-height:1;letter-spacing:0.01em;
+  color:var(--text);margin-bottom:24px;
+}
+
+/* ── MISSÃO DESTAQUE ── */
+.missao-box{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:16px;padding:28px 28px 24px;margin-bottom:48px;
+  position:relative;overflow:hidden;
+}
+.missao-box::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--orange);
+}
+.missao-text{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1.4rem;line-height:1.3;color:var(--text);margin-bottom:14px;
+}
+.missao-text em{font-style:normal;color:var(--orange)}
+.missao-sub{font-size:0.95rem;color:#C0C0C0;line-height:1.7}
+
+/* ── PILARES ── */
+.pilares{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:48px}
+@media(max-width:500px){.pilares{grid-template-columns:1fr}}
+.pilar{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  padding:20px 18px;
+}
+.pilar-icon{font-size:1.6rem;margin-bottom:10px;display:block}
+.pilar-titulo{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1.05rem;letter-spacing:0.04em;text-transform:uppercase;
+  color:var(--text);margin-bottom:8px;
+}
+.pilar-texto{font-size:0.85rem;color:var(--muted);line-height:1.6}
+
+/* ── TEXTO CORRIDO ── */
+.section{margin-bottom:40px}
+.section-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:1.25rem;letter-spacing:0.04em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:14px;
+  padding-bottom:10px;border-bottom:1px solid var(--border);
+}
+.section p{font-size:0.95rem;color:#C0C0C0;line-height:1.75;margin-bottom:12px}
+.section p:last-child{margin-bottom:0}
+
+.contact-box{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:12px;padding:22px 24px;
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.contact-box-text{flex:1;min-width:200px}
+.contact-box-text p{font-size:0.9rem;color:#C0C0C0;line-height:1.6}
+.contact-box-text strong{color:var(--text)}
+.btn-contato{
+  background:var(--orange);color:#fff;border:none;border-radius:8px;
+  padding:11px 20px;font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.95rem;letter-spacing:0.04em;text-decoration:none;
+  white-space:nowrap;transition:background 0.15s;
+}
+.btn-contato:hover{background:#cc4a0e}
+
+footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border)}
+.footer-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.footer-links a{font-size:0.85rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s}
+.footer-links a:hover{color:var(--orange)}
+.footer-links a.active{color:var(--orange)}
+.footer-dot{color:var(--border)}
+.footer-info{font-size:0.75rem;color:#333}
+
+@media(max-width:600px){
+  header{padding:14px 18px}
+  .page-wrap{padding:40px 18px 60px}
+  .missao-box{padding:22px 18px}
+  .contact-box{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">FIPE OU <span>FURADA?</span></a>
+  <a href="index.html" class="back-link">← Voltar ao site</a>
+</header>
+
+<div class="page-wrap">
+  <p class="page-eyebrow">A plataforma</p>
+  <h1 class="page-title">Quem<br>Somos</h1>
+
+  <!-- MISSÃO -->
+  <div class="missao-box">
+    <div class="missao-text">Nascemos para <em>empoderar o comprador</em> de carro usado no Brasil.</div>
+    <p class="missao-sub">Comprar um carro usado ou seminovo no Brasil é uma conquista — mas também pode ser um processo cheio de armadilhas e incertezas. Sabemos que a famosa Tabela FIPE é apenas uma referência de partida, e que a realidade das ruas envolve quilometragem, histórico, estado de conservação e, acima de tudo, a lei da oferta e da procura.</p>
+  </div>
+
+  <!-- PILARES -->
+  <div class="pilares">
+    <div class="pilar">
+      <span class="pilar-icon">📊</span>
+      <div class="pilar-titulo">Dados reais</div>
+      <p class="pilar-texto">Cruzamos a Tabela FIPE oficial com variáveis comerciais reais para chegar ao preço justo de mercado.</p>
+    </div>
+    <div class="pilar">
+      <span class="pilar-icon">🎯</span>
+      <div class="pilar-titulo">Resposta direta</div>
+      <p class="pilar-texto">Traduzimos dados complexos em uma resposta simples e visual: BARATO, JUSTO ou CARO.</p>
+    </div>
+    <div class="pilar">
+      <span class="pilar-icon">🔒</span>
+      <div class="pilar-titulo">Independência total</div>
+      <p class="pilar-texto">Não somos ligados a nenhuma montadora, concessionária ou marca. Nossa análise é estritamente baseada em dados.</p>
+    </div>
+    <div class="pilar">
+      <span class="pilar-icon">🇧🇷</span>
+      <div class="pilar-titulo">Feito para o Brasil</div>
+      <p class="pilar-texto">Desenvolvido pensando nas particularidades do mercado automotivo brasileiro, com dados nacionais.</p>
+    </div>
+  </div>
+
+  <!-- SOBRE -->
+  <div class="section">
+    <h2 class="section-title">Nossa história</h2>
+    <p>O FIPE ou Furada nasceu da paixão por tecnologia, dados e pelo mercado automotivo. Nossa missão é empoderar o consumidor final para que ele negocie de igual para igual, evite prejuízos e faça uma escolha consciente.</p>
+    <p>Desenvolvemos um algoritmo que cruza as principais variáveis comerciais de um anúncio para responder à pergunta que todo comprador se faz antes de fechar o negócio: <strong style="color:var(--text)">"Esse carro está no preço justo ou é uma furada?"</strong></p>
+    <p>Além do veredicto, a plataforma projeta a desvalorização do veículo nos próximos 5 anos e oferece um conselho personalizado sobre o momento certo de comprar ou esperar.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Transparência e independência</h2>
+    <p>Não somos ligados a nenhuma montadora, concessionária ou marca específica. Nossa análise é estritamente baseada em dados e lógica de mercado, garantindo a total imparcialidade dos resultados apresentados.</p>
+    <p>Os preços são obtidos diretamente da Tabela FIPE oficial, atualizada mensalmente, através de APIs públicas. Nenhum dado é manipulado ou patrocinado.</p>
+  </div>
+
+  <!-- CONTATO -->
+  <div class="contact-box">
+    <div class="contact-box-text">
+      <p><strong>Quer falar com a gente?</strong><br>
+      Para feedbacks, parcerias ou sugestões, entre em contato com nossa equipe.</p>
+    </div>
+    <a href="mailto:gestaoads.bot@gmail.com" class="btn-contato">✉️ Falar com a equipe</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="quem-somos.html" class="active">Quem Somos</a>
+    <span class="footer-dot">·</span>
+    <a href="politica-de-privacidade.html">Política de Privacidade</a>
+    <span class="footer-dot">·</span>
+    <a href="termos-de-uso.html">Termos de Uso</a>
+  </div>
+  <div class="footer-info">© 2026 FIPE ou Furada? — Todos os direitos reservados</div>
+</footer>
+
+</body>
+</html>

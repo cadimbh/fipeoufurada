@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FIPE ou Furada? — Analise qualquer carro</title>
+<meta name="description" content="Descubra se o carro que você quer comprar está caro ou barato, quanto ele vai desvalorizar e se é hora de comprar."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0D0D0D;
+  --bg2:#141414;
+  --bg3:#1C1C1C;
+  --border:#2A2A2A;
+  --text:#F0F0F0;
+  --muted:#888;
+  --orange:#FF6B2B;
+  --orange-dim:#cc4a0e;
+  --green:#2ECC71;
+  --red:#E74C3C;
+  --yellow:#F1C40F;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+
+/* ── HEADER ── */
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 32px;border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.95);
+  backdrop-filter:blur(8px);
+}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:0.02em;color:var(--text);text-decoration:none}
+.logo span{color:var(--orange)}
+.header-badge{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:0.72rem;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
+
+/* ── HERO ── */
+.hero{
+  text-align:center;padding:70px 24px 52px;
+  background:radial-gradient(ellipse 70% 40% at 50% 0%,rgba(255,107,43,0.10) 0%,transparent 70%);
+}
+.hero-eyebrow{font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.hero h1{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:clamp(2.6rem,8vw,5.5rem);line-height:0.95;letter-spacing:0.01em;
+  color:var(--text);margin-bottom:16px;
+}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:460px;margin:0 auto 44px;line-height:1.6}
+
+/* ── SEARCH FORM ── */
+.search-box{
+  max-width:680px;margin:0 auto;
+  background:var(--bg2);border:1px solid var(--border);border-radius:16px;
+  padding:24px;
+}
+.search-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:12px}
+@media(max-width:600px){.search-grid{grid-template-columns:1fr 1fr}}
+
+.field-wrap{display:flex;flex-direction:column;gap:6px}
+.field-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted)}
+select,input[type=number],input[type=text]{
+  background:var(--bg3);border:1px solid var(--border);border-radius:8px;
+  color:var(--text);font-family:'Inter',sans-serif;font-size:0.9rem;
+  padding:10px 12px;width:100%;outline:none;transition:border-color 0.15s;
+  appearance:none;-webkit-appearance:none;
+}
+select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;cursor:pointer;
+}
+select:focus,input:focus{border-color:var(--orange)}
+select:disabled{opacity:0.4;cursor:not-allowed}
+
+.price-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.price-row .field-wrap:first-child{grid-column:1/-1}
+@media(max-width:480px){.price-row{grid-template-columns:1fr}}
+
+.btn-analisar{
+  width:100%;padding:14px;
+  background:var(--orange);color:#fff;border:none;border-radius:10px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;
+  letter-spacing:0.04em;cursor:pointer;transition:background 0.15s,transform 0.1s;
+}
+.btn-analisar:hover{background:var(--orange-dim)}
+.btn-analisar:active{transform:scale(0.98)}
+.btn-analisar:disabled{opacity:0.5;cursor:not-allowed}
+
+/* ── LOADING ── */
+.loading-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden;margin-top:12px;display:none}
+.loading-fill{height:100%;background:var(--orange);width:0;transition:width 0.4s}
+
+/* ── RESULTS ── */
+#results{
+  max-width:860px;margin:0 auto;padding:0 24px;
+  opacity:0;height:0;overflow:hidden;
+  transform:translateY(24px);transition:opacity 0.4s,transform 0.4s;pointer-events:none;
+}
+#results.visible{
+  opacity:1;height:auto;overflow:visible;margin-top:52px;
+  transform:translateY(0);pointer-events:all;
+}
+
+/* ── VEREDICTO HERO ── */
+.veredicto-hero{
+  background:var(--bg2);border:1px solid var(--border);border-radius:20px;
+  padding:36px 32px 32px;margin-bottom:24px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.veredicto-hero::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+}
+.veredicto-hero.barato::before{background:var(--green)}
+.veredicto-hero.justo::before{background:var(--yellow)}
+.veredicto-hero.caro::before{background:var(--red)}
+
+.veredicto-car-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+
+/* ── SPEEDOMETER ── */
+.speedometer{width:260px;height:140px;margin:0 auto 24px;position:relative}
+.speedometer svg{width:100%;height:100%}
+.needle{transform-origin:130px 130px;transition:transform 1.2s cubic-bezier(0.34,1.56,0.64,1)}
+
+.veredicto-badge{
+  display:inline-block;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:2.6rem;letter-spacing:0.04em;
+  margin-bottom:8px;
+}
+.veredicto-badge.barato{color:var(--green)}
+.veredicto-badge.justo{color:var(--yellow)}
+.veredicto-badge.caro{color:var(--red)}
+
+.veredicto-diff{font-size:1rem;color:var(--muted);margin-bottom:20px}
+.veredicto-diff strong{color:var(--text)}
+
+.verdict-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
+.vstat{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center}
+.vstat-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.4rem;color:var(--text);line-height:1}
+.vstat-lbl{font-size:0.72rem;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.06em}
+
+/* ── TABS ── */
+.tabs-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden}
+.tabs-nav{display:flex;border-bottom:1px solid var(--border)}
+.tab-btn{
+  flex:1;padding:16px 12px;background:none;border:none;color:var(--muted);
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;
+  letter-spacing:0.05em;cursor:pointer;transition:all 0.15s;border-bottom:2px solid transparent;
+  text-transform:uppercase;
+}
+.tab-btn:hover{color:var(--text)}
+.tab-btn.active{color:var(--orange);border-bottom-color:var(--orange)}
+
+.tab-panel{display:none;padding:28px}
+.tab-panel.active{display:block}
+
+/* ── DESVALORIZAÇÃO ── */
+.deprec-intro{font-size:0.95rem;color:var(--muted);margin-bottom:24px;line-height:1.6}
+.deprec-intro strong{color:var(--text)}
+
+.deprec-timeline{display:flex;flex-direction:column;gap:0}
+.deprec-row{
+  display:grid;grid-template-columns:80px 1fr 120px;align-items:center;gap:16px;
+  padding:14px 0;border-bottom:1px solid var(--border);
+}
+.deprec-row:last-child{border-bottom:none}
+.deprec-year{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--muted)}
+.deprec-bar-wrap{background:var(--bg3);border-radius:4px;height:8px;overflow:hidden}
+.deprec-bar{height:100%;border-radius:4px;background:var(--orange);transition:width 1s ease}
+.deprec-val{text-align:right}
+.deprec-val-num{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--text)}
+.deprec-val-pct{font-size:0.75rem;color:var(--red)}
+
+.deprec-summary{
+  margin-top:20px;background:var(--bg3);border-radius:12px;
+  padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:16px;
+}
+.ds-item{text-align:center}
+.ds-val{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.8rem;color:var(--red)}
+.ds-val.green{color:var(--green)}
+.ds-lbl{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px}
+
+/* ── COMPRAR OU ESPERAR ── */
+.conselho-card{
+  border-radius:14px;padding:24px;margin-bottom:16px;
+  border:1px solid var(--border);
+}
+.conselho-card.comprar{border-color:rgba(46,204,113,0.3);background:rgba(46,204,113,0.06)}
+.conselho-card.esperar{border-color:rgba(241,196,15,0.3);background:rgba(241,196,15,0.06)}
+.conselho-card.cuidado{border-color:rgba(231,76,60,0.3);background:rgba(231,76,60,0.06)}
+
+.conselho-header{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.conselho-icon{font-size:1.8rem}
+.conselho-titulo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:0.03em}
+.conselho-card.comprar .conselho-titulo{color:var(--green)}
+.conselho-card.esperar .conselho-titulo{color:var(--yellow)}
+.conselho-card.cuidado .conselho-titulo{color:var(--red)}
+.conselho-texto{font-size:0.9rem;color:var(--muted);line-height:1.65}
+.conselho-texto strong{color:var(--text)}
+
+.fatores-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.fator-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px}
+.fator-titulo{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:6px}
+.fator-valor{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem}
+.fator-valor.up{color:var(--red)}
+.fator-valor.down{color:var(--green)}
+.fator-valor.neutral{color:var(--yellow)}
+
+/* ── AD SLOT ── */
+.ad-slot{
+  max-width:860px;margin:24px auto;padding:0 24px;
+}
+.ad-inner{
+  background:var(--bg2);border:1px dashed var(--border);
+  border-radius:10px;height:90px;display:flex;align-items:center;justify-content:center;
+  color:#333;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;
+}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;padding:40px 24px 28px;
+  border-top:1px solid var(--border);margin-top:20px;
+}
+.footer-links{
+  display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;
+  margin-bottom:14px;
+}
+.footer-links a{
+  font-size:0.85rem;font-weight:600;color:var(--muted);text-decoration:none;
+  transition:color 0.15s;
+}
+.footer-links a:hover{color:var(--orange)}
+.footer-dot{color:var(--border);font-size:0.85rem}
+.footer-info{font-size:0.78rem;color:#444;margin-bottom:8px}
+.footer-info a{color:#555;text-decoration:none}
+.footer-aviso{font-size:0.75rem;color:#333;max-width:520px;margin:0 auto;line-height:1.5}
+
+/* ── ERRO ── */
+.error-msg{
+  background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);
+  border-radius:10px;padding:14px 16px;font-size:0.88rem;color:#e74c3c;
+  margin-top:12px;display:none;
+}
+
+@media(max-width:600px){
+  header{padding:14px 18px}
+  .hero{padding:48px 18px 36px}
+  .verdict-stats{grid-template-columns:1fr 1fr}
+  .verdict-stats .vstat:last-child{grid-column:1/-1}
+  .fatores-grid{grid-template-columns:1fr}
+  .tabs-nav .tab-btn{font-size:0.82rem;padding:14px 8px}
+  .deprec-row{grid-template-columns:60px 1fr 100px}
+  .deprec-summary{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo">FIPE OU <span>FURADA?</span></a>
+  <span class="header-badge">🇧🇷 Dados FIPE em tempo real</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">A análise que o comprador precisava</p>
+  <h1>Esse carro tá caro<br>ou é <em>furada?</em></h1>
+  <p class="hero-sub">Digite o carro, o ano e o preço pedido — a gente faz as contas e te diz a verdade.</p>
+</section>
+
+<!-- BUSCA -->
+<section style="max-width:680px;margin:0 auto;padding:0 24px">
+  <div class="search-box">
+    <div class="search-grid">
+      <div class="field-wrap">
+        <span class="field-label">Marca</span>
+        <select id="sel-marca" onchange="carregarModelos()">
+          <option value="">Carregando...</option>
+        </select>
+      </div>
+      <div class="field-wrap">
+        <span class="field-label">Modelo</span>
+        <select id="sel-modelo" disabled onchange="carregarAnos()">
+          <option value="">Selecione a marca</option>
+        </select>
+      </div>
+      <div class="field-wrap">
+        <span class="field-label">Ano</span>
+        <select id="sel-ano" disabled onchange="carregarFipe()">
+          <option value="">Selecione o modelo</option>
+        </select>
+      </div>
+    </div>
+    <div class="price-row">
+      <div class="field-wrap">
+        <span class="field-label">Preço pedido pelo vendedor (R$)</span>
+        <input type="text" id="inp-preco" placeholder="Ex: 45.000" inputmode="numeric"/>
+      </div>
+      <div class="field-wrap">
+        <span class="field-label">Quilometragem</span>
+        <input type="text" id="inp-km" placeholder="Ex: 60.000" inputmode="numeric"/>
+      </div>
+    </div>
+    <button class="btn-analisar" id="btn-analisar" onclick="analisar()" disabled>
+      Analisar agora →
+    </button>
+    <div class="loading-bar" id="loading-bar"><div class="loading-fill" id="loading-fill"></div></div>
+    <div class="error-msg" id="error-msg"></div>
+  </div>
+</section>
+
+<!-- AD SLOT TOP -->
+<div class="ad-slot"><div class="ad-inner">Espaço publicitário · Google AdSense</div></div>
+
+<!-- RESULTS -->
+<section id="results">
+
+  <!-- VEREDICTO PRINCIPAL -->
+  <div class="veredicto-hero" id="veredicto-hero">
+    <div class="veredicto-car-name" id="car-name-label"></div>
+
+    <!-- Velocímetro SVG -->
+    <div class="speedometer">
+      <svg viewBox="0 0 260 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Arco de fundo -->
+        <path d="M20 130 A110 110 0 0 1 240 130" stroke="#2A2A2A" stroke-width="18" stroke-linecap="round" fill="none"/>
+        <!-- Zona BARATO (verde) -->
+        <path d="M20 130 A110 110 0 0 1 80 33" stroke="#2ECC71" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <!-- Zona JUSTO (amarelo) -->
+        <path d="M80 33 A110 110 0 0 1 180 33" stroke="#F1C40F" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <!-- Zona CARO (vermelho) -->
+        <path d="M180 33 A110 110 0 0 1 240 130" stroke="#E74C3C" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.7"/>
+        <!-- Labels -->
+        <text x="14" y="148" fill="#2ECC71" font-family="'Barlow Condensed',sans-serif" font-size="11" font-weight="700">BARATO</text>
+        <text x="112" y="20" fill="#F1C40F" font-family="'Barlow Condensed',sans-serif" font-size="11" font-weight="700" text-anchor="middle">JUSTO</text>
+        <text x="246" y="148" fill="#E74C3C" font-family="'Barlow Condensed',sans-serif" font-size="11" font-weight="700" text-anchor="end">CARO</text>
+        <!-- Agulha -->
+        <g id="needle-group" class="needle" style="transform-origin:130px 130px">
+          <line x1="130" y1="130" x2="130" y2="38" stroke="#FF6B2B" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="130" cy="130" r="7" fill="#FF6B2B"/>
+          <circle cx="130" cy="130" r="3" fill="#141414"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="veredicto-badge" id="veredicto-badge"></div>
+    <div class="veredicto-diff" id="veredicto-diff"></div>
+
+    <div class="verdict-stats">
+      <div class="vstat">
+        <div class="vstat-val" id="vs-fipe">—</div>
+        <div class="vstat-lbl">Tabela FIPE</div>
+      </div>
+      <div class="vstat">
+        <div class="vstat-val" id="vs-pedido">—</div>
+        <div class="vstat-lbl">Preço pedido</div>
+      </div>
+      <div class="vstat">
+        <div class="vstat-val" id="vs-km-ajuste" style="font-size:1rem">—</div>
+        <div class="vstat-lbl">Ajuste por KM</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs-wrap">
+    <div class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('deprec',this)">📉 Desvalorização</button>
+      <button class="tab-btn" onclick="switchTab('conselho',this)">💡 Comprar ou Esperar?</button>
+    </div>
+
+    <!-- TAB: DESVALORIZAÇÃO -->
+    <div class="tab-panel active" id="tab-deprec">
+      <p class="deprec-intro" id="deprec-intro"></p>
+      <div class="deprec-timeline" id="deprec-timeline"></div>
+      <div class="deprec-summary">
+        <div class="ds-item">
+          <div class="ds-val" id="ds-perda-total">—</div>
+          <div class="ds-lbl">Perda de valor em 5 anos</div>
+        </div>
+        <div class="ds-item">
+          <div class="ds-val" id="ds-perda-mes">—</div>
+          <div class="ds-lbl">Desvalorização por mês</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: CONSELHO -->
+    <div class="tab-panel" id="tab-conselho">
+      <div id="conselho-container"></div>
+      <div class="fatores-grid" id="fatores-grid"></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- AD SLOT BOTTOM -->
+<div class="ad-slot" id="ad-bottom" style="display:none">
+  <div class="ad-inner">Espaço publicitário · Google AdSense</div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="quem-somos.html">Quem Somos</a>
+    <span class="footer-dot">·</span>
+    <a href="politica-de-privacidade.html">Política de Privacidade</a>
+    <span class="footer-dot">·</span>
+    <a href="termos-de-uso.html">Termos de Uso</a>
+  </div>
+  <div class="footer-info">
+    Preços baseados na Tabela FIPE via <a href="https://brasilapi.com.br" target="_blank">BrasilAPI</a> · Atualizada mensalmente
+  </div>
+  <div class="footer-aviso">
+    ⚠️ Este site é informativo. Não constitui laudo técnico nem recomendação de compra. Consulte sempre um especialista.
+  </div>
+</footer>
+
+<script>
+// ── CONFIG ─────────────────────────────────────────────────────────────────
+// Primária: Parallelum  |  Fallback: BrasilAPI
+const API_P = 'https://parallelum.com.br/fipe/api/v1';
+const API_B = 'https://brasilapi.com.br/api/fipe';
+
+let fipeData = null;
+let marcaId = null, modeloId = null, anoId = null;
+
+// Tenta API primária; se falhar, tenta fallback
+async function fetchFipe(pathP, pathB){
+  try{
+    const r = await fetch(API_P + pathP);
+    if(!r.ok) throw new Error('primária falhou');
+    return await r.json();
+  }catch(e){
+    const r2 = await fetch(API_B + pathB);
+    if(!r2.ok) throw new Error('ambas falharam');
+    return await r2.json();
+  }
+}
+
+// Normaliza arrays: Parallelum usa {codigo,nome}, BrasilAPI usa {valor,nome}
+function normalizar(arr){
+  return arr.map(i=>({ valor: i.codigo ?? i.valor, nome: i.nome ?? '' }));
+}
+
+// Normaliza detalhe do veículo: Parallelum PascalCase, BrasilAPI camelCase
+function normalizarDetalhe(obj){
+  return {
+    valor:         obj.Valor         ?? obj.valor         ?? '',
+    marca:         obj.Marca         ?? obj.marca         ?? '',
+    modelo:        obj.Modelo        ?? obj.modelo        ?? '',
+    anoModelo:     obj.AnoModelo     ?? obj.anoModelo     ?? '',
+    mesReferencia: obj.MesReferencia ?? obj.mesReferencia ?? '',
+    codigoFipe:    obj.CodigoFipe    ?? obj.codigoFipe    ?? '',
+  };
+}
+
+// ── FORMATAÇÃO ──────────────────────────────────────────────────────────────
+function fmtBRL(v){
+  return 'R$ ' + Number(v).toLocaleString('pt-BR',{minimumFractionDigits:0,maximumFractionDigits:0});
+}
+function parseMoeda(s){
+  return parseFloat(String(s).replace(/\./g,'').replace(',','.').replace(/[^0-9.]/g,''));
+}
+function fmtNum(n){
+  return Number(n).toLocaleString('pt-BR');
+}
+
+// ── PROGRESS BAR ────────────────────────────────────────────────────────────
+function setLoading(pct){
+  const bar = document.getElementById('loading-bar');
+  const fill = document.getElementById('loading-fill');
+  if(pct===0){bar.style.display='none';fill.style.width='0%';return}
+  bar.style.display='block';
+  setTimeout(()=>fill.style.width=pct+'%',10);
+}
+
+function showError(msg){
+  const el = document.getElementById('error-msg');
+  el.textContent = msg;
+  el.style.display = 'block';
+  setTimeout(()=>el.style.display='none',5000);
+}
+
+// ── CARREGAR MARCAS ──────────────────────────────────────────────────────────
+async function carregarMarcas(){
+  const sel = document.getElementById('sel-marca');
+  sel.innerHTML = '<option value="">Carregando...</option>';
+  try{
+    const raw = await fetchFipe('/carros/marcas', '/marcas/v1/carros');
+    const marcas = normalizar(raw);
+    sel.innerHTML = '<option value="">Selecione a marca</option>';
+    marcas.sort((a,b)=>a.nome.localeCompare(b.nome)).forEach(m=>{
+      sel.innerHTML += `<option value="${m.valor}">${m.nome}</option>`;
+    });
+  }catch(e){
+    sel.innerHTML = '<option value="">Erro ao carregar</option>';
+    showError('Não foi possível carregar as marcas. Verifique sua conexão.');
+  }
+}
+
+async function carregarModelos(){
+  marcaId = document.getElementById('sel-marca').value;
+  if(!marcaId) return;
+  const sel = document.getElementById('sel-modelo');
+  sel.disabled = true;
+  sel.innerHTML = '<option>Carregando...</option>';
+  document.getElementById('sel-ano').disabled = true;
+  document.getElementById('sel-ano').innerHTML = '<option>Selecione o modelo</option>';
+  document.getElementById('btn-analisar').disabled = true;
+  try{
+    const raw = await fetchFipe(`/carros/marcas/${marcaId}/modelos`, `/veiculos/v1/carros/${marcaId}`);
+    // Parallelum retorna {modelos:[...], anos:[...]}; BrasilAPI retorna array direto
+    const arr = Array.isArray(raw) ? raw : (raw.modelos ?? raw);
+    const modelos = normalizar(arr);
+    sel.innerHTML = '<option value="">Selecione o modelo</option>';
+    modelos.sort((a,b)=>a.nome.localeCompare(b.nome)).forEach(m=>{
+      sel.innerHTML += `<option value="${m.valor}">${m.nome}</option>`;
+    });
+    sel.disabled = false;
+  }catch(e){
+    sel.innerHTML = '<option>Erro ao carregar</option>';
+    showError('Erro ao carregar modelos.');
+  }
+}
+
+async function carregarAnos(){
+  modeloId = document.getElementById('sel-modelo').value;
+  if(!modeloId) return;
+  const sel = document.getElementById('sel-ano');
+  sel.disabled = true;
+  sel.innerHTML = '<option>Carregando...</option>';
+  document.getElementById('btn-analisar').disabled = true;
+  try{
+    const raw = await fetchFipe(`/carros/marcas/${marcaId}/modelos/${modeloId}/anos`, `/veiculos/v1/carros/${marcaId}/${modeloId}`);
+    const anos = normalizar(Array.isArray(raw) ? raw : (raw.anos ?? raw));
+    sel.innerHTML = '<option value="">Selecione o ano</option>';
+    anos.sort((a,b)=>b.nome.localeCompare(a.nome)).forEach(a=>{
+      sel.innerHTML += `<option value="${a.valor}">${a.nome}</option>`;
+    });
+    sel.disabled = false;
+  }catch(e){
+    sel.innerHTML = '<option>Erro ao carregar</option>';
+    showError('Erro ao carregar anos.');
+  }
+}
+
+async function carregarFipe(){
+  anoId = document.getElementById('sel-ano').value;
+  if(!anoId) return;
+  setLoading(30);
+  document.getElementById('btn-analisar').disabled = true;
+  try{
+    const raw = await fetchFipe(
+      `/carros/marcas/${marcaId}/modelos/${modeloId}/anos/${anoId}`,
+      `/veiculos/v1/carros/${marcaId}/${modeloId}/${anoId}`
+    );
+    fipeData = normalizarDetalhe(raw);
+    setLoading(100);
+    setTimeout(()=>setLoading(0),600);
+    document.getElementById('btn-analisar').disabled = false;
+  }catch(e){
+    setLoading(0);
+    showError('Erro ao consultar a tabela FIPE. Tente novamente em instantes.');
+  }
+}
+
+// ── ANALISAR ────────────────────────────────────────────────────────────────
+function analisar(){
+  if(!fipeData){showError('Selecione o veículo completo.');return}
+
+  const precoPedido = parseMoeda(document.getElementById('inp-preco').value);
+  const km = parseMoeda(document.getElementById('inp-km').value)||0;
+  if(!precoPedido||precoPedido<=0){showError('Digite o preço pedido pelo vendedor.');return}
+
+  const precoFipe = parseMoeda(fipeData.valor.replace('R$','').trim());
+  if(!precoFipe||precoFipe<=0){showError('Erro ao obter preço FIPE. Tente novamente.');return}
+
+  // Ajuste por quilometragem
+  // ~R$0.025/km de desconto a partir de 50.000 km (referência mercado)
+  const kmRef = 50000;
+  const kmExcedente = Math.max(0, km - kmRef);
+  const ajusteKm = -(kmExcedente * 0.025);
+  const precoJusto = precoFipe + ajusteKm;
+  const diff = precoPedido - precoJusto;
+  const diffPct = (diff / precoJusto) * 100;
+
+  // Veredicto
+  let tipo, texto;
+  if(diffPct <= -5){tipo='barato';texto='BARATO!'}
+  else if(diffPct <= 5){tipo='justo';texto='PREÇO JUSTO'}
+  else{tipo='caro';texto='CARO DEMAIS'}
+
+  // Renderizar
+  renderVeredicto(tipo, texto, precoFipe, precoPedido, diff, diffPct, ajusteKm, km);
+  renderDesvalorizacao(precoFipe, fipeData);
+  renderConselho(tipo, diffPct, fipeData, km);
+
+  const results = document.getElementById('results');
+  results.classList.add('visible');
+  document.getElementById('ad-bottom').style.display='block';
+  setTimeout(()=>results.scrollIntoView({behavior:'smooth',block:'start'}),100);
+}
+
+// ── RENDERIZAR VEREDICTO ─────────────────────────────────────────────────────
+function renderVeredicto(tipo, texto, fipe, pedido, diff, diffPct, ajusteKm, km){
+  const hero = document.getElementById('veredicto-hero');
+  hero.className = `veredicto-hero ${tipo}`;
+
+  const nomeModelo = fipeData.modelo || '';
+  const nomeAno = fipeData.anoModelo || '';
+  document.getElementById('car-name-label').textContent = `${nomeModelo} — ${nomeAno}`;
+
+  // Velocímetro — mapeando -30%..+30% para -90°..+90°
+  const clampedPct = Math.max(-30, Math.min(30, diffPct));
+  const graus = (clampedPct / 30) * 90;
+  document.getElementById('needle-group').style.transform = `rotate(${graus}deg)`;
+
+  // Badge
+  const badge = document.getElementById('veredicto-badge');
+  badge.textContent = texto;
+  badge.className = `veredicto-badge ${tipo}`;
+
+  // Diff text
+  const diffEl = document.getElementById('veredicto-diff');
+  const sinal = diff > 0 ? '+' : '';
+  const cor = tipo==='barato' ? '#2ECC71' : tipo==='caro' ? '#E74C3C' : '#F1C40F';
+  diffEl.innerHTML = `<strong style="color:${cor}">${sinal}${fmtBRL(diff)} (${sinal}${diffPct.toFixed(1)}%)</strong> em relação ao preço justo de mercado`;
+
+  // Stats
+  document.getElementById('vs-fipe').textContent = fmtBRL(fipe);
+  document.getElementById('vs-pedido').textContent = fmtBRL(pedido);
+  const kmEl = document.getElementById('vs-km-ajuste');
+  if(km > 50000){
+    kmEl.textContent = fmtBRL(ajusteKm);
+    kmEl.style.color = '#E74C3C';
+  } else {
+    kmEl.textContent = '—';
+    kmEl.style.color = '#888';
+  }
+}
+
+// ── RENDERIZAR DESVALORIZAÇÃO ────────────────────────────────────────────────
+function renderDesvalorizacao(precoAtual, dados){
+  // Taxas de depreciação anual estimadas por segmento (usando o preço como proxy)
+  // Populares: 8-12%/ano | Médios: 10-14% | Premium: 12-16%
+  const preco = precoAtual;
+  let taxaAnual;
+  if(preco < 60000) taxaAnual = 0.10;
+  else if(preco < 120000) taxaAnual = 0.12;
+  else taxaAnual = 0.14;
+
+  const anoAtual = new Date().getFullYear();
+  const linhas = [];
+  let valorAcum = preco;
+  const anos = [1,2,3,4,5];
+
+  for(const a of anos){
+    const perda = valorAcum * taxaAnual;
+    valorAcum -= perda;
+    const perdaTotal = preco - valorAcum;
+    const perdaPct = (perdaTotal / preco) * 100;
+    const barWidth = Math.min(100, (perdaPct / 50) * 100);
+    linhas.push({ano:anoAtual+a, valor:valorAcum, perdaTotal, perdaPct, barWidth});
+  }
+
+  // Intro
+  document.getElementById('deprec-intro').innerHTML =
+    `Um <strong>${dados.modelo||'veículo'}</strong> no valor de <strong>${fmtBRL(preco)}</strong> `+
+    `tende a perder em média <strong>${(taxaAnual*100).toFixed(0)}% ao ano</strong> de acordo com o histórico da tabela FIPE para este segmento.`;
+
+  // Timeline
+  const tl = document.getElementById('deprec-timeline');
+  tl.innerHTML = '';
+  linhas.forEach(l=>{
+    tl.innerHTML += `
+      <div class="deprec-row">
+        <div class="deprec-year">${l.ano}</div>
+        <div class="deprec-bar-wrap"><div class="deprec-bar" style="width:${l.barWidth}%"></div></div>
+        <div class="deprec-val">
+          <div class="deprec-val-num">${fmtBRL(l.valor)}</div>
+          <div class="deprec-val-pct">-${l.perdaPct.toFixed(0)}% do total</div>
+        </div>
+      </div>`;
+  });
+
+  // Summary
+  const perdaTotal = preco - linhas[linhas.length-1].valor;
+  const perdaMes = perdaTotal / 60;
+  document.getElementById('ds-perda-total').textContent = fmtBRL(perdaTotal);
+  document.getElementById('ds-perda-mes').textContent = fmtBRL(perdaMes) + '/mês';
+
+  // Animar barras após render
+  setTimeout(()=>{
+    document.querySelectorAll('.deprec-bar').forEach(b=>{
+      const w = b.style.width; b.style.width='0';
+      setTimeout(()=>b.style.width=w,50);
+    });
+  },200);
+}
+
+// ── RENDERIZAR CONSELHO ───────────────────────────────────────────────────────
+function renderConselho(tipo, diffPct, dados, km){
+  let cardClass, icon, titulo, texto;
+
+  if(tipo==='barato'){
+    cardClass='comprar'; icon='🟢'; titulo='Boa hora para comprar';
+    texto=`O preço pedido está <strong>${Math.abs(diffPct).toFixed(1)}% abaixo</strong> do valor de mercado — isso é uma oferta acima da média. `+
+    `Veículos nessa faixa costumam ser negociados rapidamente. Se o carro estiver em bom estado, é um bom momento para fechar negócio.`;
+  } else if(tipo==='justo'){
+    cardClass='esperar'; icon='🟡'; titulo='Preço dentro da média — negocie';
+    texto=`O preço está <strong>dentro da faixa esperada</strong> para esse modelo e ano. `+
+    `Há margem para pechincha de 5 a 10%, especialmente se você oferecer pagamento à vista ou puder aguardar alguns dias.`;
+  } else {
+    cardClass='cuidado'; icon='🔴'; titulo='Caro demais — cuidado';
+    texto=`O vendedor está pedindo <strong>${Math.abs(diffPct).toFixed(1)}% acima</strong> do valor de mercado. `+
+    `A menos que o carro tenha algum diferencial muito específico (baixíssima quilometragem, garantia de fábrica, revisões em dia), `+
+    `esse preço não se justifica. Procure outros anúncios ou negocie com firmeza.`;
+  }
+
+  document.getElementById('conselho-container').innerHTML = `
+    <div class="conselho-card ${cardClass}">
+      <div class="conselho-header">
+        <span class="conselho-icon">${icon}</span>
+        <span class="conselho-titulo">${titulo}</span>
+      </div>
+      <p class="conselho-texto">${texto}</p>
+    </div>`;
+
+  // Fatores
+  const kmCor = km > 100000 ? 'up' : km > 60000 ? 'neutral' : 'down';
+  const kmTexto = km > 100000 ? 'Alta — deprecia mais' : km > 60000 ? 'Média — dentro do normal' : 'Baixa — ponto positivo';
+
+  const precoNum = parseMoeda(dados.valor||'0');
+  const segmento = precoNum < 60000 ? 'Popular' : precoNum < 120000 ? 'Médio' : 'Premium/Importado';
+  const tendencia = tipo === 'caro' ? 'Preço acima do mercado' : tipo === 'barato' ? 'Abaixo do mercado' : 'Dentro do mercado';
+  const tendCor = tipo === 'caro' ? 'up' : tipo === 'barato' ? 'down' : 'neutral';
+
+  document.getElementById('fatores-grid').innerHTML = `
+    <div class="fator-card">
+      <div class="fator-titulo">Quilometragem</div>
+      <div class="fator-valor ${kmCor}">${fmtNum(km)} km</div>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">${kmTexto}</div>
+    </div>
+    <div class="fator-card">
+      <div class="fator-titulo">Segmento</div>
+      <div class="fator-valor neutral">${segmento}</div>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Base p/ taxa de depreciação</div>
+    </div>
+    <div class="fator-card">
+      <div class="fator-titulo">Posição de preço</div>
+      <div class="fator-valor ${tendCor}">${tendencia}</div>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Em relação à FIPE ajustada</div>
+    </div>
+    <div class="fator-card">
+      <div class="fator-titulo">Referência FIPE</div>
+      <div class="fator-valor neutral">${dados.mesReferencia||'—'}</div>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Mês de atualização</div>
+    </div>`;
+}
+
+// ── TABS ──────────────────────────────────────────────────────────────────────
+function switchTab(id, btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+id).classList.add('active');
+}
+
+// ── FORMAT INPUT LIVE ─────────────────────────────────────────────────────────
+['inp-preco','inp-km'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',function(){
+    const nums = this.value.replace(/\D/g,'');
+    if(nums) this.value = parseInt(nums,10).toLocaleString('pt-BR');
+  });
+});
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+carregarMarcas();
+</script>
+</body>
+</html>

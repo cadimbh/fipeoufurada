@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Quais Carros Desvalorizam Mais Rápido no Brasil? Ranking 2026 — FIPE ou Furada?</title>
+<meta name="description" content="Descubra quais carros perdem valor mais rápido no Brasil, quais seguram melhor o preço e como a desvalorização afeta sua decisão de compra."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0D0D0D;--bg2:#141414;--bg3:#1C1C1C;--border:#2A2A2A;--text:#F0F0F0;--muted:#888;--orange:#FF6B2B;--green:#2ECC71;--red:#E74C3C;--yellow:#F1C40F}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.95);backdrop-filter:blur(8px)}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:0.02em;color:var(--text);text-decoration:none}
+.logo span{color:var(--orange)}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{font-size:0.82rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+.art-wrap{max-width:780px;margin:0 auto;padding:52px 24px 80px}
+.art-breadcrumb{font-size:0.75rem;color:var(--muted);margin-bottom:24px}
+.art-breadcrumb a{color:var(--muted);text-decoration:none}.art-breadcrumb a:hover{color:var(--orange)}
+.art-breadcrumb span{margin:0 6px}
+.art-kicker{font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.art-h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;letter-spacing:0.01em;color:var(--text);margin-bottom:16px}
+.art-meta{font-size:0.8rem;color:var(--muted);margin-bottom:36px;display:flex;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:20px}
+.art-intro{font-size:1.05rem;color:#D0D0D0;line-height:1.75;margin-bottom:32px;border-left:3px solid var(--orange);padding-left:16px}
+.art-h2{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.6rem;letter-spacing:0.03em;text-transform:uppercase;color:var(--text);margin:40px 0 16px;padding-top:8px;border-top:1px solid var(--border)}
+.art-h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:0.03em;color:var(--orange);margin:24px 0 10px}
+.art-p{font-size:0.95rem;color:#C8C8C8;line-height:1.85;margin-bottom:16px}
+.art-p strong{color:var(--text)}
+.art-ul,.art-ol{margin:12px 0 20px;padding-left:0;list-style:none}
+.art-ul li,.art-ol li{font-size:0.92rem;color:#C8C8C8;line-height:1.7;padding:8px 0 8px 24px;position:relative;border-bottom:1px solid var(--border)}
+.art-ul li:last-child,.art-ol li:last-child{border-bottom:none}
+.art-ul li::before{content:'→';position:absolute;left:0;color:var(--orange);font-weight:700}
+.art-ul li strong{color:var(--text)}
+.art-box{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--orange);border-radius:0 10px 10px 0;padding:18px 20px;margin:24px 0;font-size:0.9rem;color:#C8C8C8;line-height:1.65}
+.art-box.green{border-left-color:var(--green)}.art-box.red{border-left-color:var(--red)}.art-box.yellow{border-left-color:var(--yellow)}
+.art-box strong{color:var(--text);display:block;margin-bottom:6px}
+.art-table-wrap{overflow-x:auto;margin:20px 0}
+.art-table{width:100%;border-collapse:collapse;font-size:0.88rem}
+.art-table th{background:var(--bg3);color:var(--muted);font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:10px 16px;text-align:left;border-bottom:1px solid var(--border)}
+.art-table td{padding:12px 16px;color:#C8C8C8;border-bottom:1px solid var(--border)}
+.art-table tr:last-child td{border-bottom:none}
+.art-table tr:hover td{background:var(--bg2)}
+.art-table td strong{color:var(--text)}
+.art-table .td-red{color:var(--red)}
+.art-table .td-green{color:var(--green)}
+.art-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+@media(max-width:560px){.art-grid{grid-template-columns:1fr}}
+.art-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px}
+.art-card-titulo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.05rem;color:var(--orange);margin-bottom:8px}
+.art-card p{font-size:0.85rem;color:#C8C8C8;line-height:1.6}
+.ranking-item{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.ranking-item:last-child{border-bottom:none}
+.ranking-pos{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.4rem;text-align:center}
+.ranking-pos.p1{color:var(--yellow)}.ranking-pos.p2{color:#C0C0C0}.ranking-pos.p3{color:#CD7F32}.ranking-pos.pn{color:var(--muted)}
+.ranking-nome{font-weight:600;font-size:0.92rem;color:var(--text);margin-bottom:3px}
+.ranking-detalhe{font-size:0.78rem;color:var(--muted)}
+.ranking-pct{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;text-align:right}
+.ranking-pct.red{color:var(--red)}.ranking-pct.green{color:var(--green)}
+details{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden}
+summary{padding:14px 18px;cursor:pointer;font-weight:600;font-size:0.92rem;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center;background:var(--bg2)}
+summary::after{content:'＋';color:var(--orange);font-size:1.1rem;flex-shrink:0;margin-left:12px}
+details[open] summary::after{content:'－'}
+details p{padding:14px 18px;font-size:0.88rem;color:#C8C8C8;line-height:1.7;background:var(--bg)}
+.art-cta{background:var(--bg2);border:1px solid var(--orange);border-radius:14px;padding:28px;text-align:center;margin:40px 0}
+.art-cta-titulo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;color:var(--text);margin-bottom:10px}
+.art-cta p{font-size:0.9rem;color:var(--muted);margin-bottom:20px}
+.art-cta a{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;padding:13px 28px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:0.04em;transition:background 0.15s}
+.art-cta a:hover{background:#cc4a0e}
+.art-relacionados{margin-top:48px;border-top:1px solid var(--border);padding-top:32px}
+.art-rel-titulo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.art-rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.art-rel-grid{grid-template-columns:1fr}}
+.art-rel-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;transition:border-color 0.15s,transform 0.15s;display:block}
+.art-rel-card:hover{border-color:var(--orange);transform:translateY(-2px)}
+.art-rel-kicker{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange);margin-bottom:6px}
+.art-rel-nome{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;color:var(--text);line-height:1.2}
+footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border)}
+.footer-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.footer-links a{font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.15s}
+.footer-links a:hover{color:var(--orange)}
+.footer-dot{color:var(--border)}
+.footer-info{font-size:0.72rem;color:#444;line-height:1.6}
+@media(max-width:600px){header{padding:14px 18px}.nav-links{gap:12px}.nav-links a{font-size:0.75rem}.art-wrap{padding:36px 18px 60px}.ranking-item{grid-template-columns:36px 1fr auto;gap:10px}}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">FIPE OU <span>FURADA?</span></a>
+  <nav class="nav-links">
+    <a href="index.html">Ferramenta</a>
+    <a href="artigos.html" class="active">Artigos</a>
+    <a href="quem-somos.html">Quem Somos</a>
+  </nav>
+</header>
+
+<div class="art-wrap">
+
+  <div class="art-breadcrumb">
+    <a href="index.html">Início</a><span>›</span>
+    <a href="artigos.html">Artigos</a><span>›</span>
+    Desvalorização de carros no Brasil
+  </div>
+
+  <p class="art-kicker">Desvalorização · Atualizado em Julho de 2026</p>
+  <h1 class="art-h1">Quais carros desvalorizam<br>mais rápido no Brasil?<br>Ranking 2026</h1>
+  <div class="art-meta">
+    <span>📅 Publicado em 8 de julho de 2026</span>
+    <span>⏱️ Leitura: 9 minutos</span>
+    <span>🚗 Categoria: Análise de Mercado</span>
+  </div>
+
+  <p class="art-intro">Todo carro perde valor com o tempo — mas a velocidade dessa queda varia enormemente entre modelos. Alguns carros perdem 40% do valor em 3 anos. Outros ainda valem 80% do preço original após o mesmo período. Entender essa dinâmica pode economizar dezenas de milhares de reais na sua decisão de compra.</p>
+
+  <h2 class="art-h2">Por que os carros desvalorizam?</h2>
+  <p class="art-p">A desvalorização de veículos é influenciada por uma combinação de fatores econômicos, de mercado e físicos. Não é simplesmente "o carro ficou velho" — é um fenômeno complexo que varia muito conforme o modelo, o momento econômico e até a região do país.</p>
+
+  <h3 class="art-h3">Os principais fatores de desvalorização</h3>
+  <ul class="art-ul">
+    <li><strong>Obsolescência tecnológica:</strong> quando um fabricante lança uma nova geração com recursos superiores, as versões anteriores perdem valor rapidamente. Isso é especialmente intenso no segmento de SUVs e carros com tecnologia embarcada.</li>
+    <li><strong>Custo de manutenção e peças:</strong> carros com peças caras ou difíceis de encontrar desvalorizam mais, pois os compradores de usados já calculam esse custo no preço que aceitam pagar.</li>
+    <li><strong>Consumo de combustível:</strong> em períodos de gasolina cara, carros com alto consumo perdem mais valor. O inverso também é verdadeiro: carros econômicos se valorizam relativamente.</li>
+    <li><strong>Imagem da marca e do modelo:</strong> marcas percebidas como confiáveis (Toyota, Honda) desvalorizam menos do que marcas com histórico de problemas mecânicos recorrentes.</li>
+    <li><strong>Volume de produção:</strong> carros muito comuns têm mais oferta no mercado de usados, o que pressiona o preço para baixo. Modelos raros ou descontinuados podem inclusive se valorizar.</li>
+    <li><strong>Quilometragem acumulada:</strong> cada quilômetro rodado representa desgaste. A média esperada é 15.000 km/ano — cada 10.000 km acima disso deprecia o veículo em aproximadamente R$ 250 a R$ 500, dependendo do segmento.</li>
+  </ul>
+
+  <h2 class="art-h2">O choque do primeiro ano</h2>
+  <p class="art-p">O momento de maior desvalorização é a saída da concessionária. Assim que um carro é emplacado, ele deixa de ser "0km" e já perde entre <strong>10% e 20% do valor</strong> imediatamente — mesmo sem ter rodado um quilômetro sequer.</p>
+  <p class="art-p">Isso acontece porque o comprador de usado não está disposto a pagar preço de 0km por um carro que já tem dono. E também porque o vendedor (pessoa física) não consegue oferecer as facilidades de uma concessionária: financiamento facilitado, garantia, emplacamento no nome, possibilidade de troca.</p>
+
+  <div class="art-box yellow">
+    <strong>📊 Dado importante</strong>
+    Um carro popular de R$ 80.000 comprado 0km vale em média R$ 64.000 a R$ 68.000 após 12 meses com quilometragem normal (15.000 km). Isso representa uma perda de R$ 1.000 a R$ 1.300 por mês só pela desvalorização — antes de contar combustível, seguro, IPVA e manutenção.
+  </div>
+
+  <h2 class="art-h2">Ranking: carros que mais desvalorizam no Brasil</h2>
+  <p class="art-p">Com base no histórico da Tabela FIPE dos últimos 5 anos, estes são os segmentos e modelos com maior perda de valor proporcional:</p>
+
+  <div class="ranking-item">
+    <div class="ranking-pos p1">1</div>
+    <div><div class="ranking-nome">Elétricos importados (BYD, Volvo, BMW elétrico)</div><div class="ranking-detalhe">Alta incerteza sobre baterias e infraestrutura</div></div>
+    <div class="ranking-pct red">−18%/ano</div>
+  </div>
+  <div class="ranking-item">
+    <div class="ranking-pos p2">2</div>
+    <div><div class="ranking-nome">SUVs premium importados (Land Rover, Audi, Porsche)</div><div class="ranking-detalhe">Alto custo de manutenção afasta compradores de usados</div></div>
+    <div class="ranking-pct red">−16%/ano</div>
+  </div>
+  <div class="ranking-item">
+    <div class="ranking-pos p3">3</div>
+    <div><div class="ranking-nome">Sedãs médios nacionais (Cronos, Virtus, HB20S)</div><div class="ranking-detalhe">Segmento em declínio frente aos SUVs compactos</div></div>
+    <div class="ranking-pct red">−14%/ano</div>
+  </div>
+  <div class="ranking-item">
+    <div class="ranking-pos pn">4</div>
+    <div><div class="ranking-nome">Minivans e vans de passeio (Spin, Zafira)</div><div class="ranking-detalhe">Demanda restrita, público muito específico</div></div>
+    <div class="ranking-pct red">−13%/ano</div>
+  </div>
+  <div class="ranking-item">
+    <div class="ranking-pos pn">5</div>
+    <div><div class="ranking-nome">Hatchbacks populares (Gol, Uno, Mobi antigo)</div><div class="ranking-detalhe">Alta oferta no mercado de usados pressiona preços</div></div>
+    <div class="ranking-pct red">−12%/ano</div>
+  </div>
+
+  <h2 class="art-h2">Ranking: carros que menos desvalorizam no Brasil</h2>
+  <p class="art-p">No outro extremo, estes modelos e segmentos historicamente preservam melhor o valor:</p>
+
+  <div class="ranking-item">
+    <div class="ranking-pos p1">1</div>
+    <div><div class="ranking-nome">Toyota Hilux (todos os anos)</div><div class="ranking-detalhe">Demanda constante, símbolo de status no agronegócio</div></div>
+    <div class="ranking-pct green">−5%/ano</div>
+  </div>
+  <div class="ranking-item">
+    <div class="ranking-pos p2">2</div>
+    <div><div class="ranking-nome">Toyota Corolla (2019 em diante)</div><div class="ranking-detalhe">Reputação de durabilidade e confiabilidade</div></div>
+    <div class="ranking-pct green">−6%/ano</div>
+  </div>
+  <div class="ranking-item">
+    <div class="ranking-pos p3">3</div>
+    <div><div class="ranking-nome">Honda HR-V (2ª geração)</div><div class="ranking-detalhe">SUV compacto com alto valor percebido</div></div>
+    <div class="ranking-pct green">−7%/ano</div>
+  </div>
+  <div class="ranking-item">
+    <div class="ranking-pos pn">4</div>
+    <div><div class="ranking-nome">Ford Ranger (diesel)</div><div class="ranking-detalhe">Forte demanda no agronegócio e mercado de trabalho</div></div>
+    <div class="ranking-pct green">−7%/ano</div>
+  </div>
+  <div class="ranking-item">
+    <div class="ranking-pos pn">5</div>
+    <div><div class="ranking-nome">Jeep Compass (Trailhawk e versões topo)</div><div class="ranking-detalhe">Escassez relativa e posicionamento premium nacional</div></div>
+    <div class="ranking-pct green">−8%/ano</div>
+  </div>
+
+  <h2 class="art-h2">Desvalorização por segmento: tabela completa</h2>
+  <div class="art-table-wrap">
+    <table class="art-table">
+      <thead>
+        <tr><th>Segmento</th><th>Perda no 1º ano</th><th>Perda em 3 anos</th><th>Perda em 5 anos</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Elétricos importados</strong></td><td class="td-red">−20%</td><td class="td-red">−46%</td><td class="td-red">−62%</td></tr>
+        <tr><td><strong>SUVs premium importados</strong></td><td class="td-red">−18%</td><td class="td-red">−42%</td><td class="td-red">−56%</td></tr>
+        <tr><td><strong>Sedãs médios nacionais</strong></td><td class="td-red">−16%</td><td class="td-red">−38%</td><td class="td-red">−52%</td></tr>
+        <tr><td><strong>Hatchbacks populares</strong></td><td class="td-red">−14%</td><td class="td-red">−34%</td><td class="td-red">−46%</td></tr>
+        <tr><td><strong>SUVs compactos nacionais</strong></td><td class="td-red">−12%</td><td class="td-red">−30%</td><td class="td-red">−41%</td></tr>
+        <tr><td><strong>Sedãs médios importados</strong></td><td class="td-red">−13%</td><td class="td-red">−32%</td><td class="td-red">−44%</td></tr>
+        <tr><td><strong>Pickups médias (S10, Amarok)</strong></td><td class="td-green">−9%</td><td class="td-green">−23%</td><td class="td-green">−34%</td></tr>
+        <tr><td><strong>Pickups grandes (Hilux, Ranger)</strong></td><td class="td-green">−6%</td><td class="td-green">−16%</td><td class="td-green">−24%</td></tr>
+        <tr><td><strong>Toyota/Honda premium nacional</strong></td><td class="td-green">−8%</td><td class="td-green">−20%</td><td class="td-green">−29%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="art-h2">Por que a Toyota desvaloriza menos?</h2>
+  <p class="art-p">A Toyota é consistentemente a marca com menor desvalorização no mercado brasileiro, especialmente em modelos como Hilux, Corolla e SW4. Isso não é coincidência — é resultado de uma reputação construída ao longo de décadas:</p>
+  <ul class="art-ul">
+    <li><strong>Confiabilidade mecânica comprovada:</strong> Toyotas têm índices de defeitos e recalls muito abaixo da média do mercado. Compradores de usados sabem disso e pagam mais por isso.</li>
+    <li><strong>Rede de assistência técnica ampla:</strong> peças disponíveis e mão de obra especializada em todo o Brasil reduzem o custo de manutenção percebido.</li>
+    <li><strong>Demanda consistente:</strong> a popularidade da marca cria um mercado secundário aquecido, o que sustenta os preços mesmo em crises econômicas.</li>
+    <li><strong>Menos recalls e problemas séries:</strong> enquanto outras marcas enfrentaram problemas técnicos sérios que afetaram o valor de modelos específicos, a Toyota manteve histórico limpo na maioria dos modelos.</li>
+  </ul>
+
+  <h2 class="art-h2">Carros elétricos: a desvalorização mais rápida do mercado</h2>
+  <p class="art-p">Os carros elétricos importados vivem um paradoxo no Brasil: são tecnologicamente avançados, mas desvalorizam mais rápido do que quase qualquer outro segmento. Os motivos são específicos do contexto brasileiro:</p>
+  <ul class="art-ul">
+    <li><strong>Incerteza sobre durabilidade da bateria:</strong> baterias de lítio têm vida útil limitada. Uma bateria degradada pode custar R$ 80.000 a R$ 200.000 para substituir — o que derruba drasticamente o valor de revenda.</li>
+    <li><strong>Infraestrutura de carregamento limitada:</strong> fora das grandes capitais, carregadores rápidos ainda são escassos, o que limita o público comprador de usados elétricos.</li>
+    <li><strong>Evolução tecnológica acelerada:</strong> novos modelos elétricos surgem com autonomia significativamente superior a cada dois anos, tornando os modelos anteriores obsoletos mais rapidamente.</li>
+    <li><strong>Incerteza tributária:</strong> isenções de impostos para elétricos podem ser alteradas, afetando o preço dos novos e, consequentemente, dos usados.</li>
+  </ul>
+
+  <div class="art-box">
+    <strong>💡 Estratégia para comprar elétrico usado</strong>
+    Se quiser um elétrico usado, espere até ele ter pelo menos 3 anos de mercado no Brasil e exija um laudo de saúde da bateria (State of Health — SoH) antes de comprar. Uma bateria abaixo de 80% de capacidade original é motivo para negociação agressiva ou desistência.
+  </div>
+
+  <h2 class="art-h2">Como a desvalorização deve influenciar sua decisão de compra</h2>
+  <p class="art-p">Entender desvalorização não é só curiosidade — é dinheiro. Veja como usar esse conhecimento na prática:</p>
+
+  <div class="art-grid">
+    <div class="art-card">
+      <div class="art-card-titulo">🏆 Para quem quer revender em 2-3 anos</div>
+      <p>Priorize modelos com menor desvalorização: Hilux, Corolla, HR-V, Compass. O preço inicial é mais alto, mas você recupera mais na venda. Evite modelos em fim de ciclo ou prestes a receber nova geração.</p>
+    </div>
+    <div class="art-card">
+      <div class="art-card-titulo">💰 Para quem quer o melhor custo-benefício</div>
+      <p>Compre usado com 2 a 3 anos de uso. Você evita a desvalorização do primeiro ano (10% a 20%), mas ainda tem um carro relativamente novo com garantia de fábrica, revisões em dia e tecnologia atual.</p>
+    </div>
+    <div class="art-card">
+      <div class="art-card-titulo">🔧 Para quem vai rodar muito</div>
+      <p>Com quilometragem alta, a desvalorização pela km acelerada prejudica mais que a depreciação por tempo. Prefira modelos com alto valor de revenda mesmo em km alta: pickups e Toyotas seguram melhor o preço.</p>
+    </div>
+    <div class="art-card">
+      <div class="art-card-titulo">📅 Para quem troca de carro com frequência</div>
+      <p>Evite carros com desvalorização alta. Trocar de carro a cada 2 anos com um modelo que perde 15% ao ano significa perder R$ 24.000 num carro de R$ 80.000 — só de depreciação, sem contar os outros custos.</p>
+    </div>
+  </div>
+
+  <h2 class="art-h2">O melhor momento para comprar um usado: 2 a 3 anos de uso</h2>
+  <p class="art-p">A matemática da desvalorização favorece quem compra veículos com 2 a 3 anos de uso. Nessa faixa:</p>
+  <ul class="art-ul">
+    <li>O carro já absorveu o maior choque de desvalorização (os primeiros 2 anos)</li>
+    <li>Ainda está dentro do período de garantia de fábrica (maioria dos fabricantes oferece 3 anos)</li>
+    <li>Tem quilometragem relativamente baixa (30.000 a 45.000 km)</li>
+    <li>Ainda tem tecnologia atual — sem estar obsoleto</li>
+    <li>O preço é 20% a 30% menor que o 0km equivalente</li>
+  </ul>
+
+  <div class="art-box green">
+    <strong>✅ A equação ideal</strong>
+    Carro com 2 a 3 anos de uso + concessionária de seminovos autorizada + laudo cautelar limpo + revisões em dia = melhor custo-benefício possível no mercado brasileiro de veículos.
+  </div>
+
+  <div class="art-cta">
+    <div class="art-cta-titulo">Simule a desvalorização do seu carro</div>
+    <p>Use nossa ferramenta para ver a projeção de desvalorização do veículo que você está analisando — e descubra quanto ele vai valer nos próximos anos.</p>
+    <a href="index.html">Analisar agora →</a>
+  </div>
+
+  <h2 class="art-h2">Perguntas frequentes sobre desvalorização</h2>
+
+  <details>
+    <summary>Um carro pode se valorizar com o tempo no Brasil?</summary>
+    <p>Sim, em casos específicos. Veículos descontinuados com público apaixonado (como o Fusca, Chevette ou Brasília) podem se valorizar com o tempo e se tornar itens de coleção. Também houve casos recentes de modelos como a Toyota Hilux, que subiu na tabela FIPE durante a crise de semicondutores de 2021-2022 por falta de 0km no mercado. Mas são exceções — regra geral, todo carro desvaloriza.</p>
+  </details>
+
+  <details>
+    <summary>A cor do carro influencia na desvalorização?</summary>
+    <p>Sim, mas menos do que se pensa. Cores neutras (prata, branco, preto, cinza) têm mercado mais amplo e tendem a ter preços melhores na revenda. Cores incomuns ou vibrantes podem ser difíceis de vender para alguns compradores, o que pode forçar um desconto de 2% a 5% no momento da revenda.</p>
+  </details>
+
+  <details>
+    <summary>Fazer modificações no carro ajuda ou prejudica na revenda?</summary>
+    <p>Na maioria dos casos, prejudica. Modificações como rebaixamento, rodas de liga leve personalizadas, escapamentos alterados ou som automotivo podem desagradar compradores que preferem o carro original. Exceções existem em modelos muito específicos com comunidade de entusiastas. A recomendação geral é manter o carro o mais original possível se a revenda é uma prioridade.</p>
+  </details>
+
+  <details>
+    <summary>Revisões em concessionária realmente fazem diferença no valor de revenda?</summary>
+    <p>Sim, e muito. Um carro com histórico completo de revisões na rede autorizada pode valer de 5% a 12% a mais do que o mesmo modelo sem histórico de manutenção. Isso é especialmente relevante em marcas premium, onde compradores exigem ver o histórico antes de fechar negócio.</p>
+  </details>
+
+  <div class="art-relacionados">
+    <div class="art-rel-titulo">Leia também</div>
+    <div class="art-rel-grid">
+      <a href="o-que-e-tabela-fipe.html" class="art-rel-card">
+        <div class="art-rel-kicker">Referência</div>
+        <div class="art-rel-nome">O que é a Tabela FIPE? Guia completo 2026</div>
+      </a>
+      <a href="como-negociar-carro-usado.html" class="art-rel-card">
+        <div class="art-rel-kicker">Negociação</div>
+        <div class="art-rel-nome">Como negociar o preço de um carro usado</div>
+      </a>
+      <a href="carro-novo-ou-usado.html" class="art-rel-card">
+        <div class="art-rel-kicker">Decisão</div>
+        <div class="art-rel-nome">Carro novo ou usado: qual compensa mais em 2026?</div>
+      </a>
+      <a href="laudo-cautelar-o-que-e.html" class="art-rel-card">
+        <div class="art-rel-kicker">Segurança</div>
+        <div class="art-rel-nome">O que é laudo cautelar e por que é indispensável</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="quem-somos.html">Quem Somos</a><span class="footer-dot">·</span>
+    <a href="politica-de-privacidade.html">Privacidade</a><span class="footer-dot">·</span>
+    <a href="termos-de-uso.html">Termos</a><span class="footer-dot">·</span>
+    <a href="artigos.html">Artigos</a>
+  </div>
+  <div class="footer-info">© 2026 FIPE ou Furada? · Conteúdo informativo. Não constitui avaliação técnica ou laudo pericial.</div>
+</footer>
+</body>
+</html>

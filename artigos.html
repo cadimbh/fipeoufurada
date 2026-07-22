@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Artigos sobre Compra e Venda de Carros no Brasil — FIPE ou Furada?</title>
+<meta name="description" content="Guias completos sobre Tabela FIPE, negociação de carros usados, desvalorização, laudo cautelar e muito mais. Conteúdo gratuito para quem quer comprar bem."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0D0D0D;--bg2:#141414;--bg3:#1C1C1C;--border:#2A2A2A;--text:#F0F0F0;--muted:#888;--orange:#FF6B2B;--green:#2ECC71;--red:#E74C3C;--yellow:#F1C40F}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.95);backdrop-filter:blur(8px)}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:0.02em;color:var(--text);text-decoration:none}
+.logo span{color:var(--orange)}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{font-size:0.82rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s}
+.nav-links a:hover,.nav-links a.active{color:var(--orange)}
+/* PAGE */
+.page-wrap{max-width:860px;margin:0 auto;padding:52px 24px 80px}
+.page-hero{text-align:center;margin-bottom:52px}
+.page-kicker{font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+.page-h1{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(2rem,5vw,3.6rem);line-height:1;letter-spacing:0.02em;text-transform:uppercase;color:var(--text);margin-bottom:14px}
+.page-sub{font-size:0.95rem;color:var(--muted);line-height:1.65;max-width:520px;margin:0 auto}
+/* DESTAQUE */
+.art-destaque{
+  background:var(--bg2);border:1px solid var(--border);border-radius:16px;
+  padding:28px;margin-bottom:32px;
+  display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  text-decoration:none;transition:border-color 0.15s,transform 0.15s;
+  position:relative;overflow:hidden;
+}
+.art-destaque::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--orange)}
+.art-destaque:hover{border-color:var(--orange);transform:translateY(-2px)}
+@media(max-width:560px){.art-destaque{grid-template-columns:1fr}}
+.art-destaque-badge{
+  font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--orange);background:rgba(255,107,43,0.12);border:1px solid rgba(255,107,43,0.3);
+  padding:3px 10px;border-radius:4px;display:inline-block;margin-bottom:12px;
+}
+.art-destaque-titulo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:0.02em;color:var(--text);margin-bottom:8px;line-height:1.1}
+.art-destaque-desc{font-size:0.88rem;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.art-destaque-meta{font-size:0.75rem;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
+.art-destaque-cta{
+  background:var(--orange);color:#fff;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1rem;
+  letter-spacing:0.06em;text-transform:uppercase;
+  padding:12px 20px;border-radius:8px;white-space:nowrap;
+  transition:background 0.15s;align-self:center;flex-shrink:0;
+}
+.art-destaque:hover .art-destaque-cta{background:#cc4a0e}
+/* GRADE DE ARTIGOS */
+.section-titulo{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:0.8rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:16px;display:flex;align-items:center;gap:10px;
+}
+.section-titulo::after{content:'';flex:1;height:1px;background:var(--border)}
+.arts-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px}
+@media(max-width:560px){.arts-grid{grid-template-columns:1fr}}
+.art-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  padding:22px;text-decoration:none;
+  transition:border-color 0.15s,transform 0.15s;display:flex;flex-direction:column;gap:10px;
+}
+.art-card:hover{border-color:var(--orange);transform:translateY(-2px)}
+.art-card-kicker{font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange)}
+.art-card-titulo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:0.02em;color:var(--text);line-height:1.2}
+.art-card-desc{font-size:0.82rem;color:var(--muted);line-height:1.55;flex:1}
+.art-card-meta{font-size:0.72rem;color:var(--muted);display:flex;gap:10px;margin-top:4px;padding-top:10px;border-top:1px solid var(--border)}
+/* BANNER FERRAMENTA */
+.tool-banner{
+  background:var(--bg2);border:1px solid var(--orange);border-radius:16px;
+  padding:28px;text-align:center;margin-bottom:48px;
+}
+.tool-banner-titulo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.6rem;letter-spacing:0.03em;text-transform:uppercase;color:var(--text);margin-bottom:8px}
+.tool-banner-sub{font-size:0.9rem;color:var(--muted);margin-bottom:20px;line-height:1.5}
+.tool-banner a{
+  display:inline-block;background:var(--orange);color:#fff;text-decoration:none;
+  padding:13px 28px;border-radius:8px;font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:1.05rem;letter-spacing:0.04em;transition:background 0.15s;
+}
+.tool-banner a:hover{background:#cc4a0e}
+/* NEWSLETTER */
+.nl-box{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center;margin-bottom:40px}
+.nl-titulo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;color:var(--text);margin-bottom:6px}
+.nl-sub{font-size:0.85rem;color:var(--muted);margin-bottom:16px}
+footer{text-align:center;padding:32px 24px;border-top:1px solid var(--border)}
+.footer-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.footer-links a{font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.15s}
+.footer-links a:hover{color:var(--orange)}
+.footer-dot{color:var(--border)}
+.footer-info{font-size:0.72rem;color:#444;line-height:1.6}
+@media(max-width:600px){header{padding:14px 18px}.nav-links{gap:12px}.nav-links a{font-size:0.75rem}.page-wrap{padding:36px 18px 60px}}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">FIPE OU <span>FURADA?</span></a>
+  <nav class="nav-links">
+    <a href="index.html">Ferramenta</a>
+    <a href="artigos.html" class="active">Artigos</a>
+    <a href="quem-somos.html">Quem Somos</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+
+  <div class="page-hero">
+    <p class="page-kicker">Conteúdo gratuito · Atualizado em 2026</p>
+    <h1 class="page-h1">Guias e artigos<br>sobre carros no Brasil</h1>
+    <p class="page-sub">Tudo que você precisa saber para comprar, vender e negociar veículos com segurança. Conteúdo gratuito, sem enrolação.</p>
+  </div>
+
+  <!-- DESTAQUE -->
+  <a href="o-que-e-tabela-fipe.html" class="art-destaque">
+    <div>
+      <span class="art-destaque-badge">⭐ Artigo principal</span>
+      <div class="art-destaque-titulo">O que é a Tabela FIPE?<br>Guia completo 2026</div>
+      <div class="art-destaque-desc">Entenda como a tabela é calculada, para que serve, quais são suas limitações e como usá-la corretamente na compra e venda de veículos no Brasil.</div>
+      <div class="art-destaque-meta">
+        <span>📅 1 de julho de 2026</span>
+        <span>⏱️ 8 min de leitura</span>
+        <span>🚗 Compra e Venda</span>
+      </div>
+    </div>
+    <div class="art-destaque-cta">Ler agora →</div>
+  </a>
+
+  <!-- ARTIGOS PRINCIPAIS -->
+  <div class="section-titulo">Guias essenciais</div>
+  <div class="arts-grid">
+
+    <a href="como-negociar-carro-usado.html" class="art-card">
+      <div class="art-card-kicker">🤝 Negociação</div>
+      <div class="art-card-titulo">Como negociar o preço de um carro usado e não ser enganado</div>
+      <div class="art-card-desc">Estratégias práticas de negociação, como inspecionar o veículo sem ser mecânico e os erros que fazem você pagar mais caro.</div>
+      <div class="art-card-meta">
+        <span>📅 5 jul 2026</span>
+        <span>⏱️ 10 min</span>
+      </div>
+    </a>
+
+    <a href="desvalorizacao-carros-brasil.html" class="art-card">
+      <div class="art-card-kicker">📉 Análise de mercado</div>
+      <div class="art-card-titulo">Quais carros desvalorizam mais rápido no Brasil? Ranking 2026</div>
+      <div class="art-card-desc">Ranking completo dos modelos que perdem valor mais rápido e os que melhor preservam o preço — com dados da Tabela FIPE dos últimos 5 anos.</div>
+      <div class="art-card-meta">
+        <span>📅 8 jul 2026</span>
+        <span>⏱️ 9 min</span>
+      </div>
+    </a>
+
+    <a href="laudo-cautelar-o-que-e.html" class="art-card">
+      <div class="art-card-kicker">🔍 Segurança na compra</div>
+      <div class="art-card-titulo">O que é laudo cautelar e por que nenhuma compra de usado dispensa ele</div>
+      <div class="art-card-desc">O laudo cautelar custa R$ 150 a R$ 400 e pode evitar um prejuízo de R$ 20.000 a R$ 80.000. Entenda o que ele verifica e como contratar.</div>
+      <div class="art-card-meta">
+        <span>📅 10 jul 2026</span>
+        <span>⏱️ 8 min</span>
+      </div>
+    </a>
+
+    <a href="carro-novo-ou-usado.html" class="art-card">
+      <div class="art-card-kicker">🆚 Decisão de compra</div>
+      <div class="art-card-titulo">Carro novo ou usado: qual compensa mais em 2026?</div>
+      <div class="art-card-desc">Análise com números reais: comparativo de custo total em 3 anos, o impacto dos juros do financiamento e qual escolha é certa para cada perfil.</div>
+      <div class="art-card-meta">
+        <span>📅 12 jul 2026</span>
+        <span>⏱️ 10 min</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- BANNER FERRAMENTA -->
+  <div class="tool-banner">
+    <div class="tool-banner-titulo">Coloque o conhecimento em prática</div>
+    <div class="tool-banner-sub">Use nossa ferramenta gratuita para analisar qualquer anúncio de carro em segundos.<br>Compare com a FIPE, veja a desvalorização e descubra se é BARATO, JUSTO ou CARO.</div>
+    <a href="index.html">Analisar um carro agora →</a>
+  </div>
+
+  <!-- MAIS ARTIGOS FUTUROS (placeholder) -->
+  <div class="section-titulo">Em breve</div>
+  <div class="arts-grid">
+    <div class="art-card" style="opacity:0.5;cursor:default">
+      <div class="art-card-kicker">💳 Financiamento</div>
+      <div class="art-card-titulo">Como funciona o financiamento de veículos no Brasil</div>
+      <div class="art-card-desc">Tudo sobre CDC, Leasing, consórcio e financiamento direto com a montadora. Qual modalidade tem menor custo efetivo total?</div>
+      <div class="art-card-meta"><span>🔜 Em breve</span></div>
+    </div>
+    <div class="art-card" style="opacity:0.5;cursor:default">
+      <div class="art-card-kicker">🔋 Elétricos</div>
+      <div class="art-card-titulo">Vale a pena comprar carro elétrico no Brasil em 2026?</div>
+      <div class="art-card-desc">Análise da infraestrutura, custo de recarga, desvalorização acelerada e comparativo real com flex e híbrido no contexto brasileiro.</div>
+      <div class="art-card-meta"><span>🔜 Em breve</span></div>
+    </div>
+    <div class="art-card" style="opacity:0.5;cursor:default">
+      <div class="art-card-kicker">🏆 Ranking</div>
+      <div class="art-card-titulo">Os 10 carros mais confiáveis do Brasil segundo donos reais</div>
+      <div class="art-card-desc">Levantamento baseado em avaliações de proprietários, índices de recalls e pesquisas de satisfação do consumidor brasileiro.</div>
+      <div class="art-card-meta"><span>🔜 Em breve</span></div>
+    </div>
+    <div class="art-card" style="opacity:0.5;cursor:default">
+      <div class="art-card-kicker">📋 Transferência</div>
+      <div class="art-card-titulo">Como transferir um carro: passo a passo completo 2026</div>
+      <div class="art-card-desc">Documentos necessários, taxas do Detran, prazo legal, IPVA e multas — tudo que você precisa saber para transferir o carro sem dor de cabeça.</div>
+      <div class="art-card-meta"><span>🔜 Em breve</span></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="quem-somos.html">Quem Somos</a><span class="footer-dot">·</span>
+    <a href="politica-de-privacidade.html">Privacidade</a><span class="footer-dot">·</span>
+    <a href="termos-de-uso.html">Termos</a><span class="footer-dot">·</span>
+    <a href="artigos.html">Artigos</a>
+  </div>
+  <div class="footer-info">© 2026 FIPE ou Furada? · Conteúdo informativo. Não constitui avaliação técnica ou laudo pericial.</div>
+</footer>
+</body>
+</html>

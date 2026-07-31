@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://fipeoufurada.com.br/sitemap.xml

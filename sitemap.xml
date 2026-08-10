@@ -1,89 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-       <loc>https://fipeoufurada.com.br/</loc>
-       <lastmod>2026-08-10T02:53:02+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>1.0000</priority>
+    <loc>https://www.fipeoufurada.com.br/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
-   <url>
-       <loc>https://fipeoufurada.com.br/artigos.html</loc>
-       <lastmod>2026-08-10T02:53:02+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
-  </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/quem-somos.html</loc>
-       <lastmod>2026-08-10T02:53:02+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://www.fipeoufurada.com.br/artigos.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/o-que-e-tabela-fipe.html</loc>
-       <lastmod>2026-08-10T02:53:02+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://www.fipeoufurada.com.br/quem-somos.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/como-negociar-carro-usado.html</loc>
-       <lastmod>2026-08-10T02:53:02+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://www.fipeoufurada.com.br/o-que-e-tabela-fipe.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/desvalorizacao-carros-brasil.html</loc>
-       <lastmod>2026-08-10T02:53:02+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://www.fipeoufurada.com.br/como-negociar-carro-usado.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/carro-novo-ou-usado.html</loc>
-       <lastmod>2026-08-10T02:53:02+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://www.fipeoufurada.com.br/desvalorizacao-carros-brasil.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/politica-de-privacidade.html</loc>
-       <lastmod>2026-08-10T02:53:02+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://www.fipeoufurada.com.br/carro-novo-ou-usado.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/termos-de-uso.html</loc>
-       <lastmod>2026-08-10T02:53:02+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.8000</priority>
+    <loc>https://www.fipeoufurada.com.br/laudo-cautelar-o-que-e.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/laudo-cautelar-o-que-e.html</loc>
-       <lastmod>2026-08-10T02:53:02+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>0.6400</priority>
+    <loc>https://www.fipeoufurada.com.br/checklist-compra-carro-usado.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/checklist-compra-carro-usado.html</loc>
-       <lastmod>2026-07-31</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7000</priority>
+    <loc>https://www.fipeoufurada.com.br/custo-real-ter-carro.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/custo-real-ter-carro.html</loc>
-       <lastmod>2026-07-31</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7000</priority>
+    <loc>https://www.fipeoufurada.com.br/financiamento-carro-usado.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/financiamento-carro-usado.html</loc>
-       <lastmod>2026-07-31</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7000</priority>
+    <loc>https://www.fipeoufurada.com.br/transferencia-carro-usado.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-       <loc>https://fipeoufurada.com.br/transferencia-carro-usado.html</loc>
-       <lastmod>2026-07-31</lastmod>
-       <changefreq>monthly</changefreq>
-       <priority>0.7000</priority>
+    <loc>https://www.fipeoufurada.com.br/politica-de-privacidade.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
+
+  <url>
+    <loc>https://www.fipeoufurada.com.br/termos-de-uso.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>

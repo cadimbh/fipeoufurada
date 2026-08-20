@@ -4,8 +4,12 @@
 <link rel="canonical" href="https://www.fipeoufurada.com.br/">
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>FIPE ou Furada? Analise qualquer carro</title>
-<meta name="description" content="Descubra se o carro que você quer comprar está caro ou barato, quanto ele vai desvalorizar e se é hora de comprar."/>
+<title>FIPE ou Furada? Pesquise antes de comprar um carro</title>
+<meta name="description" content="Compare o preço de um carro com a referência FIPE, estime o custo mensal e consulte guias independentes sobre documentação, negociação e compra segura."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="FIPE ou Furada? Pesquise antes de comprar"/>
+<meta property="og:description" content="Ferramentas e guias independentes para avaliar preço, custo e risco na compra de um carro."/>
+<meta property="og:url" content="https://www.fipeoufurada.com.br/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
@@ -439,6 +443,11 @@ footer{
   .deprec-summary{grid-template-columns:1fr 1fr}
 }
 </style>
+<link rel="stylesheet" href="portal.css"/>
+<script defer src="site-shell.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.fipeoufurada.com.br/#organization","name":"FIPE ou Furada?","url":"https://www.fipeoufurada.com.br/"},{"@type":"WebSite","@id":"https://www.fipeoufurada.com.br/#website","url":"https://www.fipeoufurada.com.br/","name":"FIPE ou Furada?","inLanguage":"pt-BR","publisher":{"@id":"https://www.fipeoufurada.com.br/#organization"}},{"@type":"WebApplication","name":"Analisador de preço de carro","url":"https://www.fipeoufurada.com.br/#analisador","applicationCategory":"AutomotiveApplication","operatingSystem":"Any","isAccessibleForFree":true,"inLanguage":"pt-BR","description":"Compara o preço informado com uma referência FIPE e acrescenta contexto de quilometragem."}]}
+</script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6028036791646015"
      crossorigin="anonymous"></script> 
   <meta name="google-adsense-account" content="ca-pub-6028036791646015">
@@ -469,20 +478,54 @@ fbq('track', 'PageView');
 <body>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2074968530058072&ev=PageView&noscript=1"/></noscript>
 
-<header>
-  <a href="index.html" class="logo">FIPE OU <span>FURADA?</span></a>
-  <nav style="display:flex;align-items:center;gap:20px">
-    <a href="artigos.html" style="font-size:0.82rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--muted)'">Artigos</a>
-    <a href="quem-somos.html" style="font-size:0.82rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='var(--muted)'">Quem Somos</a>
-    <span class="header-badge">🇧🇷 Referência FIPE atual</span>
-  </nav>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-logo">FIPE OU <span>FURADA?</span></a>
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a class="site-nav__cta" href="#analisador">Analisar anúncio</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Calculadora</a><a href="metodologia.html">Metodologia</a><a href="quem-somos.html">Sobre</a>
+    </nav>
+    <details class="site-menu"><summary aria-label="Abrir menu">Menu</summary><nav class="site-menu__panel"><a href="#analisador">Analisar anúncio</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Calculadora</a><a href="metodologia.html">Metodologia</a><a href="quem-somos.html">Sobre</a></nav></details>
+  </div>
 </header>
 
+<main class="portal-home">
+<section class="portal-hero" aria-labelledby="portal-title">
+  <div>
+    <p class="portal-eyebrow">Decisão automotiva, sem conversa de vendedor</p>
+    <h1 id="portal-title">Pesquise o carro.<br>Entenda o custo.<br><em>Decida melhor.</em></h1>
+    <p class="portal-hero__intro">Um portal independente para comparar preço, organizar a vistoria, planejar gastos e entender a documentação antes de assumir um compromisso.</p>
+    <div class="portal-actions"><a class="portal-button portal-button--primary" href="#analisador">Analisar um anúncio ↓</a><a class="portal-button portal-button--secondary" href="checklist-compra-carro-usado.html">Abrir checklist de compra</a></div>
+  </div>
+  <article class="portal-feature">
+    <span class="portal-feature__label">Guia de campo</span>
+    <h2>O preço faz sentido. Mas o carro faz?</h2>
+    <p>FIPE, laudo e quilometragem respondem perguntas diferentes. Veja a sequência que reduz o risco de decidir só pelo valor do anúncio.</p>
+    <a href="checklist-compra-carro-usado.html">Ler o checklist completo →</a>
+  </article>
+</section>
+
+<section class="trust-strip" aria-label="Compromissos do portal"><div class="trust-strip__inner">
+  <div class="trust-item"><span class="trust-icon">✓</span><div><b>Projeto independente</b><span>Sem venda de carros ou intermediação de crédito</span></div></div>
+  <div class="trust-item"><span class="trust-icon">✓</span><div><b>Limites visíveis</b><span>Estimativa nunca é apresentada como laudo</span></div></div>
+  <div class="trust-item"><span class="trust-icon">✓</span><div><b>Fontes identificadas</b><span>FIPE, Senatran, Banco Central e órgãos oficiais</span></div></div>
+  <div class="trust-item"><span class="trust-icon">✓</span><div><b>Revisão editorial</b><span>Datas, correções e metodologia publicadas</span></div></div>
+</div></section>
+
+<section class="portal-section">
+  <div class="section-heading"><div><p class="section-eyebrow">Da pesquisa à transferência</p><h2>Quatro etapas para não comprar no impulso</h2></div><p>Cada decisão pede uma verificação diferente. Comece pelo estágio em que você está.</p></div>
+  <div class="journey-grid">
+    <a class="journey-card" href="#analisador"><span class="journey-card__number">01 — PREÇO</span><h3>Compare o anúncio</h3><p>Use a referência como ponto de partida e identifique diferenças que precisam ser explicadas.</p></a>
+    <a class="journey-card" href="calculadora-custo-carro.html"><span class="journey-card__number">02 — ORÇAMENTO</span><h3>Calcule o custo real</h3><p>Some combustível, seguro, impostos, manutenção, parcela e perda de valor.</p></a>
+    <a class="journey-card" href="checklist-compra-carro-usado.html"><span class="journey-card__number">03 — VISTORIA</span><h3>Cheque carro e histórico</h3><p>Organize documentos, inspeção, test-drive, laudo e avaliação mecânica.</p></a>
+    <a class="journey-card" href="transferencia-carro-usado.html"><span class="journey-card__number">04 — COMPRA</span><h3>Formalize com segurança</h3><p>Registre o acordo, valide pagamentos e siga o processo do órgão de trânsito.</p></a>
+  </div>
+</section>
+
 <!-- HERO -->
-<section class="hero">
-  <p class="hero-eyebrow">A análise que o comprador precisava</p>
-  <h1>Esse carro tá caro<br>ou é <em>furada?</em></h1>
-  <p class="hero-sub">Digite o carro, o ano, o preço pedido e a quilometragem. A ferramenta compara os dados e mostra uma estimativa para orientar sua pesquisa.</p>
+<section class="hero" id="analisador">
+  <p class="hero-eyebrow">Ferramenta gratuita · sem placa ou cadastro</p>
+  <h2>Esse carro tá caro<br>ou é <em>furada?</em></h2>
+  <p class="hero-sub">Selecione a versão e informe preço e quilometragem. O resultado compara o anúncio com uma referência nacional e mostra o que ainda precisa ser verificado.</p>
 </section>
 
 <!-- BUSCA -->
@@ -571,7 +614,7 @@ fbq('track', 'PageView');
       </div>
       <div class="vstat">
         <div class="vstat-val" id="vs-km-ajuste" style="font-size:1rem">—</div>
-        <div class="vstat-lbl">Ajuste por KM</div>
+        <div class="vstat-lbl">KM informada</div>
       </div>
     </div>
   </div>
@@ -579,8 +622,8 @@ fbq('track', 'PageView');
   <!-- TABS -->
   <div class="tabs-wrap">
     <div class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab('deprec',this)">📉 Desvalorização</button>
-      <button class="tab-btn" onclick="switchTab('conselho',this)">💡 Comprar ou Esperar?</button>
+      <button class="tab-btn active" onclick="switchTab('deprec',this)">📉 Cenários de 5 anos</button>
+      <button class="tab-btn" onclick="switchTab('conselho',this)">💡 Próximas verificações</button>
     </div>
 
     <!-- TAB: DESVALORIZAÇÃO -->
@@ -590,11 +633,11 @@ fbq('track', 'PageView');
       <div class="deprec-summary">
         <div class="ds-item">
           <div class="ds-val" id="ds-perda-total">—</div>
-          <div class="ds-lbl">Perda de valor em 5 anos</div>
+          <div class="ds-lbl">Faixa ilustrativa em 5 anos</div>
         </div>
         <div class="ds-item">
           <div class="ds-val" id="ds-perda-mes">—</div>
-          <div class="ds-lbl">Desvalorização por mês</div>
+          <div class="ds-lbl">Leitura do cenário</div>
         </div>
       </div>
     </div>
@@ -617,12 +660,12 @@ fbq('track', 'PageView');
     <!-- BLOCO 1: O que é a FIPE -->
     <article class="ed-article">
       <h2 class="ed-h2">O que é a Tabela FIPE e como ela funciona?</h2>
-      <p class="ed-p">A <strong>Tabela FIPE</strong> (Fundação Instituto de Pesquisas Econômicas) é o principal índice de precificação de veículos usados no Brasil. Criada em 1973 e atualizada mensalmente, ela representa a <strong>média dos preços praticados no mercado nacional</strong> para cada modelo, ano e versão de carro, moto ou caminhão.</p>
+      <p class="ed-p">A <strong>Tabela FIPE</strong>, produzida pela Fundação Instituto de Pesquisas Econômicas, apresenta referências de preços médios de veículos no mercado nacional. A consulta permite selecionar categoria, marca, modelo/versão e ano/modelo.</p>
       <p class="ed-p">A FIPE divulga essa referência a partir de sua própria metodologia de pesquisa e atualização. Ela ajuda a enxergar uma faixa média nacional, mas não descreve sozinha as condições de um carro específico ou a realidade de uma cidade.</p>
       <p class="ed-p">É importante entender que a FIPE é uma <strong>referência, não uma regra</strong>. O preço real de um veículo pode ser maior ou menor que o tabelado, dependendo de fatores como quilometragem, estado de conservação, histórico de manutenção, cor, opcionais e até a região do país onde a negociação acontece.</p>
       <div class="ed-destaque">
         <span class="ed-destaque-icon">💡</span>
-        <span>A Tabela FIPE também é usada por seguradoras para calcular o valor de apólices e pelo governo para calcular o IPVA anual dos veículos.</span>
+        <span>A referência FIPE pode aparecer em apólices, avaliações e cálculos tributários, conforme contrato e regras do estado. Confirme sempre o critério aplicável.</span>
       </div>
     </article>
 
@@ -662,14 +705,14 @@ fbq('track', 'PageView');
           <div class="ed-step-num">2</div>
           <div class="ed-step-content">
             <div class="ed-step-titulo">Informe o preço pedido e a quilometragem</div>
-            <p>A calculadora usa a quilometragem como um fator de contexto, comparando-a com uma média anual de referência. É uma estimativa educativa: conservação, revisões e histórico podem pesar mais que a quilometragem isolada.</p>
+            <p>A quilometragem aparece como contexto, mas não altera automaticamente a referência. Não existe um desconto universal por quilômetro; conservação, revisões e histórico precisam ser verificados separadamente.</p>
           </div>
         </div>
         <div class="ed-step">
           <div class="ed-step-num">3</div>
           <div class="ed-step-content">
             <div class="ed-step-titulo">Receba o veredicto: BARATO, JUSTO ou CARO</div>
-            <p>O velocímetro mostra faixas informativas em relação à referência ajustada. “Barato”, “justo” e “caro” não substituem vistoria, laudo cautelar, comparação regional ou negociação.</p>
+            <p>O velocímetro mostra faixas informativas em relação à referência selecionada. Estar abaixo, próximo ou acima dela não substitui vistoria, laudo, comparação regional ou negociação.</p>
           </div>
         </div>
       </div>
@@ -678,7 +721,7 @@ fbq('track', 'PageView');
     <!-- BLOCO 4: METODOLOGIA E LIMITES -->
     <article class="ed-article">
       <h2 class="ed-h2">Como esta análise é calculada — e o que ela não consegue avaliar</h2>
-      <p class="ed-p">O FIPE ou Furada? foi criado para ajudar a organizar a pesquisa de um anúncio. A ferramenta compara o preço informado pelo usuário com o valor de referência do veículo e aplica um ajuste indicativo de quilometragem. O resultado serve como <strong>ponto de partida para perguntas melhores</strong>, não como avaliação definitiva do carro.</p>
+      <p class="ed-p">O FIPE ou Furada? foi criado para ajudar a organizar a pesquisa de um anúncio. A ferramenta compara o preço informado com o valor de referência selecionado e exibe a quilometragem informada como contexto, sem aplicar desconto automático. O resultado serve como <strong>ponto de partida para perguntas melhores</strong>, não como avaliação definitiva.</p>
       <div class="method-grid">
         <div class="method-card"><h3>O que entra na estimativa</h3><p>Marca, modelo, ano/versão selecionados, valor de referência disponível na consulta, preço pedido e quilometragem informados pelo usuário.</p></div>
         <div class="method-card"><h3>O que não entra na estimativa</h3><p>Sinistros, leilão, restrições, mecânica, documentação, procedência, desgaste real, opcionais, garantia e a oferta na sua cidade.</p></div>
@@ -708,7 +751,7 @@ fbq('track', 'PageView');
         <div class="ed-dica">
           <span class="ed-dica-num">01</span>
           <div>
-            <strong>Pesquise antes de visitar.</strong> Use o FIPE ou Furada para chegar à negociação já sabendo o preço justo. Vendedor que sabe que o comprador pesquisou é mais flexível.
+            <strong>Pesquise antes de visitar.</strong> Use a ferramenta como referência inicial e leve anúncios realmente comparáveis. O objetivo é chegar com perguntas e um limite, não com um “preço certo” universal.
           </div>
         </div>
         <div class="ed-dica">
@@ -720,7 +763,7 @@ fbq('track', 'PageView');
         <div class="ed-dica">
           <span class="ed-dica-num">03</span>
           <div>
-            <strong>Verifique a quilometragem real.</strong> Carros com hodômetro adulterado são mais comuns do que parecem. Confronte a km com revisões no manual e desgaste de peças como volante, pedais e banco do motorista.
+            <strong>Verifique a coerência da quilometragem.</strong> Confronte o hodômetro com revisões, registros disponíveis e desgaste de volante, pedais e banco do motorista.
           </div>
         </div>
         <div class="ed-dica">
@@ -764,11 +807,11 @@ fbq('track', 'PageView');
         </details>
         <details class="ed-faq-item">
           <summary class="ed-faq-pergunta">A quilometragem influencia o valor da FIPE?</summary>
-          <p class="ed-faq-resp">A tabela oficial da FIPE não considera quilometragem — ela representa apenas a média por modelo e ano. No entanto, o mercado real aplica descontos significativos para veículos com quilometragem acima da média (15.000 km/ano). Nossa ferramenta já calcula esse ajuste automaticamente.</p>
+          <p class="ed-faq-resp">A consulta da FIPE não pede a quilometragem do exemplar. Ela pode influenciar o preço negociado, mas não existe um desconto universal por quilômetro. Nossa ferramenta a exibe como contexto e não altera automaticamente a referência.</p>
         </details>
         <details class="ed-faq-item">
           <summary class="ed-faq-pergunta">Posso usar a FIPE para calcular o IPVA?</summary>
-          <p class="ed-faq-resp">Sim. A maioria dos estados brasileiros usa a Tabela FIPE como base de cálculo do IPVA. A alíquota varia de 1% a 4% do valor do veículo, dependendo do estado. Quanto maior o valor na tabela, maior o imposto anual.</p>
+          <p class="ed-faq-resp">A base e a alíquota dependem da legislação de cada estado e do tipo de veículo. Consulte a Secretaria da Fazenda do seu estado para confirmar o valor venal e a regra vigente.</p>
         </details>
         <details class="ed-faq-item">
           <summary class="ed-faq-pergunta">Carro acima da FIPE sempre é uma furada?</summary>
@@ -823,20 +866,13 @@ fbq('track', 'PageView');
   </div>
 </section>
 
-<footer>
-  <div class="footer-links">
-    <a href="quem-somos.html">Quem Somos</a>
-    <span class="footer-dot">·</span>
-    <a href="politica-de-privacidade.html">Política de Privacidade</a>
-    <span class="footer-dot">·</span>
-    <a href="termos-de-uso.html">Termos de Uso</a>
-  </div>
-  <div class="footer-info">
-    Preços baseados na Tabela FIPE via <a href="https://brasilapi.com.br" target="_blank">BrasilAPI</a> · Atualizada mensalmente
-  </div>
-  <div class="footer-aviso">
-    ⚠️ Este site é informativo. Não constitui laudo técnico nem recomendação de compra. Consulte sempre um especialista.
-  </div>
+</main>
+
+<section class="method-band"><div class="method-band__inner"><div><p class="section-eyebrow">Transparência</p><h2>De onde vem o resultado?</h2><p>Publicamos as variáveis, limites, fontes e histórico de mudanças da ferramenta. Você precisa conseguir entender um resultado antes de confiar nele.</p></div><a class="portal-button portal-button--secondary" href="metodologia.html">Conhecer a metodologia →</a></div></section>
+
+<footer class="site-footer">
+  <div class="site-footer__inner"><div class="site-footer__brand"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span></a><p>Informação independente para pesquisar preço, custo e risco antes de comprar um veículo.</p></div><div class="site-footer__links"><div><h2>Ferramentas</h2><a href="#analisador">Analisar anúncio</a><a href="calculadora-custo-carro.html">Custo mensal</a></div><div><h2>Editorial</h2><a href="artigos.html">Todos os guias</a><a href="metodologia.html">Metodologia</a><a href="politica-editorial.html">Política editorial</a></div><div><h2>Institucional</h2><a href="quem-somos.html">Quem somos</a><a href="politica-de-privacidade.html">Privacidade</a><a href="termos-de-uso.html">Termos</a></div></div></div>
+  <div class="site-footer__legal">© 2026 FIPE ou Furada? Projeto independente, sem vínculo com a Fundação Instituto de Pesquisas Econômicas. Referências consultadas por integração pública; confirme o valor no canal oficial. Conteúdo informativo — não substitui laudo, avaliação mecânica ou aconselhamento financeiro.</div>
 </footer>
 
 <script>
@@ -1014,20 +1050,17 @@ function analisar(){
   const precoFipe = parseMoeda(fipeData.valor.replace('R$','').trim());
   if(!precoFipe||precoFipe<=0){showError('Erro ao obter preço FIPE. Tente novamente.');return}
 
-  // Ajuste por quilometragem
-  // ~R$0.025/km de desconto a partir de 50.000 km (referência mercado)
-  const kmRef = 50000;
-  const kmExcedente = Math.max(0, km - kmRef);
-  const ajusteKm = -(kmExcedente * 0.025);
-  const precoJusto = precoFipe + ajusteKm;
-  const diff = precoPedido - precoJusto;
-  const diffPct = (diff / precoJusto) * 100;
+  // A quilometragem é exibida como contexto, mas não altera a referência.
+  // Não existe desconto universal por quilômetro aplicável a todos os veículos.
+  const ajusteKm = 0;
+  const diff = precoPedido - precoFipe;
+  const diffPct = (diff / precoFipe) * 100;
 
   // Veredicto
   let tipo, texto;
-  if(diffPct <= -5){tipo='barato';texto='BARATO!'}
-  else if(diffPct <= 5){tipo='justo';texto='PREÇO JUSTO'}
-  else{tipo='caro';texto='CARO DEMAIS'}
+  if(diffPct <= -5){tipo='barato';texto='ABAIXO DA REFERÊNCIA'}
+  else if(diffPct <= 5){tipo='justo';texto='PRÓXIMO DA REFERÊNCIA'}
+  else{tipo='caro';texto='ACIMA DA REFERÊNCIA'}
 
   // Renderizar
   renderVeredicto(tipo, texto, precoFipe, precoPedido, diff, diffPct, ajusteKm, km);
@@ -1036,7 +1069,6 @@ function analisar(){
 
   const results = document.getElementById('results');
   results.classList.add('visible');
-  document.getElementById('ad-bottom').style.display='block';
   setTimeout(()=>results.scrollIntoView({behavior:'smooth',block:'start'}),100);
 }
 
@@ -1063,70 +1095,30 @@ function renderVeredicto(tipo, texto, fipe, pedido, diff, diffPct, ajusteKm, km)
   const diffEl = document.getElementById('veredicto-diff');
   const sinal = diff > 0 ? '+' : '';
   const cor = tipo==='barato' ? '#2ECC71' : tipo==='caro' ? '#E74C3C' : '#F1C40F';
-  diffEl.innerHTML = `<strong style="color:${cor}">${sinal}${fmtBRL(diff)} (${sinal}${diffPct.toFixed(1)}%)</strong> em relação ao preço justo de mercado`;
+  diffEl.innerHTML = `<strong style="color:${cor}">${sinal}${fmtBRL(diff)} (${sinal}${diffPct.toFixed(1)}%)</strong> em relação à referência FIPE selecionada`;
 
   // Stats
   document.getElementById('vs-fipe').textContent = fmtBRL(fipe);
   document.getElementById('vs-pedido').textContent = fmtBRL(pedido);
   const kmEl = document.getElementById('vs-km-ajuste');
-  if(km > 50000){
-    kmEl.textContent = fmtBRL(ajusteKm);
-    kmEl.style.color = '#E74C3C';
-  } else {
-    kmEl.textContent = '—';
-    kmEl.style.color = '#888';
-  }
+  kmEl.textContent = km ? fmtNum(km) + ' km' : 'Não informada';
+  kmEl.style.color = '#F0F0F0';
 }
 
 // ── RENDERIZAR DESVALORIZAÇÃO ────────────────────────────────────────────────
 function renderDesvalorizacao(precoAtual, dados){
-  // Taxas de depreciação anual estimadas por segmento (usando o preço como proxy)
-  // Populares: 8-12%/ano | Médios: 10-14% | Premium: 12-16%
   const preco = precoAtual;
-  let taxaAnual;
-  if(preco < 60000) taxaAnual = 0.10;
-  else if(preco < 120000) taxaAnual = 0.12;
-  else taxaAnual = 0.14;
-
-  const anoAtual = new Date().getFullYear();
-  const linhas = [];
-  let valorAcum = preco;
-  const anos = [1,2,3,4,5];
-
-  for(const a of anos){
-    const perda = valorAcum * taxaAnual;
-    valorAcum -= perda;
-    const perdaTotal = preco - valorAcum;
-    const perdaPct = (perdaTotal / preco) * 100;
-    const barWidth = Math.min(100, (perdaPct / 50) * 100);
-    linhas.push({ano:anoAtual+a, valor:valorAcum, perdaTotal, perdaPct, barWidth});
-  }
-
-  // Intro
+  const cenarios = [0.05,0.10,0.15].map(taxa => ({
+    taxa,
+    valor: preco * Math.pow(1-taxa,5)
+  }));
   document.getElementById('deprec-intro').innerHTML =
-    `Um <strong>${dados.modelo||'veículo'}</strong> no valor de <strong>${fmtBRL(preco)}</strong> `+
-    `tende a perder em média <strong>${(taxaAnual*100).toFixed(0)}% ao ano</strong> de acordo com o histórico da tabela FIPE para este segmento.`;
-
-  // Timeline
+    `Estes são <strong>três exercícios matemáticos</strong> com taxas escolhidas apenas para comparação. `+
+    `Não representam histórico do modelo nem previsão de revenda. Mercado, versão, conservação e momento podem produzir resultados diferentes.`;
   const tl = document.getElementById('deprec-timeline');
-  tl.innerHTML = '';
-  linhas.forEach(l=>{
-    tl.innerHTML += `
-      <div class="deprec-row">
-        <div class="deprec-year">${l.ano}</div>
-        <div class="deprec-bar-wrap"><div class="deprec-bar" style="width:${l.barWidth}%"></div></div>
-        <div class="deprec-val">
-          <div class="deprec-val-num">${fmtBRL(l.valor)}</div>
-          <div class="deprec-val-pct">-${l.perdaPct.toFixed(0)}% do total</div>
-        </div>
-      </div>`;
-  });
-
-  // Summary
-  const perdaTotal = preco - linhas[linhas.length-1].valor;
-  const perdaMes = perdaTotal / 60;
-  document.getElementById('ds-perda-total').textContent = fmtBRL(perdaTotal);
-  document.getElementById('ds-perda-mes').textContent = fmtBRL(perdaMes) + '/mês';
+  tl.innerHTML = cenarios.map(c=>`<div class="deprec-row"><div class="deprec-year">${(c.taxa*100).toFixed(0)}% a.a.</div><div class="deprec-bar-wrap"><div class="deprec-bar" style="width:${Math.round((1-c.valor/preco)*100)}%"></div></div><div class="deprec-val"><div class="deprec-val-num">${fmtBRL(c.valor)}</div><div class="deprec-val-pct">valor hipotético após 5 anos</div></div></div>`).join('');
+  document.getElementById('ds-perda-total').textContent = `${fmtBRL(cenarios[2].valor)} a ${fmtBRL(cenarios[0].valor)}`;
+  document.getElementById('ds-perda-mes').textContent = 'Não é previsão';
 
   // Animar barras após render
   setTimeout(()=>{
@@ -1142,18 +1134,14 @@ function renderConselho(tipo, diffPct, dados, km){
   let cardClass, icon, titulo, texto;
 
   if(tipo==='barato'){
-    cardClass='comprar'; icon='🟢'; titulo='Boa hora para comprar';
-    texto=`O preço pedido está <strong>${Math.abs(diffPct).toFixed(1)}% abaixo</strong> do valor de mercado — isso é uma oferta acima da média. `+
-    `Veículos nessa faixa costumam ser negociados rapidamente. Se o carro estiver em bom estado, é um bom momento para fechar negócio.`;
+    cardClass='comprar'; icon='🔎'; titulo='Abaixo da referência — investigue o motivo';
+    texto=`O preço informado está <strong>${Math.abs(diffPct).toFixed(1)}% abaixo</strong> da referência selecionada. Isso não prova oportunidade. Confirme identidade do vendedor, versão, histórico, documentação e condição mecânica antes de pagar sinal.`;
   } else if(tipo==='justo'){
-    cardClass='esperar'; icon='🟡'; titulo='Preço dentro da média — negocie';
-    texto=`O preço está <strong>dentro da faixa esperada</strong> para esse modelo e ano. `+
-    `Há margem para pechincha de 5 a 10%, especialmente se você oferecer pagamento à vista ou puder aguardar alguns dias.`;
+    cardClass='esperar'; icon='📋'; titulo='Próximo da referência — compare a condição';
+    texto=`O preço está <strong>próximo da referência</strong>. Compare anúncios equivalentes da sua região e verifique manutenção, pneus, histórico, garantia e custos imediatos. A referência não garante que o exemplar esteja bem avaliado.`;
   } else {
-    cardClass='cuidado'; icon='🔴'; titulo='Caro demais — cuidado';
-    texto=`O vendedor está pedindo <strong>${Math.abs(diffPct).toFixed(1)}% acima</strong> do valor de mercado. `+
-    `A menos que o carro tenha algum diferencial muito específico (baixíssima quilometragem, garantia de fábrica, revisões em dia), `+
-    `esse preço não se justifica. Procure outros anúncios ou negocie com firmeza.`;
+    cardClass='cuidado'; icon='🧾'; titulo='Acima da referência — peça evidências';
+    texto=`O preço informado está <strong>${Math.abs(diffPct).toFixed(1)}% acima</strong> da referência. Peça justificativas verificáveis, compare versões equivalentes e inclua garantia, manutenção, opcionais e mercado local antes de decidir.`;
   }
 
   document.getElementById('conselho-container').innerHTML = `
@@ -1166,12 +1154,9 @@ function renderConselho(tipo, diffPct, dados, km){
     </div>`;
 
   // Fatores
-  const kmCor = km > 100000 ? 'up' : km > 60000 ? 'neutral' : 'down';
-  const kmTexto = km > 100000 ? 'Alta — deprecia mais' : km > 60000 ? 'Média — dentro do normal' : 'Baixa — ponto positivo';
-
-  const precoNum = parseMoeda(dados.valor||'0');
-  const segmento = precoNum < 60000 ? 'Popular' : precoNum < 120000 ? 'Médio' : 'Premium/Importado';
-  const tendencia = tipo === 'caro' ? 'Preço acima do mercado' : tipo === 'barato' ? 'Abaixo do mercado' : 'Dentro do mercado';
+  const kmCor = 'neutral';
+  const kmTexto = 'Contexto informado; não altera automaticamente a referência';
+  const tendencia = tipo === 'caro' ? 'Acima da referência' : tipo === 'barato' ? 'Abaixo da referência' : 'Próximo da referência';
   const tendCor = tipo === 'caro' ? 'up' : tipo === 'barato' ? 'down' : 'neutral';
 
   document.getElementById('fatores-grid').innerHTML = `
@@ -1181,14 +1166,14 @@ function renderConselho(tipo, diffPct, dados, km){
       <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">${kmTexto}</div>
     </div>
     <div class="fator-card">
-      <div class="fator-titulo">Segmento</div>
-      <div class="fator-valor neutral">${segmento}</div>
-      <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Base p/ taxa de depreciação</div>
+      <div class="fator-titulo">Histórico do veículo</div>
+      <div class="fator-valor neutral">Não consultado</div>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Valide em laudo e consultas oficiais</div>
     </div>
     <div class="fator-card">
       <div class="fator-titulo">Posição de preço</div>
       <div class="fator-valor ${tendCor}">${tendencia}</div>
-      <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Em relação à FIPE ajustada</div>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:4px">Comparação numérica com a FIPE selecionada</div>
     </div>
     <div class="fator-card">
       <div class="fator-titulo">Referência FIPE</div>

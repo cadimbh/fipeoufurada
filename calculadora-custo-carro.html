@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calculadora de custo mensal do carro | FIPE ou Furada?</title>
+  <meta name="description" content="Calcule quanto custa manter um carro por mês somando combustível, seguro, IPVA, manutenção, estacionamento, parcela e depreciação.">
+  <link rel="canonical" href="https://www.fipeoufurada.com.br/calculadora-custo-carro.html">
+  <meta property="og:type" content="website"><meta property="og:title" content="Calculadora de custo mensal do carro"><meta property="og:description" content="Veja o peso real do carro no orçamento, além da parcela."><meta property="og:url" content="https://www.fipeoufurada.com.br/calculadora-custo-carro.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="portal.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6028036791646015" crossorigin="anonymous"></script><script defer src="site-shell.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de custo mensal do carro","url":"https://www.fipeoufurada.com.br/calculadora-custo-carro.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,"inLanguage":"pt-BR","publisher":{"@type":"Organization","name":"FIPE ou Furada?"}}</script>
+</head>
+<body>
+  <header class="site-header"><div class="site-header__inner"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span></a><nav class="site-nav" aria-label="Navegação principal"><a href="/#analisador">Analisar anúncio</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Calculadora</a><a href="metodologia.html">Metodologia</a><a href="quem-somos.html">Sobre</a></nav><details class="site-menu"><summary aria-label="Abrir menu">Menu</summary><nav class="site-menu__panel"><a href="/#analisador">Analisar anúncio</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Calculadora</a><a href="metodologia.html">Metodologia</a><a href="quem-somos.html">Sobre</a></nav></details></div></header>
+  <div class="article-shell"><main><p class="article-kicker">Planejamento financeiro</p><h1 class="article-title">Quanto esse carro custa por mês de verdade?</h1><p class="article-deck">A parcela é apenas uma linha do orçamento. Preencha valores do seu cenário para estimar custo mensal, custo anual e custo por quilômetro.</p><div class="byline"><div class="byline__mark">R$</div><div><b>Calculadora independente e gratuita</b><span>Seus dados ficam no navegador e não são enviados pelo formulário</span></div></div>
+    <section class="calculator" aria-labelledby="calc-title"><h2 id="calc-title" style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;margin-bottom:8px">Monte seu cenário</h2><p style="color:var(--portal-muted);font-size:.85rem;line-height:1.6;margin-bottom:20px">Use valores anuais onde indicado. Se algum custo não se aplicar, deixe zero.</p>
+      <form id="cost-form">
+        <div class="calculator-grid">
+          <div><label for="km">Quilômetros por mês</label><input id="km" type="number" min="0" step="1" value="1000" required></div>
+          <div><label for="consumo">Consumo médio (km/l)</label><input id="consumo" type="number" min="0.1" step="0.1" value="10" required></div>
+          <div><label for="combustivel">Preço do combustível (R$/l)</label><input id="combustivel" type="number" min="0" step="0.01" value="6.20" required></div>
+          <div><label for="parcela">Parcela mensal (R$)</label><input id="parcela" type="number" min="0" step="0.01" value="0"></div>
+          <div><label for="seguro">Seguro anual (R$)</label><input id="seguro" type="number" min="0" step="0.01" value="3000"></div>
+          <div><label for="ipva">IPVA + licenciamento anual (R$)</label><input id="ipva" type="number" min="0" step="0.01" value="2400"></div>
+          <div><label for="manutencao">Manutenção + pneus anual (R$)</label><input id="manutencao" type="number" min="0" step="0.01" value="3000"></div>
+          <div><label for="estacionamento">Garagem, pedágio e estacionamento/mês (R$)</label><input id="estacionamento" type="number" min="0" step="0.01" value="300"></div>
+          <div><label for="valor">Valor atual do carro (R$)</label><input id="valor" type="number" min="0" step="0.01" value="60000"></div>
+          <div><label for="depreciacao">Depreciação estimada ao ano (%)</label><input id="depreciacao" type="number" min="0" max="100" step="0.1" value="8"></div>
+        </div>
+        <button type="submit">CALCULAR CUSTO REAL</button>
+      </form>
+      <div class="calculator-result" id="result" aria-live="polite"><div class="result-grid"><div class="result-item"><span>Custo mensal estimado</span><b id="mensal">—</b></div><div class="result-item"><span>Custo anual estimado</span><b id="anual">—</b></div><div class="result-item"><span>Custo por quilômetro</span><b id="por-km">—</b></div></div><p id="breakdown" style="font-size:.8rem;color:var(--portal-muted);line-height:1.65;margin-top:16px"></p></div>
+    </section>
+    <article class="article-content">
+      <h2>Como a conta é feita</h2><p>A calculadora soma os custos mensais informados, transforma os custos anuais em parcelas mensais e estima o combustível a partir da distância, do consumo e do preço por litro. A depreciação é tratada como custo econômico: ela não sai da conta todo mês, mas aparece quando o carro é vendido por menos.</p>
+      <div class="editor-note"><h2>Fórmula resumida</h2><p><strong>Custo mensal</strong> = combustível + parcela + estacionamento/pedágio + (seguro + impostos + manutenção + depreciação) ÷ 12.</p></div>
+      <h2>Como preencher sem se enganar</h2>
+      <h3>Use consumo realista</h3><p>O consumo de catálogo é medido em condições específicas. Para orçamento, use sua média de abastecimentos ou um cenário conservador. Trânsito pesado, ar-condicionado, carga e trajeto curto podem elevar o gasto.</p>
+      <h3>Não zere manutenção</h3><p>Mesmo um carro em garantia precisa de revisões, pneus e itens de desgaste. Para um usado sem histórico completo, considere também uma revisão inicial. Dividir uma reserva anual por 12 evita que a despesa pareça um imprevisto absoluto.</p>
+      <h3>Separe parcela de custo do crédito</h3><p>A parcela mostra o impacto no caixa, mas não revela sozinha o preço do financiamento. Para comparar propostas, consulte o CET e o valor total a pagar. O guia de <a href="financiamento-carro-usado.html">financiamento de carro usado</a> explica essa diferença.</p>
+      <h3>Trate a depreciação como cenário</h3><p>Não existe uma taxa anual universal. Use uma hipótese e teste valores diferentes. Modelo, idade, geração, oferta, manutenção, garantia e mercado local influenciam a revenda. A calculadora não prevê o futuro.</p>
+      <h2>O que não entra automaticamente</h2><p>Multas, franquia de seguro, reparos após acidente, acessórios, lavagens, juros separados da parcela, custo de oportunidade e variação de preços não são calculados sem que você os inclua em alguma categoria. O objetivo é criar um orçamento comparável, não uma promessa de gasto exato.</p>
+      <div class="source-box"><h2>Leituras para completar a análise</h2><ul><li><a href="custo-real-ter-carro.html">Guia completo do custo de propriedade</a></li><li><a href="financiamento-carro-usado.html">Como comparar CET e custo total</a></li><li><a href="desvalorizacao-carros-brasil.html">O que influencia a desvalorização</a></li><li><a href="/#analisador">Comparar o anúncio com a referência FIPE</a></li></ul></div>
+    </article></main><aside class="article-aside"><div class="aside-card"><h2>Privacidade</h2><p>Os valores do formulário são processados localmente no navegador. A calculadora não pede placa, CPF ou dados bancários.</p></div><div class="aside-card"><h2>Importante</h2><p>Resultado educativo. Faça cotações reais de seguro, manutenção e crédito antes de comprar.</p></div></aside></div>
+  <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__brand"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span></a><p>Informação independente para pesquisar preço, custo e risco antes de comprar um veículo.</p></div><div class="site-footer__links"><div><h2>Ferramentas</h2><a href="/#analisador">Analisar anúncio</a><a href="calculadora-custo-carro.html">Custo mensal</a></div><div><h2>Editorial</h2><a href="artigos.html">Todos os guias</a><a href="metodologia.html">Metodologia</a><a href="politica-editorial.html">Política editorial</a></div><div><h2>Institucional</h2><a href="quem-somos.html">Quem somos</a><a href="politica-de-privacidade.html">Privacidade</a><a href="termos-de-uso.html">Termos</a></div></div></div><div class="site-footer__legal">© 2026 FIPE ou Furada? Estimativas não constituem recomendação financeira.</div></footer>
+  <script>
+    const brl = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+    document.getElementById('cost-form').addEventListener('submit', event => {
+      event.preventDefault();
+      const n = id => Math.max(0, Number(document.getElementById(id).value) || 0);
+      const km=n('km'), consumo=Math.max(.1,n('consumo')), preco=n('combustivel');
+      const combustivel=(km/consumo)*preco, parcela=n('parcela'), estacionamento=n('estacionamento');
+      const seguro=n('seguro')/12, impostos=n('ipva')/12, manutencao=n('manutencao')/12;
+      const depreciacao=(n('valor')*(n('depreciacao')/100))/12;
+      const mensal=combustivel+parcela+estacionamento+seguro+impostos+manutencao+depreciacao;
+      document.getElementById('mensal').textContent=brl.format(mensal);
+      document.getElementById('anual').textContent=brl.format(mensal*12);
+      document.getElementById('por-km').textContent=km ? brl.format(mensal/km) : 'Informe a km';
+      document.getElementById('breakdown').textContent=`Neste cenário: ${brl.format(combustivel)} de combustível, ${brl.format(parcela)} de parcela, ${brl.format(estacionamento)} de uso/garagem, ${brl.format(seguro+impostos+manutencao)} de custos anuais rateados e ${brl.format(depreciacao)} de depreciação mensal estimada.`;
+      document.getElementById('result').classList.add('is-visible');
+    });
+  </script>
+</body></html>

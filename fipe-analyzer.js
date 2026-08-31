@@ -5,6 +5,7 @@
   const API_FALLBACK = 'https://brasilapi.com.br/api/fipe';
   const $ = id => document.getElementById(id);
   let selection = { brand: '', model: '', year: '', reference: null };
+  let requestVersion = 0;
 
   const money = value => Number(value || 0).toLocaleString('pt-BR', {
     style: 'currency', currency: 'BRL', maximumFractionDigits: 0
@@ -79,6 +80,31 @@
     }))
     .filter(item => item.value && item.label);
 
+  const isZeroKmCode = value => /^32000(?:-|$)/.test(String(value || ''));
+
+  function normalizedYears(value) {
+    return normalizedItems(value)
+      .map(item => {
+        if (!isZeroKmCode(item.value) && !/^32000\b/.test(item.label)) return item;
+        const fuel = item.label.replace(/^32000\s*/i, '').trim();
+        return { ...item, label: `0 km (novo)${fuel ? ` · ${fuel}` : ''}` };
+      })
+      .sort((a, b) => {
+        if (isZeroKmCode(a.value)) return -1;
+        if (isZeroKmCode(b.value)) return 1;
+        return b.label.localeCompare(a.label, 'pt-BR', { numeric: true });
+      });
+  }
+
+  function referenceYear(year, fuel) {
+    if (Number(year) === 32000 || isZeroKmCode(year)) return `0 km (novo)${fuel ? ` · ${fuel}` : ''}`;
+    return String(year || 'Ano não informado');
+  }
+
+  function clearResult() {
+    $('fipe-result')?.classList.remove('is-visible');
+  }
+
   function replaceOptions(select, placeholder, items = []) {
     select.replaceChildren();
     const first = document.createElement('option');
@@ -108,7 +134,10 @@
   }
 
   async function loadModels() {
+    const token = ++requestVersion;
     clearError();
+    clearResult();
+    setBusy(0);
     selection.brand = $('fipe-brand').value;
     selection.model = '';
     selection.year = '';
@@ -128,17 +157,22 @@
     replaceOptions(model, 'Carregando modelos…');
     try {
       const data = await fetchJSON(`/carros/marcas/${selection.brand}/modelos`, `/veiculos/v1/carros/${selection.brand}`);
+      if (token !== requestVersion) return;
       const items = normalizedItems(data).sort((a, b) => a.label.localeCompare(b.label, 'pt-BR'));
       replaceOptions(model, 'Selecione o modelo', items);
       model.disabled = false;
     } catch (_) {
+      if (token !== requestVersion) return;
       replaceOptions(model, 'Erro ao carregar modelos');
       showError('Não conseguimos carregar os modelos agora. Nenhum resultado foi estimado.');
     }
   }
 
   async function loadYears() {
+    const token = ++requestVersion;
     clearError();
+    clearResult();
+    setBusy(0);
     selection.model = $('fipe-model').value;
     selection.year = '';
     selection.reference = null;
@@ -156,17 +190,21 @@
         `/carros/marcas/${selection.brand}/modelos/${selection.model}/anos`,
         `/anos/v1/carros/${selection.brand}/${selection.model}`
       );
-      const items = normalizedItems(data).sort((a, b) => b.label.localeCompare(a.label, 'pt-BR'));
+      if (token !== requestVersion) return;
+      const items = normalizedYears(data);
       replaceOptions(year, 'Selecione o ano/modelo', items);
       year.disabled = false;
     } catch (_) {
+      if (token !== requestVersion) return;
       replaceOptions(year, 'Erro ao carregar anos');
       showError('Não conseguimos carregar os anos disponíveis para essa versão.');
     }
   }
 
   async function loadReference() {
+    const token = ++requestVersion;
     clearError();
+    clearResult();
     selection.year = $('fipe-year').value;
     selection.reference = null;
     $('fipe-submit').disabled = true;
@@ -177,11 +215,12 @@
         `/carros/marcas/${selection.brand}/modelos/${selection.model}/anos/${selection.year}`,
         `/detalhes/v1/carros/${selection.brand}/${selection.model}/${selection.year}`
       );
+      if (token !== requestVersion) return;
       selection.reference = {
         price: data.Valor ?? data.valor ?? '',
         brand: data.Marca ?? data.marca ?? '',
         model: data.Modelo ?? data.modelo ?? '',
-        year: data.AnoModelo ?? data.anoModelo ?? '',
+        year: referenceYear(data.AnoModelo ?? data.anoModelo ?? '', data.Combustivel ?? data.combustivel ?? ''),
         month: data.MesReferencia ?? data.mesReferencia ?? '',
         code: data.CodigoFipe ?? data.codigoFipe ?? ''
       };
@@ -189,6 +228,7 @@
       $('fipe-submit').disabled = false;
       setTimeout(() => setBusy(0), 350);
     } catch (_) {
+      if (token !== requestVersion) return;
       setBusy(0);
       showError('A consulta de referência falhou. O botão continuará desativado para evitar um resultado incompleto.');
     }
@@ -228,6 +268,7 @@
   function formatCurrencyInput(event) {
     const digits = event.target.value.replace(/\D/g, '');
     event.target.value = digits ? Number(digits).toLocaleString('pt-BR') : '';
+    clearResult();
   }
 
   document.addEventListener('DOMContentLoaded', () => {

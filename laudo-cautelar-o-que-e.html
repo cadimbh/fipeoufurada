@@ -28,11 +28,27 @@
   </script>
   <!-- Adcash Display: biblioteca compartilhada -->
   <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  <link rel="stylesheet" href="ads.css?v=20260831-1">
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 <div class="announcement"><div class="announcement__inner"><span><b>Pergunta certa:</b> não é “passou?”, mas “o que foi verificado?”.</span><span><a href="dossie-compra.html">Registrar achados →</a></span></div></div>
 <header class="site-header"><div class="site-header__inner"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Decisão automotiva</small></a><nav class="site-nav" aria-label="Navegação principal"><a href="dossie-compra.html">Dossiê</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Custo do carro</a><a href="metodologia.html">Método</a><a href="quem-somos.html">Sobre</a><a class="site-nav__cta" href="/#comparador">Comparar preço</a></nav><details class="site-menu"><summary>Menu</summary><nav class="site-menu__panel"><a href="/">Início</a><a href="dossie-compra.html">Dossiê</a><a href="artigos.html">Guias</a><a href="metodologia.html">Método</a><a href="quem-somos.html">Sobre</a></nav></details></div></header>
+<aside class="ad-placement ad-placement--top" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit">
+      <script type="text/javascript">
+        (() => {
+          const slot = document.currentScript.parentElement;
+          const desktop = window.matchMedia("(min-width: 801px)").matches;
+          slot.classList.add(desktop ? "ad-placement__unit--leaderboard" : "ad-placement__unit--mobile-square");
+          aclib.runBanner({ zoneId: desktop ? "12080334" : "12080370" });
+        })();
+      </script>
+    </div>
+  </div>
+</aside>
 
 <div class="article-shell">
   <main id="conteudo">
@@ -105,7 +121,22 @@
         </tbody>
       </table>
 
-      <h2>O que ainda precisa de avaliação mecânica</h2>
+      <aside class="ad-placement ad-placement--wide" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit">
+      <script type="text/javascript">
+        (() => {
+          const slot = document.currentScript.parentElement;
+          const wide = window.matchMedia("(min-width: 430px)").matches;
+          if (wide) slot.classList.add("ad-placement__unit--wide");
+          aclib.runBanner({ zoneId: wide ? "12080350" : "12080378" });
+        })();
+      </script>
+    </div>
+  </div>
+</aside>
+<h2>O que ainda precisa de avaliação mecânica</h2>
       <p>Funcionamento de motor, transmissão, arrefecimento, suspensão, freios, direção, eletrônica, ar-condicionado e componentes de desgaste exige avaliação compatível. Uma volta curta não substitui diagnóstico; tampouco um laudo focado em identificação e estrutura garante desempenho ou vida útil.</p>
       <p>Combine a visita para que o carro possa ser avaliado em condição apropriada e por profissional independente. Se o vendedor impede qualquer inspeção externa sem apresentar motivo confiável, trate a restrição como informação relevante para a decisão.</p>
 
@@ -154,6 +185,14 @@
   </aside></main>
 
   <aside class="article-aside" aria-label="Resumo do guia">
+    <aside class="ad-placement ad-placement--rail" aria-label="Publicidade">
+      <div class="ad-placement__inner">
+        <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+        <div class="ad-placement__unit ad-placement__unit--rail">
+          <script type="text/javascript">aclib.runBanner({ zoneId: "12080342" });</script>
+        </div>
+      </div>
+    </aside>
     <div class="aside-card"><h2>Antes de pagar</h2><ul><li>Escopo</li><li>Bases</li><li>Exclusões</li><li>Evidências</li><li>Responsável</li><li>Validade</li></ul></div>
     <div class="aside-card"><h2>Não substitui</h2><p>Avaliação mecânica, consulta documental oficial ou análise de uma ressalva técnica.</p></div>
     <div class="aside-card"><h2>Registre</h2><p><a href="dossie-compra.html">Abrir Dossiê de Compra →</a></p></div>
@@ -162,5 +201,5 @@
 
 <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__brand"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Decisão automotiva</small></a><p>Ferramentas transparentes e conteúdo aplicado para decisões automotivas.</p></div><div class="site-footer__links"><div><h2>Ferramentas</h2><a href="dossie-compra.html">Dossiê</a><a href="/#comparador">Referência</a><a href="calculadora-custo-carro.html">Custo</a></div><div><h2>Editorial</h2><a href="artigos.html">Guias</a><a href="metodologia.html">Método</a><a href="politica-editorial.html">Política editorial</a></div><div><h2>Institucional</h2><a href="autor-cadim.html">Autor</a><a href="quem-somos.html">Quem somos</a><a href="politica-de-privacidade.html">Privacidade</a><a href="termos-de-uso.html">Termos</a></div></div></div><div class="site-footer__legal">© 2026 FIPE ou Furada? Projeto independente.</div></footer>
 <script defer src="site-shell.js?v=20260831-4"></script>
-</body>
+<script defer src="monetization.js?v=20260831-1"></script></body>
 </html>

@@ -28,11 +28,27 @@
   </script>
   <!-- Adcash Display: biblioteca compartilhada -->
   <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  <link rel="stylesheet" href="ads.css?v=20260831-1">
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 <div class="announcement"><div class="announcement__inner"><span><b>Regra editorial:</b> referência de preço não substitui a verificação do veículo.</span><span><a href="metodologia.html">Como usamos os dados →</a></span></div></div>
 <header class="site-header"><div class="site-header__inner"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Decisão automotiva</small></a><nav class="site-nav" aria-label="Navegação principal"><a href="dossie-compra.html">Dossiê</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Custo do carro</a><a href="metodologia.html">Método</a><a href="quem-somos.html">Sobre</a><a class="site-nav__cta" href="/#comparador">Comparar preço</a></nav><details class="site-menu"><summary>Menu</summary><nav class="site-menu__panel"><a href="/">Início</a><a href="dossie-compra.html">Dossiê</a><a href="artigos.html">Guias</a><a href="metodologia.html">Método</a><a href="quem-somos.html">Sobre</a></nav></details></div></header>
+<aside class="ad-placement ad-placement--top" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit">
+      <script type="text/javascript">
+        (() => {
+          const slot = document.currentScript.parentElement;
+          const desktop = window.matchMedia("(min-width: 801px)").matches;
+          slot.classList.add(desktop ? "ad-placement__unit--leaderboard" : "ad-placement__unit--mobile-square");
+          aclib.runBanner({ zoneId: desktop ? "12080334" : "12080370" });
+        })();
+      </script>
+    </div>
+  </div>
+</aside>
 
 <div class="article-shell">
   <main id="conteudo">
@@ -97,7 +113,22 @@
         </tbody>
       </table>
 
-      <h2>Preço abaixo, próximo ou acima: qual é a pergunta correta?</h2>
+      <aside class="ad-placement ad-placement--wide" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit">
+      <script type="text/javascript">
+        (() => {
+          const slot = document.currentScript.parentElement;
+          const wide = window.matchMedia("(min-width: 430px)").matches;
+          if (wide) slot.classList.add("ad-placement__unit--wide");
+          aclib.runBanner({ zoneId: wide ? "12080350" : "12080378" });
+        })();
+      </script>
+    </div>
+  </div>
+</aside>
+<h2>Preço abaixo, próximo ou acima: qual é a pergunta correta?</h2>
       <h3>Abaixo da referência</h3>
       <p>Investigue identidade do vendedor, versão, documentação, histórico e condição mecânica antes de interpretar o desconto como oportunidade. Urgência pode ser legítima, mas precisa ser separada de informação ausente ou incoerente.</p>
       <h3>Próximo da referência</h3>
@@ -136,6 +167,14 @@
   </aside></main>
 
   <aside class="article-aside" aria-label="Resumo do guia">
+    <aside class="ad-placement ad-placement--rail" aria-label="Publicidade">
+      <div class="ad-placement__inner">
+        <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+        <div class="ad-placement__unit ad-placement__unit--rail">
+          <script type="text/javascript">aclib.runBanner({ zoneId: "12080342" });</script>
+        </div>
+      </div>
+    </aside>
     <div class="aside-card"><h2>Leve para a consulta</h2><ul><li>Versão completa</li><li>Ano/modelo</li><li>Mês de referência</li><li>Código FIPE</li><li>Links dos comparáveis</li></ul></div>
     <div class="aside-card"><h2>Não responde</h2><p>Conservação, sinistro, leilão, restrição, mecânica, vendedor, garantia ou preço fechado.</p></div>
     <div class="aside-card"><h2>Próximo passo</h2><p><a href="dossie-compra.html">Abrir o Dossiê de Compra →</a></p></div>
@@ -144,5 +183,5 @@
 
 <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__brand"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Decisão automotiva</small></a><p>Ferramentas transparentes e conteúdo aplicado para decisões automotivas.</p></div><div class="site-footer__links"><div><h2>Ferramentas</h2><a href="dossie-compra.html">Dossiê</a><a href="/#comparador">Referência</a><a href="calculadora-custo-carro.html">Custo</a></div><div><h2>Editorial</h2><a href="artigos.html">Guias</a><a href="metodologia.html">Método</a><a href="politica-editorial.html">Política editorial</a></div><div><h2>Institucional</h2><a href="autor-cadim.html">Autor</a><a href="quem-somos.html">Quem somos</a><a href="politica-de-privacidade.html">Privacidade</a><a href="termos-de-uso.html">Termos</a></div></div></div><div class="site-footer__legal">© 2026 FIPE ou Furada? Projeto independente.</div></footer>
 <script defer src="site-shell.js?v=20260831-4"></script>
-</body>
+<script defer src="monetization.js?v=20260831-1"></script></body>
 </html>

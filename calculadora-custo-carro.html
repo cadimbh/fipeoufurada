@@ -77,6 +77,7 @@
   </script>
   <!-- Adcash Display: biblioteca compartilhada -->
   <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  <link rel="stylesheet" href="ads.css?v=20260831-1">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -90,6 +91,21 @@
       <details class="site-menu"><summary>Menu</summary><nav class="site-menu__panel" aria-label="Navegação móvel"><a href="/">Início</a><a href="dossie-compra.html">Dossiê</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html" aria-current="page">Custo do carro</a><a href="metodologia.html">Metodologia</a></nav></details>
     </div>
   </header>
+<aside class="ad-placement ad-placement--top" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit">
+      <script type="text/javascript">
+        (() => {
+          const slot = document.currentScript.parentElement;
+          const desktop = window.matchMedia("(min-width: 801px)").matches;
+          slot.classList.add(desktop ? "ad-placement__unit--leaderboard" : "ad-placement__unit--mobile-square");
+          aclib.runBanner({ zoneId: desktop ? "12080334" : "12080370" });
+        })();
+      </script>
+    </div>
+  </div>
+</aside>
 
   <div class="article-shell">
     <main id="conteudo">
@@ -159,7 +175,15 @@
       </section>
 
       <article class="article-content">
-        <h2 id="formula">A fórmula usada</h2>
+        <aside class="ad-placement ad-placement--compact" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit ad-placement__unit--compact">
+      <script type="text/javascript">aclib.runBanner({ zoneId: "12080214" });</script>
+    </div>
+  </div>
+</aside>
+<h2 id="formula">A fórmula usada</h2>
         <p>A calculadora transforma a quilometragem mensal em anual, soma combustível e custos recorrentes e divide o total por 12 e pela distância percorrida. O perfil escolhido apenas cria um ponto de partida; todos os valores continuam editáveis.</p>
         <div class="cost-formula" aria-label="Fórmulas da calculadora">
           <p><strong>Combustível por ano</strong> = (km por ano ÷ consumo em km/l) × preço por litro.</p>
@@ -176,7 +200,22 @@
         <h3>Perfil pronto não é cotação</h3>
         <p>Seguro, manutenção, tributos e depreciação variam conforme veículo, condutor, estado e uso. Os três perfis aplicam percentuais declarados apenas para evitar uma tela vazia e permitir comparação rápida. Abra “Personalizar estimativas” e substitua-os por cotações, alíquotas e orçamentos do seu caso antes de tomar uma decisão.</p>
 
-        <h2>Limites do resultado</h2>
+        <aside class="ad-placement ad-placement--wide" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit">
+      <script type="text/javascript">
+        (() => {
+          const slot = document.currentScript.parentElement;
+          const wide = window.matchMedia("(min-width: 430px)").matches;
+          if (wide) slot.classList.add("ad-placement__unit--wide");
+          aclib.runBanner({ zoneId: wide ? "12080350" : "12080378" });
+        })();
+      </script>
+    </div>
+  </div>
+</aside>
+<h2>Limites do resultado</h2>
         <ul>
           <li>é uma estimativa baseada nos valores e no período que você informar, não uma previsão;</li>
           <li>não corrige preços por inflação nem projeta mudanças de combustível, seguro ou tributos;</li>
@@ -234,5 +273,5 @@
   </footer>
   <script defer src="site-shell.js?v=20260831-4"></script>
   <script defer src="custo-carro.js?v=20260831-4"></script>
-</body>
+<script defer src="monetization.js?v=20260831-1"></script></body>
 </html>

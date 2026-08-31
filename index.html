@@ -37,6 +37,7 @@
   </script>
   <!-- Adcash Display: biblioteca compartilhada -->
   <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  <link rel="stylesheet" href="ads.css?v=20260831-1">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -60,6 +61,21 @@
       </details>
     </div>
   </header>
+<aside class="ad-placement ad-placement--top" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit">
+      <script type="text/javascript">
+        (() => {
+          const slot = document.currentScript.parentElement;
+          const desktop = window.matchMedia("(min-width: 801px)").matches;
+          slot.classList.add(desktop ? "ad-placement__unit--leaderboard" : "ad-placement__unit--mobile-square");
+          aclib.runBanner({ zoneId: desktop ? "12080334" : "12080370" });
+        })();
+      </script>
+    </div>
+  </div>
+</aside>
 
   <main id="conteudo" class="home-main">
     <section id="comparador" class="page-shell home-tool-hero" aria-labelledby="hero-title">
@@ -148,7 +164,22 @@
       </div>
     </section>
 
-    <section class="section section--soft">
+    <aside class="ad-placement ad-placement--wide" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit">
+      <script type="text/javascript">
+        (() => {
+          const slot = document.currentScript.parentElement;
+          const wide = window.matchMedia("(min-width: 430px)").matches;
+          if (wide) slot.classList.add("ad-placement__unit--wide");
+          aclib.runBanner({ zoneId: wide ? "12080350" : "12080378" });
+        })();
+      </script>
+    </div>
+  </div>
+</aside>
+<section class="section section--soft">
       <div class="page-shell">
         <div class="section-head"><div><p class="section-eyebrow">Transparência operacional</p><h2>Quem fez, como foi feito e o que não sabemos.</h2></div><p>O projeto identifica o responsável, publica fórmulas, registra limitações e aponta quando uma informação precisa ser confirmada em outra fonte.</p></div>
         <div class="source-row">
@@ -178,5 +209,5 @@
   </footer>
   <script defer src="site-shell.js?v=20260831-4"></script>
   <script defer src="fipe-analyzer.js?v=20260831-4"></script>
-</body>
+<script defer src="monetization.js?v=20260831-1"></script></body>
 </html>

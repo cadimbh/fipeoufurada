@@ -28,11 +28,27 @@
   </script>
   <!-- Adcash Display: biblioteca compartilhada -->
   <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  <link rel="stylesheet" href="ads.css?v=20260831-1">
 </head>
 <body>
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 <div class="announcement"><div class="announcement__inner"><span><b>Negociação segura:</b> preço só é uma parte do acordo.</span><span><a href="dossie-compra.html">Prepare o dossiê →</a></span></div></div>
 <header class="site-header"><div class="site-header__inner"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Decisão automotiva</small></a><nav class="site-nav" aria-label="Navegação principal"><a href="dossie-compra.html">Dossiê</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Custo do carro</a><a href="metodologia.html">Método</a><a href="quem-somos.html">Sobre</a><a class="site-nav__cta" href="/#comparador">Comparar preço</a></nav><details class="site-menu"><summary>Menu</summary><nav class="site-menu__panel"><a href="/">Início</a><a href="dossie-compra.html">Dossiê</a><a href="artigos.html">Guias</a><a href="metodologia.html">Método</a><a href="quem-somos.html">Sobre</a></nav></details></div></header>
+<aside class="ad-placement ad-placement--top" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit">
+      <script type="text/javascript">
+        (() => {
+          const slot = document.currentScript.parentElement;
+          const desktop = window.matchMedia("(min-width: 801px)").matches;
+          slot.classList.add(desktop ? "ad-placement__unit--leaderboard" : "ad-placement__unit--mobile-square");
+          aclib.runBanner({ zoneId: desktop ? "12080334" : "12080370" });
+        })();
+      </script>
+    </div>
+  </div>
+</aside>
 
 <div class="article-shell">
   <main id="conteudo">
@@ -99,7 +115,22 @@
       <p>Some preço negociado, transferência, seguro, laudo, inspeção, revisão inicial e itens já identificados. Se houver crédito, use o valor total do contrato e o CET informado, não somente a parcela. O <a href="simulador-financiamento.html">comparador de propostas</a> ajuda a deixar prazo e desembolso visíveis.</p>
       <p>Esse total é diferente do seu teto de oferta: ele mostra o compromisso financeiro necessário para receber, regularizar e usar o veículo. Se a compra consome a reserva destinada aos primeiros imprevistos, o problema pode ser a escolha, não a negociação.</p>
 
-      <h2>5. Apresente uma proposta curta e condicional</h2>
+      <aside class="ad-placement ad-placement--wide" aria-label="Publicidade">
+  <div class="ad-placement__inner">
+    <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+    <div class="ad-placement__unit">
+      <script type="text/javascript">
+        (() => {
+          const slot = document.currentScript.parentElement;
+          const wide = window.matchMedia("(min-width: 430px)").matches;
+          if (wide) slot.classList.add("ad-placement__unit--wide");
+          aclib.runBanner({ zoneId: wide ? "12080350" : "12080378" });
+        })();
+      </script>
+    </div>
+  </div>
+</aside>
+<h2>5. Apresente uma proposta curta e condicional</h2>
       <p>Uma proposta útil contém valor, forma de pagamento, validade e condições para concluir. Use linguagem simples e substitua os campos apenas pelo que foi realmente apurado:</p>
       <div class="box">
         <strong>Modelo de estrutura</strong>
@@ -152,6 +183,14 @@
   </aside></main>
 
   <aside class="article-aside" aria-label="Resumo do guia">
+    <aside class="ad-placement ad-placement--rail" aria-label="Publicidade">
+      <div class="ad-placement__inner">
+        <div class="ad-placement__meta"><span>Publicidade</span><span>Parceiro externo</span></div>
+        <div class="ad-placement__unit ad-placement__unit--rail">
+          <script type="text/javascript">aclib.runBanner({ zoneId: "12080342" });</script>
+        </div>
+      </div>
+    </aside>
     <div class="aside-card"><h2>Leve para a proposta</h2><ul><li>Comparáveis salvos</li><li>Teto de compra</li><li>Custo de entrada em uso</li><li>Pendências</li><li>Condições para avançar</li></ul></div>
     <div class="aside-card"><h2>Nunca negocie</h2><p>Identidade, propriedade, segurança, documentação ou inspeção em troca de desconto.</p></div>
     <div class="aside-card"><h2>Organize</h2><p><a href="dossie-compra.html">Abrir Dossiê de Compra →</a></p></div>
@@ -160,5 +199,5 @@
 
 <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__brand"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Decisão automotiva</small></a><p>Ferramentas transparentes e conteúdo aplicado para decisões automotivas.</p></div><div class="site-footer__links"><div><h2>Ferramentas</h2><a href="dossie-compra.html">Dossiê</a><a href="/#comparador">Referência</a><a href="simulador-financiamento.html">Financiamento</a></div><div><h2>Editorial</h2><a href="artigos.html">Guias</a><a href="metodologia.html">Método</a><a href="politica-editorial.html">Política editorial</a></div><div><h2>Institucional</h2><a href="autor-cadim.html">Autor</a><a href="quem-somos.html">Quem somos</a><a href="politica-de-privacidade.html">Privacidade</a><a href="termos-de-uso.html">Termos</a></div></div></div><div class="site-footer__legal">© 2026 FIPE ou Furada? Projeto independente.</div></footer>
 <script defer src="site-shell.js?v=20260831-4"></script>
-</body>
+<script defer src="monetization.js?v=20260831-1"></script></body>
 </html>

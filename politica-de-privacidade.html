@@ -1,160 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head><link rel="canonical" href="https://www.fipeoufurada.com.br/politica-de-privacidade.html"><meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Política de Privacidade — FIPE ou Furada?</title>
-<meta name="description" content="Política de privacidade do FIPE ou Furada. Saiba como tratamos seus dados."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0D0D0D;--bg2:#141414;--bg3:#1C1C1C;
-  --border:#2A2A2A;--text:#F0F0F0;--muted:#888;
-  --orange:#FF6B2B;
-}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
-
-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 32px;border-bottom:1px solid var(--border);
-  position:sticky;top:0;z-index:100;background:rgba(13,13,13,0.95);
-  backdrop-filter:blur(8px);
-}
-.logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:0.02em;color:var(--text);text-decoration:none}
-.logo span{color:var(--orange)}
-.back-link{font-size:0.82rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s}
-.back-link:hover{color:var(--orange)}
-
-/* ── PAGE CONTENT ── */
-.page-wrap{max-width:720px;margin:0 auto;padding:60px 24px 80px}
-
-.page-eyebrow{
-  font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--orange);margin-bottom:12px;
-}
-.page-title{
-  font-family:'Barlow Condensed',sans-serif;font-weight:800;
-  font-size:clamp(2rem,6vw,3.4rem);line-height:1;letter-spacing:0.01em;
-  color:var(--text);margin-bottom:8px;
-}
-.page-updated{font-size:0.8rem;color:var(--muted);margin-bottom:48px}
-
-/* ── SEÇÕES ── */
-.section{margin-bottom:40px}
-.section-title{
-  font-family:'Barlow Condensed',sans-serif;font-weight:700;
-  font-size:1.25rem;letter-spacing:0.04em;text-transform:uppercase;
-  color:var(--orange);margin-bottom:14px;
-  padding-bottom:10px;border-bottom:1px solid var(--border);
-}
-.section p{
-  font-size:0.95rem;color:#C0C0C0;line-height:1.75;margin-bottom:12px;
-}
-.section p:last-child{margin-bottom:0}
-.section ul{
-  list-style:none;padding:0;margin-top:4px;
-}
-.section ul li{
-  font-size:0.95rem;color:#C0C0C0;line-height:1.75;
-  padding:6px 0 6px 20px;position:relative;border-bottom:1px solid var(--border);
-}
-.section ul li:last-child{border-bottom:none}
-.section ul li::before{
-  content:'→';position:absolute;left:0;color:var(--orange);font-weight:700;
-}
-.highlight-box{
-  background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--orange);
-  border-radius:0 10px 10px 0;padding:16px 18px;margin:16px 0;
-  font-size:0.9rem;color:#C0C0C0;line-height:1.65;
-}
-.highlight-box strong{color:var(--text)}
-
-/* ── FOOTER ── */
-footer{
-  text-align:center;padding:32px 24px;
-  border-top:1px solid var(--border);
-}
-.footer-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
-.footer-links a{font-size:0.85rem;font-weight:600;color:var(--muted);text-decoration:none;transition:color 0.15s}
-.footer-links a:hover{color:var(--orange)}
-.footer-links a.active{color:var(--orange)}
-.footer-dot{color:var(--border)}
-.footer-info{font-size:0.75rem;color:#333}
-
-@media(max-width:600px){
-  header{padding:14px 18px}
-  .page-wrap{padding:40px 18px 60px}
-}
-</style>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6028036791646015"
-     crossorigin="anonymous"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Política de privacidade e cookies | FIPE ou Furada?</title>
+  <meta name="description" content="Entenda quais dados o FIPE ou Furada processa, como funcionam o dossiê local, as APIs de referência, o Google AdSense e seus direitos pela LGPD.">
+  <link rel="canonical" href="https://www.fipeoufurada.com.br/politica-de-privacidade.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Política de privacidade | FIPE ou Furada?">
+  <meta property="og:description" content="Dados locais, integrações externas, publicidade, retenção e direitos do visitante.">
+  <meta property="og:url" content="https://www.fipeoufurada.com.br/politica-de-privacidade.html">
+  <meta property="og:image" content="https://www.fipeoufurada.com.br/fipe-ou-furada-og-editorial.png">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="google-adsense-account" content="ca-pub-6028036791646015">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QR4939TTSV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QR4939TTSV');
-</script>
-<script defer src="meta-pixel.js"></script>
-<link rel="stylesheet" href="portal.css"><script defer src="site-shell.js"></script></head>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700;6..72,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal.css?v=20260830-2">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6028036791646015" crossorigin="anonymous"></script>
+</head>
 <body>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2074968530058072&ev=PageView&noscript=1"/></noscript>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header"><div class="site-header__inner"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Caderno do comprador</small></a><nav class="site-nav" aria-label="Navegação principal"><a href="dossie-compra.html">Dossiê</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Custo</a><a href="metodologia.html">Método</a><a href="quem-somos.html">Sobre</a><a class="site-nav__cta" href="/#comparador">Comparar preço</a></nav><details class="site-menu"><summary>Menu</summary><nav class="site-menu__panel" aria-label="Navegação móvel"><a href="/">Início</a><a href="dossie-compra.html">Dossiê</a><a href="artigos.html">Guias</a><a href="metodologia.html">Método</a><a href="quem-somos.html">Sobre</a></nav></details></div></header>
 
-<header class="site-header"><div class="site-header__inner"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span></a><nav class="site-nav" aria-label="Navegação principal"><a href="/#analisador">Analisar anúncio</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Calculadora</a><a href="metodologia.html">Metodologia</a><a href="quem-somos.html">Sobre</a></nav><details class="site-menu"><summary aria-label="Abrir menu">Menu</summary><nav class="site-menu__panel"><a href="/#analisador">Analisar anúncio</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Calculadora</a><a href="metodologia.html">Metodologia</a><a href="quem-somos.html">Sobre</a></nav></details></div></header>
+  <main id="conteudo">
+    <div class="crumb"><a href="/">Início</a> › Institucional › Privacidade</div>
+    <p class="kicker">Transparência de dados</p>
+    <h1>Política de privacidade e cookies</h1>
+    <p class="intro">Esta página descreve o funcionamento atual do FIPE ou Furada: o que permanece no seu navegador, quais serviços externos recebem requisições e como entrar em contato sobre dados pessoais.</p>
+    <div class="byline"><div class="byline__mark">LG</div><div><b>Documento institucional</b><span>Última atualização: 30 de agosto de 2026</span></div></div>
 
-<div class="page-wrap">
-  <p class="page-eyebrow">Legal</p>
-  <h1 class="page-title">Política de<br>Privacidade</h1>
-  <p class="page-updated">Última atualização: 22 de junho de 2026</p>
+    <h2>1. Quem responde pelo site</h2>
+    <p>O FIPE ou Furada? é um projeto independente mantido por <a href="autor-cadim.html">Cadim</a>, responsável editorial e técnico. Para dúvidas ou solicitações relacionadas a esta política, use o e-mail <a href="mailto:gestaoads.bot@gmail.com">gestaoads.bot@gmail.com</a>. Não envie placa, Renavam, documentos, dados bancários ou informações de terceiros por e-mail.</p>
 
-  <div class="section">
-    <h2 class="section-title">Apresentação</h2>
-    <p>A sua privacidade é de extrema importância para nós. É política do FIPE ou Furada respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site FIPE ou Furada, e outros sites que possuímos e operamos.</p>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">Coleta de Informações</h2>
-    <p>Nós apenas solicitamos informações pessoais quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento.</p>
-    <div class="highlight-box">
-      <strong>Importante:</strong> Os dados inseridos nos formulários de simulação (modelo do carro, preço, quilometragem) são processados localmente no seu navegador e não são armazenados em nossos servidores.
-    </div>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">Retenção e Segurança dos Dados</h2>
-    <p>Quando armazenamos dados, os protegemos dentro de meios comercialmente aceitáveis para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</p>
-    <p>Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</p>
-  </div>
-
-  <div class="section">
-    <h2 class="section-title">Cookies e Google AdSense</h2>
-    <p>Este site utiliza o <strong style="color:var(--text)">Google AdSense</strong> para veicular anúncios. O Google utiliza cookies (como o cookie DART) para veicular anúncios baseados nas suas visitas a este e a outros sites na internet.</p>
+    <h2>2. Dados informados nas ferramentas</h2>
+    <p>O site não exige conta, nome, CPF, telefone ou e-mail para usar as ferramentas. O tratamento varia conforme o recurso:</p>
     <ul>
-      <li>Os usuários podem desativar a publicidade personalizada visitando as <strong style="color:var(--text)">Configurações de Anúncios do Google</strong></li>
-      <li>Este site não tem controle sobre os cookies utilizados por anunciantes de terceiros</li>
-      <li>Recomendamos que você consulte as respectivas Políticas de Privacidade desses servidores de anúncios para informações mais detalhadas</li>
+      <li><strong>Comparador de referência FIPE:</strong> marca, modelo e ano/modelo selecionados geram consultas, a partir do seu navegador, às interfaces Parallelum e BrasilAPI. O preço de anúncio informado é usado pelo JavaScript da página para fazer a comparação e não é enviado por esse formulário ao FIPE ou Furada.</li>
+      <li><strong>Calculadora de custo e comparador de financiamento:</strong> os valores digitados são calculados no navegador. O código atual não envia esses campos a um banco de dados próprio.</li>
+      <li><strong>Dossiê de compra:</strong> campos, notas e verificações marcadas são gravados em <code>localStorage</code>, identificado pela chave <code>fipeoufurada:dossie:v1</code>, no navegador usado. O conteúdo não é sincronizado com uma conta nem enviado ao servidor pelo dossiê.</li>
     </ul>
-  </div>
+    <div class="editor-note"><h2>Controle do dossiê</h2><p>O registro local permanece até você usar o botão de limpar da ferramenta, apagar os dados do site nas configurações do navegador ou remover o armazenamento ao desinstalar/redefinir o navegador. Quem utiliza aparelho compartilhado deve limpar o dossiê ao terminar.</p></div>
 
-  <div class="section">
-    <h2 class="section-title">Compromisso do Usuário</h2>
-    <p>O usuário se compromete a fazer uso adequado dos conteúdos e da ferramenta que o FIPE ou Furada oferece no site, incluindo, mas não se limitando a: não introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas que sejam capazes de causar danos.</p>
-  </div>
+    <h2>3. Consultas às fontes de referência</h2>
+    <p>Para exibir marcas, versões, anos e valores de referência, o navegador tenta consultar a API pública da Parallelum e, se necessário, a BrasilAPI. Essas empresas são independentes do FIPE ou Furada e podem receber dados técnicos comuns a uma requisição web, como endereço IP, URL solicitada, horário e informações do navegador. Consulte os termos e políticas disponibilizados por cada serviço.</p>
+    <p>Essas integrações não são o canal oficial da Fundação Instituto de Pesquisas Econômicas. O valor deve ser confirmado na <a href="https://veiculos.fipe.org.br/" rel="noopener noreferrer">consulta oficial da FIPE</a> antes de uma decisão financeira.</p>
 
-  <div class="section">
-    <h2 class="section-title">Contato</h2>
-    <p>Para dúvidas sobre como lidamos com dados do usuário e informações pessoais, entre em contato conosco:</p>
-    <div class="highlight-box">
-      📧 <strong>E-mail:</strong> gestaoads.bot@gmail.com
-    </div>
-  </div>
-</div>
+    <h2>4. Hospedagem e registros técnicos</h2>
+    <p>O site é publicado em infraestrutura da Vercel. Como ocorre em serviços de hospedagem e segurança, a plataforma pode processar registros técnicos necessários para entregar páginas, diagnosticar falhas e proteger a operação, incluindo IP, data e hora, rota acessada, agente do navegador e informações de rede. A retenção e o tratamento feitos pela infraestrutura seguem as condições do respectivo fornecedor.</p>
 
-<footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__brand"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span></a><p>Informação independente para pesquisar preço, custo e risco antes de comprar um veículo.</p></div><div class="site-footer__links"><div><h2>Ferramentas</h2><a href="/#analisador">Analisar anúncio</a><a href="calculadora-custo-carro.html">Custo mensal</a></div><div><h2>Editorial</h2><a href="artigos.html">Todos os guias</a><a href="metodologia.html">Metodologia</a><a href="politica-editorial.html">Política editorial</a></div><div><h2>Institucional</h2><a href="quem-somos.html">Quem somos</a><a href="politica-de-privacidade.html">Privacidade</a><a href="termos-de-uso.html">Termos</a></div></div></div><div class="site-footer__legal">© 2026 FIPE ou Furada? Projeto independente. Conteúdo informativo; confirme regras e valores nos canais oficiais.</div></footer>
+    <h2>5. Google Fonts</h2>
+    <p>As páginas carregam famílias tipográficas pelo Google Fonts. Para entregar os arquivos, o navegador se conecta a domínios do Google e pode transmitir dados técnicos da requisição, como IP, URL e cabeçalhos do navegador. O FIPE ou Furada não usa essa conexão para criar cadastro de visitantes.</p>
 
+    <h2>6. Google AdSense, cookies e publicidade</h2>
+    <p>O código do Google AdSense está incluído no site para verificação e eventual exibição de publicidade. Ao carregar uma tag ou um anúncio, o navegador pode se comunicar com o Google. Conforme a configuração aplicável, o Google pode usar cookies ou tecnologias semelhantes para entrega, limitação de frequência, medição, prevenção de fraude e personalização de anúncios.</p>
+    <p>O Google informa que páginas com tags de publicidade podem realizar chamadas aos seus servidores mesmo quando um anúncio não está visível. Essas chamadas podem incluir a URL acessada, endereço IP e informações do navegador. As escolhas de personalização podem ser gerenciadas nas <a href="https://myadcenter.google.com/" rel="noopener noreferrer">configurações de anúncios do Google</a>; cookies também podem ser bloqueados ou apagados nas configurações do navegador.</p>
+    <p>O projeto não recebe do Google a identidade civil do visitante por meio do AdSense. O uso de dados pelo Google é regido pelas próprias políticas e configurações da empresa.</p>
+
+    <h2>7. Contato por e-mail</h2>
+    <p>Se você escrever para o projeto, serão recebidos o endereço do remetente e as informações incluídas na mensagem. Esses dados são usados para responder, investigar o assunto relatado e manter o histórico necessário da comunicação. Não envie dados pessoais de vendedores, proprietários ou outras pessoas.</p>
+
+    <h2>8. Finalidades e fundamentos</h2>
+    <p>Os tratamentos descritos buscam entregar as ferramentas solicitadas, responder contatos, manter segurança e disponibilidade, prevenir abuso e viabilizar o projeto por publicidade. Conforme o caso, podem ser aplicáveis procedimentos solicitados pelo próprio titular, legítimo interesse com avaliação dos direitos envolvidos, cumprimento de obrigação legal ou consentimento quando a lei o exigir.</p>
+    <p>Não vendemos cadastros nem o conteúdo do dossiê.</p>
+
+    <h2>9. Compartilhamento e transferências</h2>
+    <p>Dados técnicos podem ser processados pelos fornecedores necessários ao funcionamento descrito nesta política: Vercel (hospedagem), Google (Fonts e AdSense), Parallelum e BrasilAPI (referências de veículos). Alguns fornecedores operam infraestrutura em diferentes países. O FIPE ou Furada não controla as práticas próprias desses serviços; consulte os documentos deles antes de continuar se desejar mais detalhes.</p>
+
+    <h2>10. Retenção e segurança</h2>
+    <p>O dossiê permanece apenas no armazenamento local até ser apagado pelo usuário. Mensagens de contato são mantidas pelo período necessário para resposta, prevenção de abuso e eventual cumprimento de obrigação. Registros tratados pelos fornecedores obedecem aos prazos deles.</p>
+    <p>Adotamos minimização de campos e conexão HTTPS, mas nenhum sistema conectado à internet é absolutamente imune a falhas. Evite registrar informações sensíveis nas notas do dossiê.</p>
+
+    <h2>11. Direitos previstos na LGPD</h2>
+    <p>Quando aplicável, o titular pode solicitar confirmação e acesso, correção, informação sobre compartilhamento, oposição, anonimização, bloqueio ou eliminação de dados tratados em desconformidade, além de revogar consentimento. A solicitação deve identificar o pedido sem incluir documentos desnecessários.</p>
+    <p>Como o conteúdo do dossiê fica somente no dispositivo, o responsável pelo site não consegue consultar ou apagar esse registro remotamente. A exclusão é feita pelo botão da ferramenta ou pelas configurações do navegador.</p>
+
+    <h2>12. Links externos, menores e atualizações</h2>
+    <p>Links para órgãos públicos e serviços de terceiros levam a ambientes com políticas próprias. O site é dirigido ao público geral interessado em compra de veículos e não foi desenhado para coletar intencionalmente dados de crianças.</p>
+    <p>Esta política será atualizada quando integrações, ferramentas ou práticas relevantes mudarem. A data acima identifica a versão em vigor.</p>
+
+    <section class="source-box"><h2>Documentos e controles úteis</h2><ul>
+      <li><a href="https://support.google.com/adsense/answer/7549925?hl=pt-BR" rel="noopener noreferrer">Google AdSense — como os cookies são usados</a></li>
+      <li><a href="https://policies.google.com/technologies/partner-sites?hl=pt-BR" rel="noopener noreferrer">Google — informações de sites que usam seus serviços</a></li>
+      <li><a href="https://brasilapi.com.br/" rel="noopener noreferrer">BrasilAPI</a></li>
+      <li><a href="https://vercel.com/legal/privacy-policy" rel="noopener noreferrer">Política de privacidade da Vercel</a></li>
+      <li><a href="https://www.gov.br/anpd/pt-br/assuntos/titular-de-dados-1/direito-dos-titulares" rel="noopener noreferrer">ANPD — direitos dos titulares</a></li>
+      <li><a href="termos-de-uso.html">Termos de uso do FIPE ou Furada?</a></li>
+    </ul></section>
+  </main>
+
+  <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__brand"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Caderno do comprador</small></a><p>Pesquisa independente com limites, fontes e tratamento de dados visíveis.</p></div><div class="site-footer__links"><div><h2>Ferramentas</h2><a href="dossie-compra.html">Dossiê</a><a href="/#comparador">Referência</a><a href="calculadora-custo-carro.html">Custo</a></div><div><h2>Editorial</h2><a href="artigos.html">Guias</a><a href="metodologia.html">Método</a><a href="politica-editorial.html">Política editorial</a></div><div><h2>Institucional</h2><a href="quem-somos.html">Quem somos</a><a href="politica-de-privacidade.html">Privacidade</a><a href="termos-de-uso.html">Termos</a></div></div></div><div class="site-footer__legal">© 2026 FIPE ou Furada? Última revisão de privacidade: 30/08/2026.</div></footer>
+  <script defer src="site-shell.js?v=20260830-2"></script>
 </body>
 </html>

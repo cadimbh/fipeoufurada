@@ -1,63 +1,278 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Calculadora de custo mensal do carro | FIPE ou Furada?</title>
-  <meta name="description" content="Calcule quanto custa manter um carro por mês somando combustível, seguro, IPVA, manutenção, estacionamento, parcela e depreciação.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Calculadora de custo do carro: anual, mensal e por km | FIPE ou Furada?</title>
+  <meta name="description" content="Calcule o custo anual, a média mensal e o custo por quilômetro do carro usando somente os valores do seu cenário. Fórmula aberta e campos vazios.">
   <link rel="canonical" href="https://www.fipeoufurada.com.br/calculadora-custo-carro.html">
-  <meta property="og:type" content="website"><meta property="og:title" content="Calculadora de custo mensal do carro"><meta property="og:description" content="Veja o peso real do carro no orçamento, além da parcela."><meta property="og:url" content="https://www.fipeoufurada.com.br/calculadora-custo-carro.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="portal.css">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6028036791646015" crossorigin="anonymous"></script><script defer src="site-shell.js"></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de custo mensal do carro","url":"https://www.fipeoufurada.com.br/calculadora-custo-carro.html","applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,"inLanguage":"pt-BR","publisher":{"@type":"Organization","name":"FIPE ou Furada?"}}</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="FIPE ou Furada?">
+  <meta property="og:title" content="Calculadora de custo do carro">
+  <meta property="og:description" content="Custo anual, média mensal e custo por quilômetro com fórmula aberta e nenhum valor presumido.">
+  <meta property="og:url" content="https://www.fipeoufurada.com.br/calculadora-custo-carro.html">
+  <meta property="og:image" content="https://www.fipeoufurada.com.br/fipe-ou-furada-og-editorial.png">
+  <meta property="og:image:alt" content="Mesa de pesquisa do caderno independente FIPE ou Furada?">
+  <meta property="og:image:width" content="1672">
+  <meta property="og:image:height" content="941">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Calculadora de custo do carro">
+  <meta name="twitter:description" content="Use seus próprios números para estimar custo anual, mensal e por quilômetro.">
+  <meta name="twitter:image" content="https://www.fipeoufurada.com.br/fipe-ou-furada-og-editorial.png">
+  <meta name="twitter:image:alt" content="Mesa de pesquisa do caderno independente FIPE ou Furada?">
+  <meta name="google-adsense-account" content="ca-pub-6028036791646015">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700;6..72,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal.css?v=20260830-2">
+  <style>
+    .cost-calculator{margin:34px 0;padding:clamp(22px,4vw,34px);border:1px solid var(--line);border-radius:24px;background:var(--card);box-shadow:var(--shadow);font-family:"Manrope",sans-serif}
+    .cost-calculator h2{margin:0 0 8px!important}.cost-calculator__intro{margin:0 0 28px!important;color:var(--muted)!important;font-size:.83rem!important;line-height:1.6!important}
+    .cost-group{min-width:0;margin:0 0 28px;padding:0;border:0}.cost-group legend{width:100%;margin:0 0 14px;padding:0 0 10px;border-bottom:1px solid var(--line);color:var(--ink);font-family:"Newsreader",serif;font-size:1.35rem;font-weight:700}
+    .cost-required{color:var(--orange-dark);font-size:.67rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}.cost-field-unit{color:var(--muted);font-weight:700;letter-spacing:0;text-transform:none}
+    .cost-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:end}.cost-actions .button,.cost-actions .form-action{margin-top:0}
+    .cost-table-wrap{overflow-x:auto}.cost-breakdown{width:100%;margin-top:22px!important;border-collapse:collapse;font-family:"Manrope",sans-serif;font-size:.78rem}.cost-breakdown caption{padding:0 0 10px;text-align:left;color:var(--ink);font-family:"Newsreader",serif;font-size:1.2rem;font-weight:700}.cost-breakdown th,.cost-breakdown td{padding:11px 10px;border:1px solid var(--line);text-align:left;vertical-align:top}.cost-breakdown thead th{color:#fff;background:var(--forest)}.cost-breakdown tfoot th,.cost-breakdown tfoot td{font-weight:800;background:var(--paper-2)}.cost-breakdown td:nth-child(n+2),.cost-breakdown th:nth-child(n+2){text-align:right}
+    .cost-result__context{white-space:nowrap}.cost-zero-note{margin:12px 0 0!important;color:var(--muted)!important;font-size:.72rem!important}.cost-formula{display:grid;gap:10px;margin:24px 0}.cost-formula p{margin:0!important;padding:14px 16px;border-left:3px solid var(--forest);background:rgba(255,255,255,.5);font-family:"Manrope",sans-serif!important;font-size:.8rem!important}
+    @media(max-width:680px){.cost-actions{grid-template-columns:1fr}.cost-actions .button{width:100%}.cost-result__context{white-space:normal}.cost-breakdown{font-size:.72rem!important}.cost-breakdown th,.cost-breakdown td{padding:9px 7px!important}}
+  </style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6028036791646015" crossorigin="anonymous"></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebApplication",
+        "@id":"https://www.fipeoufurada.com.br/calculadora-custo-carro.html#app",
+        "name":"Calculadora de custo do carro",
+        "description":"Calculadora que soma valores informados pelo usuário e apresenta custo anual, média mensal e custo por quilômetro.",
+        "url":"https://www.fipeoufurada.com.br/calculadora-custo-carro.html",
+        "applicationCategory":"FinanceApplication",
+        "operatingSystem":"Web",
+        "browserRequirements":"JavaScript",
+        "isAccessibleForFree":true,
+        "inLanguage":"pt-BR",
+        "datePublished":"2026-08-30",
+        "dateModified":"2026-08-30",
+        "image":"https://www.fipeoufurada.com.br/fipe-ou-furada-og-editorial.png",
+        "featureList":["Custo anual estimado","Média mensal","Custo por quilômetro","Composição por categoria"],
+        "author":{"@id":"https://www.fipeoufurada.com.br/autor-cadim.html#person"},
+        "publisher":{"@id":"https://www.fipeoufurada.com.br/#organization"},
+        "offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"}
+      },
+      {
+        "@type":"Person",
+        "@id":"https://www.fipeoufurada.com.br/autor-cadim.html#person",
+        "name":"Cadim",
+        "url":"https://www.fipeoufurada.com.br/autor-cadim.html"
+      },
+      {
+        "@type":"Organization",
+        "@id":"https://www.fipeoufurada.com.br/#organization",
+        "name":"FIPE ou Furada?",
+        "url":"https://www.fipeoufurada.com.br/"
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://www.fipeoufurada.com.br/calculadora-custo-carro.html#breadcrumb",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Início","item":"https://www.fipeoufurada.com.br/"},
+          {"@type":"ListItem","position":2,"name":"Ferramentas","item":"https://www.fipeoufurada.com.br/artigos.html"},
+          {"@type":"ListItem","position":3,"name":"Calculadora de custo do carro","item":"https://www.fipeoufurada.com.br/calculadora-custo-carro.html"}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <header class="site-header"><div class="site-header__inner"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span></a><nav class="site-nav" aria-label="Navegação principal"><a href="/#analisador">Analisar anúncio</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Calculadora</a><a href="metodologia.html">Metodologia</a><a href="quem-somos.html">Sobre</a></nav><details class="site-menu"><summary aria-label="Abrir menu">Menu</summary><nav class="site-menu__panel"><a href="/#analisador">Analisar anúncio</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html">Calculadora</a><a href="metodologia.html">Metodologia</a><a href="quem-somos.html">Sobre</a></nav></details></div></header>
-  <div class="article-shell"><main><p class="article-kicker">Planejamento financeiro</p><h1 class="article-title">Quanto esse carro custa por mês de verdade?</h1><p class="article-deck">A parcela é apenas uma linha do orçamento. Preencha valores do seu cenário para estimar custo mensal, custo anual e custo por quilômetro.</p><div class="byline"><div class="byline__mark">R$</div><div><b>Calculadora independente e gratuita</b><span>Seus dados ficam no navegador e não são enviados pelo formulário</span></div></div>
-    <section class="calculator" aria-labelledby="calc-title"><h2 id="calc-title" style="font-family:'Barlow Condensed',sans-serif;font-size:2rem;margin-bottom:8px">Monte seu cenário</h2><p style="color:var(--portal-muted);font-size:.85rem;line-height:1.6;margin-bottom:20px">Use valores anuais onde indicado. Se algum custo não se aplicar, deixe zero.</p>
-      <form id="cost-form">
-        <div class="calculator-grid">
-          <div><label for="km">Quilômetros por mês</label><input id="km" type="number" min="0" step="1" value="1000" required></div>
-          <div><label for="consumo">Consumo médio (km/l)</label><input id="consumo" type="number" min="0.1" step="0.1" value="10" required></div>
-          <div><label for="combustivel">Preço do combustível (R$/l)</label><input id="combustivel" type="number" min="0" step="0.01" value="6.20" required></div>
-          <div><label for="parcela">Parcela mensal (R$)</label><input id="parcela" type="number" min="0" step="0.01" value="0"></div>
-          <div><label for="seguro">Seguro anual (R$)</label><input id="seguro" type="number" min="0" step="0.01" value="3000"></div>
-          <div><label for="ipva">IPVA + licenciamento anual (R$)</label><input id="ipva" type="number" min="0" step="0.01" value="2400"></div>
-          <div><label for="manutencao">Manutenção + pneus anual (R$)</label><input id="manutencao" type="number" min="0" step="0.01" value="3000"></div>
-          <div><label for="estacionamento">Garagem, pedágio e estacionamento/mês (R$)</label><input id="estacionamento" type="number" min="0" step="0.01" value="300"></div>
-          <div><label for="valor">Valor atual do carro (R$)</label><input id="valor" type="number" min="0" step="0.01" value="60000"></div>
-          <div><label for="depreciacao">Depreciação estimada ao ano (%)</label><input id="depreciacao" type="number" min="0" max="100" step="0.1" value="8"></div>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="announcement"><div class="announcement__inner"><span><b>Conta transparente:</b> nenhum valor entra sem você informar.</span><span><a href="#formula">Ver a fórmula →</a></span></div></div>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Caderno do comprador</small></a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="dossie-compra.html">Dossiê de compra</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html" aria-current="page">Custo do carro</a><a href="metodologia.html">Método</a><a href="quem-somos.html">Sobre</a><a class="site-nav__cta" href="/#comparador">Comparar preço</a>
+      </nav>
+      <details class="site-menu"><summary>Menu</summary><nav class="site-menu__panel" aria-label="Navegação móvel"><a href="/">Início</a><a href="dossie-compra.html">Dossiê</a><a href="artigos.html">Guias</a><a href="calculadora-custo-carro.html" aria-current="page">Custo do carro</a><a href="metodologia.html">Metodologia</a></nav></details>
+    </div>
+  </header>
+
+  <div class="article-shell">
+    <main id="conteudo">
+      <div class="crumb"><a href="/">Início</a> › <a href="artigos.html">Ferramentas</a> › Custo do carro</div>
+      <p class="article-kicker">Planejamento financeiro · fórmula reproduzível</p>
+      <h1 class="article-title">Calcule o custo anual, mensal e por quilômetro</h1>
+      <p class="article-deck">Preencha o seu cenário. A calculadora não escolhe preço de combustível, taxa de depreciação nem reserva de manutenção por você — a conta começa vazia e mostra cada parcela da soma.</p>
+      <div class="byline"><div class="byline__mark" aria-hidden="true">C</div><div><b><a href="autor-cadim.html">Cadim</a>, editor e desenvolvedor</b><span>Ferramenta publicada e revisada em 30 de agosto de 2026 · processamento local</span></div></div>
+
+      <section class="cost-calculator" aria-labelledby="calculator-title">
+        <h2 id="calculator-title">Monte o seu cenário</h2>
+        <p class="cost-calculator__intro">A quilometragem é necessária para calcular o valor por km. Os demais campos podem ficar vazios quando não se aplicam; nesse caso, aparecem como “não incluído” no resultado.</p>
+        <form id="cost-form" novalidate autocomplete="off">
+          <fieldset class="cost-group">
+            <legend>Uso e combustível</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="km-year">Quilometragem prevista <span class="cost-field-unit">(km/ano)</span> <span class="cost-required">Obrigatório</span></label>
+                <input id="km-year" name="km-year" type="number" min="0.01" step="1" inputmode="decimal" aria-describedby="km-year-help" required>
+                <small id="km-year-help">Some deslocamentos habituais e viagens previstos para 12 meses.</small>
+              </div>
+              <div class="field">
+                <label for="fuel-price">Preço do combustível <span class="cost-field-unit">(R$/litro)</span></label>
+                <input id="fuel-price" name="fuel-price" type="number" min="0.01" step="0.001" inputmode="decimal" aria-describedby="fuel-help">
+                <small id="fuel-help">Use o preço do posto ou consulte a pesquisa da ANP.</small>
+              </div>
+              <div class="field">
+                <label for="consumption">Consumo médio <span class="cost-field-unit">(km/l)</span></label>
+                <input id="consumption" name="consumption" type="number" min="0.01" step="0.01" inputmode="decimal" aria-describedby="consumption-help">
+                <small id="consumption-help">Preço e consumo devem ser informados juntos. Deixe ambos vazios para não incluir combustível.</small>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="cost-group">
+            <legend>Valores informados por ano</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="insurance-year">Seguro <span class="cost-field-unit">(R$/ano)</span></label>
+                <input id="insurance-year" name="insurance-year" type="number" min="0" step="0.01" inputmode="decimal">
+              </div>
+              <div class="field">
+                <label for="taxes-year">Tributos e licenciamento <span class="cost-field-unit">(R$/ano)</span></label>
+                <input id="taxes-year" name="taxes-year" type="number" min="0" step="0.01" inputmode="decimal" aria-describedby="taxes-help">
+                <small id="taxes-help">Confirme IPVA, licenciamento e cobranças aplicáveis no seu estado.</small>
+              </div>
+              <div class="field">
+                <label for="maintenance-year">Manutenção e pneus <span class="cost-field-unit">(R$/ano)</span></label>
+                <input id="maintenance-year" name="maintenance-year" type="number" min="0" step="0.01" inputmode="decimal" aria-describedby="maintenance-help">
+                <small id="maintenance-help">Use orçamento, histórico e revisões previstas; a página não presume uma reserva.</small>
+              </div>
+              <div class="field">
+                <label for="depreciation-year">Depreciação estimada <span class="cost-field-unit">(R$/ano, opcional)</span></label>
+                <input id="depreciation-year" name="depreciation-year" type="number" min="0" step="0.01" inputmode="decimal" aria-describedby="depreciation-help">
+                <small id="depreciation-help">Informe uma hipótese em reais. Nenhuma taxa é aplicada automaticamente.</small>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="cost-group">
+            <legend>Valores informados por mês</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="parking-month">Estacionamento e pedágios <span class="cost-field-unit">(R$/mês)</span></label>
+                <input id="parking-month" name="parking-month" type="number" min="0" step="0.01" inputmode="decimal">
+              </div>
+              <div class="field">
+                <label for="financing-month">Parcela do financiamento <span class="cost-field-unit">(R$/mês)</span></label>
+                <input id="financing-month" name="financing-month" type="number" min="0" step="0.01" inputmode="decimal" aria-describedby="financing-help">
+                <small id="financing-help">Representa saída de caixa; a calculadora não separa principal, juros e tarifas.</small>
+              </div>
+              <div class="field field--full">
+                <label for="other-month">Outros custos recorrentes <span class="cost-field-unit">(R$/mês)</span></label>
+                <input id="other-month" name="other-month" type="number" min="0" step="0.01" inputmode="decimal" aria-describedby="other-help">
+                <small id="other-help">Exemplos possíveis: lavagem, rastreador ou assinatura. Some somente o que fizer parte do seu cenário.</small>
+              </div>
+            </div>
+          </fieldset>
+
+          <div id="cost-error" class="form-error" role="alert" aria-live="assertive"></div>
+          <div class="cost-actions"><button class="form-action" type="submit">Calcular este cenário</button><button class="button button--ghost" type="reset">Limpar campos</button></div>
+        </form>
+
+        <section id="cost-result" class="result-panel" tabindex="-1" aria-live="polite" aria-labelledby="result-title">
+          <div class="result-head"><div><p class="eyebrow">Resultado estimado</p><h3 id="result-title">Resumo do cenário</h3></div><span id="result-context" class="result-band cost-result__context">—</span></div>
+          <div class="result-stats">
+            <div class="result-stat"><span>Custo anual</span><b id="annual-total">—</b></div>
+            <div class="result-stat"><span>Média mensal</span><b id="monthly-total">—</b></div>
+            <div class="result-stat"><span>Custo por km</span><b id="per-km-total">—</b></div>
+          </div>
+          <div class="cost-table-wrap" role="region" aria-label="Composição do custo" tabindex="0">
+            <table class="cost-breakdown">
+              <caption>Composição do cenário</caption>
+              <thead><tr><th scope="col">Categoria</th><th scope="col">Por ano</th><th scope="col">Média por mês</th></tr></thead>
+              <tbody>
+                <tr><td>Combustível</td><td id="fuel-annual">—</td><td id="fuel-monthly">—</td></tr>
+                <tr><td>Seguro</td><td id="insurance-annual">—</td><td id="insurance-monthly">—</td></tr>
+                <tr><td>Tributos e licenciamento</td><td id="taxes-annual">—</td><td id="taxes-monthly">—</td></tr>
+                <tr><td>Manutenção e pneus</td><td id="maintenance-annual">—</td><td id="maintenance-monthly">—</td></tr>
+                <tr><td>Estacionamento e pedágios</td><td id="parking-annual">—</td><td id="parking-monthly">—</td></tr>
+                <tr><td>Financiamento</td><td id="financing-annual">—</td><td id="financing-monthly">—</td></tr>
+                <tr><td>Outros</td><td id="other-annual">—</td><td id="other-monthly">—</td></tr>
+                <tr><td>Depreciação estimada</td><td id="depreciation-annual">—</td><td id="depreciation-monthly">—</td></tr>
+              </tbody>
+              <tfoot><tr><th scope="row">Total</th><td id="table-annual-total">—</td><td id="table-monthly-total">—</td></tr></tfoot>
+            </table>
+          </div>
+          <p id="result-note" class="result-note">—</p>
+          <p class="cost-zero-note">Campos vazios são tratados como zero, mas permanecem identificados como “não incluído” para não parecer que foram cotados.</p>
+        </section>
+      </section>
+
+      <article class="article-content">
+        <h2 id="formula">A fórmula usada</h2>
+        <p>A calculadora apenas normaliza todos os valores para um período anual. Depois, divide o total por 12 e pela quilometragem anual informada.</p>
+        <div class="cost-formula" aria-label="Fórmulas da calculadora">
+          <p><strong>Combustível por ano</strong> = (km por ano ÷ consumo em km/l) × preço por litro.</p>
+          <p><strong>Custos mensais por ano</strong> = (estacionamento + financiamento + outros) × 12.</p>
+          <p><strong>Custo anual</strong> = combustível + seguro + tributos + manutenção + custos mensais anualizados + depreciação informada.</p>
+          <p><strong>Média mensal</strong> = custo anual ÷ 12. <strong>Custo por km</strong> = custo anual ÷ km por ano.</p>
         </div>
-        <button type="submit">CALCULAR CUSTO REAL</button>
-      </form>
-      <div class="calculator-result" id="result" aria-live="polite"><div class="result-grid"><div class="result-item"><span>Custo mensal estimado</span><b id="mensal">—</b></div><div class="result-item"><span>Custo anual estimado</span><b id="anual">—</b></div><div class="result-item"><span>Custo por quilômetro</span><b id="por-km">—</b></div></div><p id="breakdown" style="font-size:.8rem;color:var(--portal-muted);line-height:1.65;margin-top:16px"></p></div>
-    </section>
-    <article class="article-content">
-      <h2>Como a conta é feita</h2><p>A calculadora soma os custos mensais informados, transforma os custos anuais em parcelas mensais e estima o combustível a partir da distância, do consumo e do preço por litro. A depreciação é tratada como custo econômico: ela não sai da conta todo mês, mas aparece quando o carro é vendido por menos.</p>
-      <div class="editor-note"><h2>Fórmula resumida</h2><p><strong>Custo mensal</strong> = combustível + parcela + estacionamento/pedágio + (seguro + impostos + manutenção + depreciação) ÷ 12.</p></div>
-      <h2>Como preencher sem se enganar</h2>
-      <h3>Use consumo realista</h3><p>O consumo de catálogo é medido em condições específicas. Para orçamento, use sua média de abastecimentos ou um cenário conservador. Trânsito pesado, ar-condicionado, carga e trajeto curto podem elevar o gasto.</p>
-      <h3>Não zere manutenção</h3><p>Mesmo um carro em garantia precisa de revisões, pneus e itens de desgaste. Para um usado sem histórico completo, considere também uma revisão inicial. Dividir uma reserva anual por 12 evita que a despesa pareça um imprevisto absoluto.</p>
-      <h3>Separe parcela de custo do crédito</h3><p>A parcela mostra o impacto no caixa, mas não revela sozinha o preço do financiamento. Para comparar propostas, consulte o CET e o valor total a pagar. O guia de <a href="financiamento-carro-usado.html">financiamento de carro usado</a> explica essa diferença.</p>
-      <h3>Trate a depreciação como cenário</h3><p>Não existe uma taxa anual universal. Use uma hipótese e teste valores diferentes. Modelo, idade, geração, oferta, manutenção, garantia e mercado local influenciam a revenda. A calculadora não prevê o futuro.</p>
-      <h2>O que não entra automaticamente</h2><p>Multas, franquia de seguro, reparos após acidente, acessórios, lavagens, juros separados da parcela, custo de oportunidade e variação de preços não são calculados sem que você os inclua em alguma categoria. O objetivo é criar um orçamento comparável, não uma promessa de gasto exato.</p>
-      <div class="source-box"><h2>Leituras para completar a análise</h2><ul><li><a href="custo-real-ter-carro.html">Guia completo do custo de propriedade</a></li><li><a href="financiamento-carro-usado.html">Como comparar CET e custo total</a></li><li><a href="desvalorizacao-carros-brasil.html">O que influencia a desvalorização</a></li><li><a href="/#analisador">Comparar o anúncio com a referência FIPE</a></li></ul></div>
-    </article></main><aside class="article-aside"><div class="aside-card"><h2>Privacidade</h2><p>Os valores do formulário são processados localmente no navegador. A calculadora não pede placa, CPF ou dados bancários.</p></div><div class="aside-card"><h2>Importante</h2><p>Resultado educativo. Faça cotações reais de seguro, manutenção e crédito antes de comprar.</p></div></aside></div>
-  <footer class="site-footer"><div class="site-footer__inner"><div class="site-footer__brand"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span></a><p>Informação independente para pesquisar preço, custo e risco antes de comprar um veículo.</p></div><div class="site-footer__links"><div><h2>Ferramentas</h2><a href="/#analisador">Analisar anúncio</a><a href="calculadora-custo-carro.html">Custo mensal</a></div><div><h2>Editorial</h2><a href="artigos.html">Todos os guias</a><a href="metodologia.html">Metodologia</a><a href="politica-editorial.html">Política editorial</a></div><div><h2>Institucional</h2><a href="quem-somos.html">Quem somos</a><a href="politica-de-privacidade.html">Privacidade</a><a href="termos-de-uso.html">Termos</a></div></div></div><div class="site-footer__legal">© 2026 FIPE ou Furada? Estimativas não constituem recomendação financeira.</div></footer>
-  <script>
-    const brl = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
-    document.getElementById('cost-form').addEventListener('submit', event => {
-      event.preventDefault();
-      const n = id => Math.max(0, Number(document.getElementById(id).value) || 0);
-      const km=n('km'), consumo=Math.max(.1,n('consumo')), preco=n('combustivel');
-      const combustivel=(km/consumo)*preco, parcela=n('parcela'), estacionamento=n('estacionamento');
-      const seguro=n('seguro')/12, impostos=n('ipva')/12, manutencao=n('manutencao')/12;
-      const depreciacao=(n('valor')*(n('depreciacao')/100))/12;
-      const mensal=combustivel+parcela+estacionamento+seguro+impostos+manutencao+depreciacao;
-      document.getElementById('mensal').textContent=brl.format(mensal);
-      document.getElementById('anual').textContent=brl.format(mensal*12);
-      document.getElementById('por-km').textContent=km ? brl.format(mensal/km) : 'Informe a km';
-      document.getElementById('breakdown').textContent=`Neste cenário: ${brl.format(combustivel)} de combustível, ${brl.format(parcela)} de parcela, ${brl.format(estacionamento)} de uso/garagem, ${brl.format(seguro+impostos+manutencao)} de custos anuais rateados e ${brl.format(depreciacao)} de depreciação mensal estimada.`;
-      document.getElementById('result').classList.add('is-visible');
-    });
-  </script>
-</body></html>
+
+        <h2>Como interpretar sem misturar conceitos</h2>
+        <h3>Parcela é fluxo de caixa</h3>
+        <p>O campo de financiamento soma a parcela inteira porque ela sai do orçamento mensal. Parte desse pagamento pode amortizar o principal e formar patrimônio; esta ferramenta não separa principal, juros, seguro e tarifa. Para comparar contratos, consulte o CET e o total a pagar no <a href="simulador-financiamento.html">comparador de financiamento</a>.</p>
+        <h3>Depreciação é uma hipótese econômica</h3>
+        <p>A perda de valor não costuma sair da conta bancária todo mês. Ela aparece quando o veículo é vendido por menos. Se você incluir parcela integral e depreciação ao mesmo tempo, o resultado mistura saída de caixa e perda estimada de valor. Para um orçamento mensal, use a parcela e deixe a depreciação vazia; para um cenário econômico, informe a depreciação e trate o financiamento conforme a finalidade da análise.</p>
+        <h3>Valor vazio não é cotação</h3>
+        <p>Seguro, manutenção, tributos e outros itens dependem do veículo, do condutor, da região e do uso. Por isso, a ferramenta não preenche médias. Um campo vazio entra como zero somente para permitir a soma e é marcado como não incluído no detalhamento.</p>
+
+        <h2>Limites do resultado</h2>
+        <ul>
+          <li>é uma estimativa baseada nos valores e no período que você informar, não uma previsão;</li>
+          <li>não corrige preços por inflação nem projeta mudanças de combustível, seguro ou tributos;</li>
+          <li>não inclui multas, acidentes, franquia de seguro, reparos imprevistos ou custo de oportunidade sem que você os some a um campo;</li>
+          <li>o consumo em uso urbano, rodoviário, com carga ou ar-condicionado pode divergir do ensaio padronizado;</li>
+          <li>a referência FIPE expressa preço médio e não determina o preço futuro ou a condição de um veículo específico.</li>
+        </ul>
+
+        <section class="source-box" aria-labelledby="sources-title">
+          <h2 id="sources-title">Fontes oficiais para preencher melhor</h2>
+          <ul>
+            <li><a href="https://www.gov.br/anp/pt-br/assuntos/precos-e-defesa-da-concorrencia/precos/levantamento-de-precos-de-combustiveis-ultimas-semanas-pesquisadas" rel="noopener noreferrer">ANP — levantamento semanal de preços de combustíveis</a></li>
+            <li><a href="https://www.gov.br/inmetro/pt-br/assuntos/regulamentacao/avaliacao-da-conformidade/programa-brasileiro-de-etiquetagem/tabelas-de-eficiencia-energetica/veiculos-automotivos-pbe-veicular" rel="noopener noreferrer">Inmetro — Programa Brasileiro de Etiquetagem Veicular</a></li>
+            <li><a href="https://www.gov.br/transportes/pt-br/assuntos/transito/senatran/servicos-senatran" rel="noopener noreferrer">Senatran — serviços e consultas de veículos</a>; confirme IPVA e taxas também no Detran e na Secretaria da Fazenda do seu estado.</li>
+            <li><a href="https://veiculos.fipe.org.br/" rel="noopener noreferrer">FIPE — consulta pública de preços médios de veículos</a></li>
+            <li><a href="https://www.bcb.gov.br/cidadaniafinanceira" rel="noopener noreferrer">Banco Central — Cidadania Financeira</a></li>
+          </ul>
+          <p>Use comprovantes, propostas e orçamentos recentes sempre que possível. Links consultados em 30 de agosto de 2026.</p>
+        </section>
+
+        <div class="author-card"><div class="author-card__avatar" aria-hidden="true">C</div><div><p class="eyebrow">Responsabilidade editorial</p><h2>Ferramenta mantida por Cadim</h2><p>Cadim responde pela estrutura, fórmula e revisão desta página. A calculadora não substitui cotação, avaliação mecânica, orientação tributária ou análise financeira. Veja a <a href="autor-cadim.html">página do autor</a>, a <a href="metodologia.html">metodologia</a> e o <a href="registro-de-correcoes.html">registro de correções</a>.</p></div></div>
+        <div class="hero-actions"><a class="button button--primary" href="simulador-financiamento.html">Comparar financiamentos →</a><a class="button button--ghost" href="dossie-compra.html">Voltar ao dossiê</a></div>
+      </article>
+    </main>
+
+    <aside class="article-aside" aria-label="Notas da calculadora">
+      <div class="aside-card"><h2>Privacidade</h2><p>Os valores são calculados no seu navegador. O formulário não pede placa, CPF, e-mail ou dados bancários.</p></div>
+      <div class="aside-card"><h2>Antes de começar</h2><ul><li>defina uma quilometragem de 12 meses;</li><li>use a mesma base de período em todos os campos;</li><li>deixe vazio o que não se aplica;</li><li>guarde a origem das suas cotações.</li></ul></div>
+      <div class="aside-card"><h2>Importante</h2><p>O total é tão completo quanto os dados informados. Compare mais de um cenário antes de decidir.</p></div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Caderno do comprador</small></a><p>Pesquisa independente para organizar preço, custo, evidências e próximos passos antes de comprar.</p></div>
+      <div class="site-footer__links">
+        <div><h2>Ferramentas</h2><a href="dossie-compra.html">Dossiê</a><a href="/#comparador">Referência FIPE</a><a href="calculadora-custo-carro.html">Custo do carro</a><a href="simulador-financiamento.html">Financiamento</a></div>
+        <div><h2>Editorial</h2><a href="artigos.html">Guias</a><a href="metodologia.html">Metodologia</a><a href="politica-editorial.html">Política editorial</a><a href="autor-cadim.html">Autor</a></div>
+        <div><h2>Institucional</h2><a href="quem-somos.html">Quem somos</a><a href="politica-de-privacidade.html">Privacidade</a><a href="termos-de-uso.html">Termos</a></div>
+      </div>
+    </div>
+    <div class="site-footer__legal">© 2026 FIPE ou Furada? Estimativas informativas; confirme valores nas fontes e propostas aplicáveis.</div>
+  </footer>
+  <script defer src="site-shell.js?v=20260830-2"></script>
+  <script defer src="custo-carro.js?v=20260830-2"></script>
+</body>
+</html>

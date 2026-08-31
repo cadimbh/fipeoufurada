@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <title>FIPE ou Furada?</title>
+  <rect width="80" height="80" rx="18" fill="#111722"/>
+  <path d="M19 17h43v12H33v10h24v12H33v19H19z" fill="#f7f3ec"/>
+  <circle cx="62" cy="63" r="8" fill="#ff5938"/>
+</svg>

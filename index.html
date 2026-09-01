@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="portal-v3.css?v=20260831-5">
+  <link rel="stylesheet" href="portal-v3.css?v=20260831-9">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -63,7 +63,7 @@
       <div class="home-tool-copy">
         <p class="eyebrow">Comparador de preço automotivo</p>
         <h1 id="hero-title">O preço está <em>bom</em> ou precisa de investigação?</h1>
-        <p class="hero-deck">Escolha a versão exata, informe o preço do anúncio e compare com a referência FIPE atual. Sem cadastro, sem placa e sem julgamento automático.</p>
+        <p class="hero-deck">Escolha a versão exata, informe preço e quilometragem e veja a diferença para a FIPE com o contexto de uso do carro. Sem cadastro e sem placa.</p>
         <div class="home-trust-row"><span>✓ Consulta gratuita</span><span>✓ Resultado em segundos</span><span>✓ Fonte identificada</span></div>
       </div>
       <div class="home-tool-card">
@@ -74,6 +74,7 @@
             <div class="field"><label for="fipe-model">2. Modelo e versão</label><select id="fipe-model" disabled required><option value="">Selecione a marca</option></select></div>
             <div class="field"><label for="fipe-year">3. Ano/modelo</label><select id="fipe-year" disabled required><option value="">Selecione o modelo</option></select></div>
             <div class="field"><label for="fipe-asked">4. Preço anunciado (R$)</label><input id="fipe-asked" inputmode="numeric" autocomplete="off" placeholder="Ex.: 68.900" required></div>
+            <div class="field"><label for="fipe-mileage">5. Quilometragem</label><input id="fipe-mileage" inputmode="numeric" autocomplete="off" placeholder="Ex.: 72.000" required><small>Usada como contexto; não altera o valor oficial da FIPE.</small></div>
           </div>
           <div id="fipe-loading" class="loading-bar" aria-hidden="true"><div id="fipe-loading-fill" class="loading-fill"></div></div>
           <div id="fipe-error" class="form-error" role="alert" tabindex="-1"></div>
@@ -81,7 +82,7 @@
         </form>
         <section id="fipe-result" class="result-panel" tabindex="-1" aria-live="polite" aria-labelledby="result-vehicle">
           <div class="result-head"><div><p class="eyebrow">Comparação pronta</p><h3 id="result-vehicle">Veículo selecionado</h3></div><span id="result-percentage" class="result-band">—</span></div>
-          <div class="result-stats"><div class="result-stat"><span>Referência FIPE</span><b id="result-reference">—</b></div><div class="result-stat"><span>Preço anunciado</span><b id="result-asked">—</b></div><div class="result-stat"><span>Diferença</span><b id="result-difference">—</b></div></div>
+          <div class="result-stats"><div class="result-stat"><span>Referência FIPE</span><b id="result-reference">—</b></div><div class="result-stat"><span>Preço anunciado</span><b id="result-asked">—</b></div><div class="result-stat"><span>Diferença</span><b id="result-difference">—</b></div><div class="result-stat"><span>Contexto de uso</span><b id="result-mileage">—</b></div></div>
           <p class="result-note"><strong>Próximo passo:</strong> <span id="result-action">—</span></p>
           <p class="home-result-meta">Referência: <b id="result-month">—</b> · Código FIPE: <b id="result-code">—</b>. Confirme o valor no <a href="https://veiculos.fipe.org.br/" rel="noopener noreferrer">portal oficial da FIPE</a>.</p>
           <div class="hero-actions"><a class="button button--primary" href="dossie-compra.html">Investigar este carro →</a><a class="button button--ghost" href="calculadora-custo-carro.html">Calcular custo mensal</a></div>
@@ -89,7 +90,7 @@
       </div>
     </section>
 
-    <nav class="page-shell home-quicknav" aria-label="Atalhos das ferramentas"><a href="dossie-compra.html"><span>01</span><b>Dossiê de compra</b><small>30 verificações essenciais</small></a><a href="calculadora-custo-carro.html"><span>02</span><b>Custo mensal</b><small>Resultado em menos de 1 minuto</small></a><a href="simulador-financiamento.html"><span>03</span><b>Financiamento</b><small>Compare propostas reais</small></a></nav>
+    <nav class="page-shell home-quicknav" aria-label="Atalhos das ferramentas"><a href="dossie-compra.html"><span>01</span><b>Checklist de compra</b><small>10 verificações em 4 etapas</small></a><a href="calculadora-custo-carro.html"><span>02</span><b>Custo mensal</b><small>Resultado em menos de 1 minuto</small></a><a href="simulador-financiamento.html"><span>03</span><b>Financiamento</b><small>Compare cenários entre bancos</small></a></nav>
 
     <section class="proof-strip" aria-label="Compromissos editoriais">
       <div class="proof-strip__inner">
@@ -102,7 +103,7 @@
 <section class="section page-shell" aria-labelledby="comece-title">
       <div class="section-head"><div><p class="section-eyebrow">Escolha seu ponto de partida</p><h2 id="comece-title">Três ferramentas. Uma decisão documentada.</h2></div><p>Você não precisa preencher tudo de uma vez. Cada recurso resolve uma parte da pesquisa e deixa claro o que ainda depende de verificação profissional ou oficial.</p></div>
       <div class="path-grid">
-        <a class="path-card path-card--dark" href="dossie-compra.html"><span class="path-card__index">01 · FERRAMENTA PRINCIPAL</span><h3>Dossiê de compra</h3><p>Registre evidências, pendências e perguntas antes de avançar com um veículo.</p><span class="path-card__link">Abrir caderno interativo →</span></a>
+        <a class="path-card path-card--dark" href="dossie-compra.html"><span class="path-card__index">01 · CHECKLIST GUIADO</span><h3>Compra sem esquecer o essencial</h3><p>Dez verificações objetivas, divididas em quatro etapas curtas e com resumo automático.</p><span class="path-card__link">Começar checklist →</span></a>
         <a class="path-card" href="#comparador"><span class="path-card__index">02 · PREÇO</span><h3>Comparador de referência</h3><p>Veja a diferença numérica entre o anúncio e a versão FIPE selecionada, sem veredicto automático.</p><span class="path-card__link">Comparar agora ↓</span></a>
         <a class="path-card" href="calculadora-custo-carro.html"><span class="path-card__index">03 · ORÇAMENTO</span><h3>Custo total do carro</h3><p>Some combustível, seguro, impostos, manutenção, financiamento e perda de valor.</p><span class="path-card__link">Calcular custo mensal →</span></a>
       </div>
@@ -147,6 +148,6 @@
     <div class="site-footer__legal">© 2026 FIPE ou Furada? Projeto independente, sem vínculo com a Fundação Instituto de Pesquisas Econômicas, órgãos de trânsito, lojas ou instituições financeiras. Conteúdo informativo; confirme regras e dados nos canais oficiais.</div>
   </footer>
   <script defer src="site-shell.js?v=20260831-4"></script>
-  <script defer src="fipe-analyzer.js?v=20260831-4"></script>
+  <script defer src="fipe-analyzer.js?v=20260831-5"></script>
 </body>
 </html>

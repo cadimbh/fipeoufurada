@@ -239,23 +239,38 @@
     clearError();
     if (!selection.reference) return showError('Selecione marca, modelo e ano/modelo antes de comparar.');
     const asked = numberFromInput($('fipe-asked').value);
+    const mileage = numberFromInput($('fipe-mileage').value);
     const reference = brlFromAPI(selection.reference.price);
     if (!asked || asked < 1000) return showError('Informe um preço de anúncio válido.');
+    if (!mileage && !isZeroKmCode(selection.year)) return showError('Informe a quilometragem anunciada.');
     if (!reference) return showError('A fonte não retornou um valor de referência válido.');
 
     const difference = asked - reference;
     const percentage = (difference / reference) * 100;
     const direction = difference === 0 ? 'igual à' : difference > 0 ? 'acima da' : 'abaixo da';
-    const action = difference > 0
+    const modelYear = Number(String(selection.year).match(/^\d{4}/)?.[0]);
+    const age = isZeroKmCode(selection.year) ? 0 : Math.max(1, new Date().getFullYear() - modelYear);
+    const annualMileage = age ? Math.round(mileage / age) : mileage;
+    let mileageLabel = isZeroKmCode(selection.year) ? '0 km declarado' : `${annualMileage.toLocaleString('pt-BR')} km/ano`;
+    let mileageNote = 'A FIPE não corrige o valor pela quilometragem. Confirme hodômetro, histórico e desgaste físico.';
+    if (!isZeroKmCode(selection.year)) {
+      if (annualMileage < 8000) mileageNote = 'Uso anual baixo declarado. Exija histórico que sustente a quilometragem e não aceite ágio apenas por esse dado.';
+      else if (annualMileage <= 18000) mileageNote = 'Uso anual dentro da faixa editorial de triagem. Estado, manutenção e histórico continuam decisivos.';
+      else if (annualMileage <= 28000) mileageNote = 'Uso anual elevado. Inspeção, manutenção e itens de desgaste merecem atenção reforçada.';
+      else mileageNote = 'Uso anual intenso. Investigue finalidade anterior, manutenção e desgaste antes de interpretar o desconto.';
+    }
+    const priceAction = difference > 0
       ? 'Peça evidências que expliquem o valor: conservação, garantia, manutenção, opcionais e baixa oferta local.'
       : difference < 0
         ? 'Investigue por que o preço está menor: versão, débitos, histórico, condição mecânica, sinistro, leilão e identidade do vendedor.'
         : 'Mesmo preço da referência não significa exemplar aprovado. Histórico, condição e custos imediatos continuam sem verificação.';
+    const action = `${priceAction} ${mileageNote}`;
 
     setText('result-vehicle', `${selection.reference.brand} ${selection.reference.model} · ${selection.reference.year}`);
     setText('result-reference', money(reference));
     setText('result-asked', money(asked));
     setText('result-difference', `${difference > 0 ? '+' : difference < 0 ? '−' : ''}${money(Math.abs(difference))}`);
+    setText('result-mileage', mileageLabel);
     setText('result-percentage', `${Math.abs(percentage).toLocaleString('pt-BR', { maximumFractionDigits: 1 })}% ${direction} referência`);
     setText('result-month', selection.reference.month || 'mês não informado pela fonte');
     setText('result-code', selection.reference.code || 'não informado');
@@ -278,6 +293,7 @@
     $('fipe-model').addEventListener('change', loadYears);
     $('fipe-year').addEventListener('change', loadReference);
     $('fipe-asked').addEventListener('input', formatCurrencyInput);
+    $('fipe-mileage').addEventListener('input', formatCurrencyInput);
     form.addEventListener('submit', renderResult);
     loadBrands();
   });

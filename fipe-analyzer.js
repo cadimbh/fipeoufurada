@@ -238,7 +238,7 @@
     event.preventDefault();
     clearError();
     if (!selection.reference) return showError('Selecione marca, modelo e ano/modelo antes de comparar.');
-    const asked = numberFromInput($('fipe-asked').value);
+    const asked = brlFromAPI($('fipe-asked').value);
     const mileage = numberFromInput($('fipe-mileage').value);
     const reference = brlFromAPI(selection.reference.price);
     if (!asked || asked < 1000) return showError('Informe um preço de anúncio válido.');
@@ -281,8 +281,15 @@
   }
 
   function formatCurrencyInput(event) {
-    const digits = event.target.value.replace(/\D/g, '');
-    event.target.value = digits ? Number(digits).toLocaleString('pt-BR') : '';
+    if (event.target.id === 'fipe-asked') {
+      // Preserve decimal cents when the user pastes a Brazilian currency amount.
+      const amount = event.target.value.replace(/[^0-9,]/g, '').split(',');
+      const whole = amount[0] ? Number(amount[0]).toLocaleString('pt-BR') : '';
+      event.target.value = whole + (amount.length > 1 ? ',' + amount[1].slice(0, 2) : '');
+    } else {
+      const digits = event.target.value.replace(/\D/g, '');
+      event.target.value = digits ? Number(digits).toLocaleString('pt-BR') : '';
+    }
     clearResult();
   }
 

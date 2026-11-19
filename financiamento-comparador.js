@@ -31,7 +31,7 @@
   ];
 
   const money = value => Number(value || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
-  const parseMoney = value => Number(String(value || '').replace(/\D/g, ''));
+  const parseMoney = value => Number(String(value || '').replace(/\./g, '').replace(',', '.'));
   const apiMoney = value => Number(String(value || '').replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.'));
   const isZeroKm = value => /^32000(?:-|$)/.test(String(value || ''));
 
@@ -187,7 +187,7 @@
     const matched = BRAND_BANKS.find(bank => bank.match.some(term => normalized.includes(term)));
     const banks = [...GENERAL_BANKS];
     if (matched) banks.push({ ...matched, note: `Financeira ligada à marca ${vehicle.brandLabel}` });
-    return banks.sort((a, b) => a.rate - b.rate).slice(0, 8);
+    return banks.sort((a, b) => a.rate - b.rate);
   }
 
   function createBankCard(bank, data, index) {
@@ -243,13 +243,33 @@
   }
 
   function formatPrice(event) {
-    const digits = event.target.value.replace(/\D/g, '');
-    event.target.value = digits ? Number(digits).toLocaleString('pt-BR') : '';
+    if (event.target.id === 'finance-price') {
+      // Preserve decimal cents when the user pastes a Brazilian currency amount.
+      const amount = event.target.value.replace(/[^0-9,]/g, '').split(',');
+      const whole = amount[0] ? Number(amount[0]).toLocaleString('pt-BR') : '';
+      event.target.value = whole + (amount.length > 1 ? ',' + amount[1].slice(0, 2) : '');
+    }
     updatePreview();
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    if (!$('finance-form')) return;
+    const offers = $('offers');
+    const result = $('offers-result');
+    const currency = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+    offers.addEventListener('input', () => { result.textContent = ''; });
+    offers.addEventListener('submit', event => {
+      event.preventDefault();
+      function total(key) {
+        const value = field => Number(offers.elements.namedItem(key + '-' + field).value);
+        const cents = field => Math.round(value(field) * 100);
+        return cents('entry') + value('months') * cents('payment') + cents('extra') + cents('fees');
+      }
+      const a = total('A');
+      const b = total('B');
+      const comparison = a === b ? 'Os totais são iguais.' : 'A proposta ' + (a < b ? 'A' : 'B') + ' custa ' + currency.format(Math.abs(a - b) / 100) + ' a menos.';
+      result.textContent = 'A: ' + currency.format(a / 100) + ' · B: ' + currency.format(b / 100) + '. ' + comparison;
+    });
+    $('finance-form').addEventListener('input', () => $('finance-result').classList.remove('is-visible'));
     $('finance-brand').addEventListener('change', loadModels);
     $('finance-model').addEventListener('change', loadYears);
     $('finance-year').addEventListener('change', loadReference);

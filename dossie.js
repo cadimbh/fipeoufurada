@@ -23,7 +23,7 @@
         if (field.type === 'checkbox') field.checked = Boolean(data[field.id]);
         else field.value = String(data[field.id] ?? '');
       });
-    } catch (_) { localStorage.removeItem(STORAGE_KEY); }
+    } catch (_) { feedback('O checklist está disponível nesta aba. Não foi possível restaurar os dados salvos.'); }
   }
 
   function checkTitle(check) {
@@ -125,7 +125,7 @@
   function reset() {
     if (!window.confirm('Limpar o checklist salvo neste navegador?')) return;
     fields().forEach(field => { if (field.type === 'checkbox') field.checked = false; else field.value = ''; });
-    localStorage.removeItem(STORAGE_KEY);
+    try { localStorage.removeItem(STORAGE_KEY); } catch (_) { /* Storage can be disabled. */ }
     showStep(0);
     update();
     feedback('Checklist limpo.');

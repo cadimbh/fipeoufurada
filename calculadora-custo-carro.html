@@ -94,7 +94,7 @@
       <p class="article-kicker">Calculadora rápida · cenário editável</p>
       <h1 class="article-title">Quanto esse carro pesa no seu mês?</h1>
       <p class="article-deck">Escolha como você usa o carro, informe o valor e ajuste quatro números. Em segundos você vê combustível, custos recorrentes e o impacto mensal — sem enfrentar uma planilha.</p>
-      <div class="byline"><div class="byline__mark" aria-hidden="true">C</div><div><b><a href="autor-cadim.html">Cadim</a>, editor e desenvolvedor</b><span>Ferramenta revisada em 31 de agosto de 2026 · processamento local</span></div></div>
+      <div class="byline"><div class="byline__mark" aria-hidden="true">C</div><div><b><a href="autor-cadim.html">Cadim</a>, editor e desenvolvedor</b><span>Ferramenta revisada em 19 de novembro de 2026 · processamento local</span></div></div>
 
       <section class="cost-calculator" aria-labelledby="calculator-title">
         <h2 id="calculator-title">Descubra em menos de um minuto</h2>
@@ -143,13 +143,13 @@
 
         <section id="cost-result" class="result-panel" tabindex="-1" aria-live="polite" aria-labelledby="result-title">
           <div class="result-head"><div><p class="eyebrow">Seu cenário</p><h3 id="result-title">O peso real no orçamento</h3></div><span id="result-context" class="result-band cost-result__context">—</span></div>
-          <div class="cost-result-hero"><span class="cost-result-hero__label">Custo médio por mês</span><b id="monthly-total" class="cost-result-hero__value">—</b><p class="cost-result-hero__sub">Inclui as estimativas exibidas abaixo. Edite qualquer valor para comparar outro cenário.</p></div>
+          <div class="cost-result-hero"><span class="cost-result-hero__label">Desembolso médio por mês</span><b id="monthly-total" class="cost-result-hero__value">—</b><p class="cost-result-hero__sub">Inclui combustível, despesas e parcelas informadas. A perda de valor estimada aparece separadamente na tabela.</p></div>
           <div class="result-stats"><div class="result-stat"><span>Por ano</span><b id="annual-total">—</b></div><div class="result-stat"><span>Por quilômetro</span><b id="per-km-total">—</b></div><div class="result-stat"><span>Perfil escolhido</span><b id="profile-result">—</b></div></div>
           <div id="cost-bars" class="cost-breakdown-visual" aria-label="Composição visual do custo"></div>
           <details class="cost-breakdown-details"><summary>Ver tabela completa e valores não incluídos</summary><div class="cost-table-wrap" role="region" aria-label="Composição do custo" tabindex="0">
             <table class="cost-breakdown"><caption>Composição do cenário</caption><thead><tr><th scope="col">Categoria</th><th scope="col">Por ano</th><th scope="col">Média por mês</th></tr></thead><tbody>
-              <tr><td>Combustível</td><td id="fuel-annual">—</td><td id="fuel-monthly">—</td></tr><tr><td>Seguro</td><td id="insurance-annual">—</td><td id="insurance-monthly">—</td></tr><tr><td>Tributos e licenciamento</td><td id="taxes-annual">—</td><td id="taxes-monthly">—</td></tr><tr><td>Manutenção e pneus</td><td id="maintenance-annual">—</td><td id="maintenance-monthly">—</td></tr><tr><td>Estacionamento e pedágios</td><td id="parking-annual">—</td><td id="parking-monthly">—</td></tr><tr><td>Financiamento</td><td id="financing-annual">—</td><td id="financing-monthly">—</td></tr><tr><td>Outros</td><td id="other-annual">—</td><td id="other-monthly">—</td></tr><tr><td>Depreciação estimada</td><td id="depreciation-annual">—</td><td id="depreciation-monthly">—</td></tr>
-            </tbody><tfoot><tr><th scope="row">Total</th><td id="table-annual-total">—</td><td id="table-monthly-total">—</td></tr></tfoot></table>
+              <tr><td>Combustível</td><td id="fuel-annual">—</td><td id="fuel-monthly">—</td></tr><tr><td>Seguro</td><td id="insurance-annual">—</td><td id="insurance-monthly">—</td></tr><tr><td>Tributos e licenciamento</td><td id="taxes-annual">—</td><td id="taxes-monthly">—</td></tr><tr><td>Manutenção e pneus</td><td id="maintenance-annual">—</td><td id="maintenance-monthly">—</td></tr><tr><td>Estacionamento e pedágios</td><td id="parking-annual">—</td><td id="parking-monthly">—</td></tr><tr><td>Financiamento</td><td id="financing-annual">—</td><td id="financing-monthly">—</td></tr><tr><td>Outros</td><td id="other-annual">—</td><td id="other-monthly">—</td></tr><tr><td>Depreciação estimada (fora do total)</td><td id="depreciation-annual">—</td><td id="depreciation-monthly">—</td></tr>
+            </tbody><tfoot><tr><th scope="row">Desembolso total</th><td id="table-annual-total">—</td><td id="table-monthly-total">—</td></tr></tfoot></table>
           </div></details>
           <p id="result-note" class="result-note">—</p>
         </section>
@@ -161,7 +161,7 @@
         <div class="cost-formula" aria-label="Fórmulas da calculadora">
           <p><strong>Combustível por ano</strong> = (km por ano ÷ consumo em km/l) × preço por litro.</p>
           <p><strong>Custos mensais por ano</strong> = (estacionamento + financiamento + outros) × 12.</p>
-          <p><strong>Custo anual</strong> = combustível + seguro + tributos + manutenção + custos mensais anualizados + depreciação informada.</p>
+          <p><strong>Custo anual</strong> = combustível + seguro + tributos + manutenção + custos mensais anualizados.</p>
           <p><strong>Média mensal</strong> = custo anual ÷ 12. <strong>Custo por km</strong> = custo anual ÷ km por ano.</p>
         </div>
 
@@ -169,7 +169,7 @@
         <h3>Parcela é fluxo de caixa</h3>
         <p>O campo de financiamento soma a parcela inteira porque ela sai do orçamento mensal. Parte desse pagamento pode amortizar o principal e formar patrimônio; esta ferramenta não separa principal, juros, seguro e tarifa. Para comparar contratos, consulte o CET e o total a pagar no <a href="simulador-financiamento.html">comparador de financiamento</a>.</p>
         <h3>Depreciação é uma hipótese econômica</h3>
-        <p>A perda de valor não costuma sair da conta bancária todo mês. Ela aparece quando o veículo é vendido por menos. Se você incluir parcela integral e depreciação ao mesmo tempo, o resultado mistura saída de caixa e perda estimada de valor. Para um orçamento mensal, use a parcela e deixe a depreciação vazia; para um cenário econômico, informe a depreciação e trate o financiamento conforme a finalidade da análise.</p>
+        <p>A perda de valor não costuma sair da conta bancária todo mês. Ela aparece quando o veículo é vendido por menos. A tabela mostra essa hipótese em uma linha separada. Por exemplo, com R$ 600 em combustível, R$ 900 de parcela e depreciação estimada em R$ 400 por mês, o desembolso mensal desses itens é R$ 1.500.</p>
         <h3>Perfil pronto não é cotação</h3>
         <p>Seguro, manutenção, tributos e depreciação variam conforme veículo, condutor, estado e uso. Os três perfis aplicam percentuais declarados apenas para evitar uma tela vazia e permitir comparação rápida. Abra “Personalizar estimativas” e substitua-os por cotações, alíquotas e orçamentos do seu caso antes de tomar uma decisão.</p>
 <h2>Limites do resultado</h2>
@@ -217,6 +217,6 @@
     <div class="site-footer__legal">© 2026 FIPE ou Furada? Estimativas informativas; confirme valores nas fontes e propostas aplicáveis.</div>
   </footer>
   <script defer src="site-shell.js?v=20260831-4"></script>
-  <script defer src="custo-carro.js?v=20260831-4"></script>
+  <script defer src="custo-carro.js?v=20261119"></script>
 </body>
 </html>

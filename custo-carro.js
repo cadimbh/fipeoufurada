@@ -14,7 +14,7 @@
   const moneyFields = ['insurance-year', 'taxes-year', 'maintenance-year', 'parking-month', 'financing-month', 'other-month', 'depreciation-year'];
   const categories = [
     ['Combustível', 'fuel'], ['Seguro', 'insurance'], ['Tributos', 'taxes'], ['Manutenção', 'maintenance'],
-    ['Estacionamento', 'parking'], ['Financiamento', 'financing'], ['Outros', 'other'], ['Depreciação', 'depreciation']
+    ['Estacionamento', 'parking'], ['Financiamento', 'financing'], ['Outros', 'other']
   ];
   let applyingPreset = false;
 
@@ -156,8 +156,7 @@
       maintenance: values['maintenance-year'] ?? 0,
       parking: (values['parking-month'] ?? 0) * 12,
       financing: (values['financing-month'] ?? 0) * 12,
-      other: (values['other-month'] ?? 0) * 12,
-      depreciation: values['depreciation-year'] ?? 0
+      other: (values['other-month'] ?? 0) * 12
     };
     const annualTotal = Object.values(annual).reduce((sum, value) => sum + value, 0);
     const monthlyTotal = annualTotal / 12;
@@ -178,7 +177,7 @@
     annualRow('parking', annual.parking, values['parking-month'] !== null);
     annualRow('financing', annual.financing, values['financing-month'] !== null);
     annualRow('other', annual.other, values['other-month'] !== null);
-    annualRow('depreciation', annual.depreciation, values['depreciation-year'] !== null);
+    annualRow('depreciation', values['depreciation-year'], values['depreciation-year'] !== null);
     renderBars(annual, annualTotal);
 
     const profile = profiles[selectedProfile()];

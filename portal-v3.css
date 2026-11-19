@@ -42,3 +42,12 @@ body>main.dossier-page .dossier-hero h1,body>main.finance-page .finance-hero h1{
 .dossier-card{min-height:490px}
 @media(max-width:900px){.dossier-hero,.finance-hero{grid-template-columns:1fr 190px}.dossier-hero__proof,.finance-hero__badge{min-height:138px}.dossier-hero h1,.finance-hero h1{font-size:clamp(2.8rem,6vw,3.8rem)}}
 @media(max-width:680px){.dossier-hero,.finance-hero{grid-template-columns:1fr;gap:18px;padding-top:30px;padding-bottom:24px}.dossier-hero h1,.finance-hero h1{font-size:3.25rem}.dossier-hero__proof,.finance-hero__badge{min-height:112px}.dossier-card{min-height:0}}
+
+.editorial-lead {min-height:auto;padding-block:clamp(36px,6vw,84px)}
+.editorial-data {margin:0;padding:clamp(22px,4vw,44px);border-radius:18px;background:#17212b;color:#fff}
+.editorial-data figcaption {font:700 2rem 'Barlow Condensed',sans-serif}
+.editorial-data small {display:block;font:500 .83rem Inter,sans-serif;margin:5px 0 28px;color:#d1d7de}
+.editorial-data div {margin-top:20px;font-size:.9rem}
+.editorial-data b {float:right}
+.editorial-data i {display:block;height:8px;margin-top:10px;background:#f4c242;border-radius:4px}
+.home-tool-copy h2 {font:800 clamp(2.2rem,5vw,4rem)/1.05 'Barlow Condensed',sans-serif}

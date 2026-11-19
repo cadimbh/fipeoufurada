@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Comparador FIPE de carros | FIPE ou Furada?</title>
+  <meta name="description" content="Consulte o preço de referência da versão e compare com o valor do anúncio.">
+  <link rel="canonical" href="https://www.fipeoufurada.com.br/comparador-fipe.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#090b10">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="FIPE ou Furada?">
+  <meta property="og:title" content="Comparador FIPE de carros">
+  <meta property="og:description" content="Consulte o preço de referência da versão e compare com o valor do anúncio.">
+  <meta property="og:url" content="https://www.fipeoufurada.com.br/comparador-fipe.html">
+  <meta property="og:image" content="https://www.fipeoufurada.com.br/fipe-ou-furada-og-v3.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Comparador FIPE de carros">
+  <meta name="twitter:description" content="Consulte o preço de referência da versão e compare com o valor do anúncio.">
+  <meta name="twitter:image" content="https://www.fipeoufurada.com.br/fipe-ou-furada-og-v3.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal-v3.css?v=20261119-portal">
+
+  <meta name="google-adsense-account" content="ca-pub-6028036791646015">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6028036791646015" crossorigin="anonymous"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="announcement"><div class="announcement__inner"><span><b>Projeto independente:</b> não vendemos carros, crédito, laudos nem posição em resultados.</span><span><a href="metodologia.html">Veja como trabalhamos →</a></span></div></div>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Decisão automotiva</small></a>
+      <nav class="site-nav" aria-label="Navegação principal"><a href="/#mercado">Usados</a><a href="/#lancamentos">Lançamentos</a><a href="/#eletricos">Elétricos</a><a href="artigos.html">Guias</a><a href="quem-somos.html">Sobre</a><a class="site-nav__cta" href="comparador-fipe.html">Consultar FIPE</a></nav>
+      <details class="site-menu">
+        <summary aria-label="Abrir menu">Menu</summary>
+        <nav class="site-menu__panel" aria-label="Navegação móvel"><a href="/#mercado">Usados</a><a href="/#lancamentos">Lançamentos</a><a href="/#eletricos">Elétricos</a><a href="artigos.html">Guias</a><a href="quem-somos.html">Sobre</a><a class="site-nav__cta" href="comparador-fipe.html">Consultar FIPE</a></nav>
+      </details>
+    </div>
+  </header>
+<main id="conteudo" class="home-main"><section id="comparador" class="page-shell home-tool-hero" aria-labelledby="hero-title">
+      <div class="home-tool-copy">
+        <p class="eyebrow">Comparador de preço automotivo</p>
+        <h1 id="hero-title">O preço está <em>bom</em> ou precisa de investigação?</h1>
+        <p class="hero-deck">Escolha a versão exata, informe preço e quilometragem e veja a diferença para a FIPE com o contexto de uso do carro. Sem cadastro e sem placa.</p>
+        <div class="home-trust-row"><span>✓ Consulta gratuita</span><span>✓ Sem cadastro</span><span>✓ Fonte identificada</span></div>
+      </div>
+      <div class="home-tool-card">
+        <div class="home-tool-card__top"><div><span class="journal-stamp">Consulta FIPE</span><h2>Compare agora</h2></div><span class="journal-id">PASSO A PASSO</span></div>
+        <form id="fipe-form" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="fipe-brand">1. Marca</label><select id="fipe-brand" required><option value="">Carregando marcas…</option></select></div>
+            <div class="field"><label for="fipe-model">2. Modelo e versão</label><select id="fipe-model" disabled required><option value="">Selecione a marca</option></select></div>
+            <div class="field"><label for="fipe-year">3. Ano/modelo</label><select id="fipe-year" disabled required><option value="">Selecione o modelo</option></select></div>
+            <div class="field"><label for="fipe-asked">4. Preço anunciado (R$)</label><input id="fipe-asked" inputmode="numeric" autocomplete="off" placeholder="Ex.: 68.900" required></div>
+            <div class="field"><label for="fipe-mileage">5. Quilometragem</label><input id="fipe-mileage" inputmode="numeric" autocomplete="off" placeholder="Ex.: 72.000" required><small>Usada como contexto; não altera o valor oficial da FIPE.</small></div>
+          </div>
+          <div id="fipe-loading" class="loading-bar" aria-hidden="true"><div id="fipe-loading-fill" class="loading-fill"></div></div>
+          <div id="fipe-error" class="form-error" role="alert" tabindex="-1"></div>
+          <button id="fipe-submit" class="form-action" type="submit" disabled>Comparar anúncio com a FIPE →</button>
+        </form>
+        <section id="fipe-result" class="result-panel" tabindex="-1" aria-live="polite" aria-labelledby="result-vehicle">
+          <div class="result-head"><div><p class="eyebrow">Comparação pronta</p><h3 id="result-vehicle">Veículo selecionado</h3></div><span id="result-percentage" class="result-band">—</span></div>
+          <div class="result-stats"><div class="result-stat"><span>Referência FIPE</span><b id="result-reference">—</b></div><div class="result-stat"><span>Preço anunciado</span><b id="result-asked">—</b></div><div class="result-stat"><span>Diferença</span><b id="result-difference">—</b></div><div class="result-stat"><span>Contexto de uso</span><b id="result-mileage">—</b></div></div>
+          <p class="result-note"><strong>Próximo passo:</strong> <span id="result-action">—</span></p>
+          <p class="home-result-meta">Referência: <b id="result-month">—</b> · Código FIPE: <b id="result-code">—</b>. Confirme o valor no <a href="https://veiculos.fipe.org.br/" rel="noopener noreferrer">portal oficial da FIPE</a>.</p>
+          <div class="hero-actions"><a class="button button--primary" href="dossie-compra.html">Investigar este carro →</a><a class="button button--ghost" href="calculadora-custo-carro.html">Calcular custo mensal</a></div>
+        </section>
+      </div>
+    </section>
+
+    <div class="page-shell section"><h2>Como interpretar a diferença</h2><p>Compare o mesmo ano-modelo, versão e mês de referência. Para ver o efeito de escolher a versão errada, consulte o <a href="hb20-comfort-2023-preco-por-versao.html">estudo com três versões do HB20</a>.</p></div></main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner"><div class="site-footer__brand"><a class="site-logo" href="/">FIPE OU <span>FURADA?</span><small>Decisão automotiva</small></a><p>Pesquisa independente para organizar preço, custo, evidências e próximos passos antes de comprar um carro usado.</p></div><div class="site-footer__links"><div><h2>Ferramentas</h2><a href="dossie-compra.html">Dossiê de compra</a><a href="comparador-fipe.html">Referência FIPE</a><a href="calculadora-custo-carro.html">Custo do carro</a><a href="simulador-financiamento.html">Financiamento</a></div><div><h2>Editorial</h2><a href="artigos.html">Todos os guias</a><a href="metodologia.html">Metodologia</a><a href="politica-editorial.html">Política editorial</a><a href="autor-cadim.html">Autor e responsável</a></div><div><h2>Institucional</h2><a href="quem-somos.html">Quem somos</a><a href="politica-de-privacidade.html">Privacidade</a><a href="termos-de-uso.html">Termos de uso</a></div></div></div>
+    <div class="site-footer__legal">© 2026 FIPE ou Furada? Projeto independente, sem vínculo com a Fundação Instituto de Pesquisas Econômicas, órgãos de trânsito, lojas ou instituições financeiras. Conteúdo informativo; confirme regras e dados nos canais oficiais.</div>
+  </footer>
+  <script defer src="site-shell.js?v=20260831-4"></script>
+  <script defer src="fipe-analyzer.js?v=20261119"></script>
+</body>
+</html>
